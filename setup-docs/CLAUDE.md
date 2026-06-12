@@ -11,8 +11,10 @@ English; Claude does the building. Always explain things simply and avoid jargon
 asked. When you use a technical term, add a one-line plain-English definition.
 
 ## The golden rules (read first, every time)
-1. **Never break the live site.** Do not deploy to production or change the live domain
-   without being explicitly asked. Build and preview first.
+1. **Never break the live site — and never touch checkout.** Do not deploy to production
+   or change the live domain without being explicitly asked. Build and preview first. The
+   "Register Now" / "Gift Now" buttons are live **Stripe Payment Links** (`buy.stripe.com/...`)
+   that take real money — never alter, remove, or rewrite those URLs.
 2. **Plan before you build.** For anything beyond a typo, propose a short plan and wait
    for approval.
 3. **One change at a time.** Make a change, confirm it works, then move on.
@@ -29,15 +31,23 @@ who is new to AI. Short sentences. Reassuring. Never hypey or fear-based.
 
 ## Tech stack (the target setup)
 - **Framework:** Next.js (App Router) — the front end and back end live together.
-- **Database:** Supabase (Postgres). Articles, AI-tool reviews, and any saved data live here.
+- **Database:** Supabase (Postgres). Articles, AI-tool reviews, form submissions, and any
+  saved data live here.
 - **ORM:** Drizzle — how our code talks to Supabase in plain commands instead of raw SQL.
 - **Auth:** Supabase Auth — only if/when moms log in. Not needed for public pages.
-- **Hosting/Deploy:** Netlify. Pushing to GitHub `main` auto-deploys to production.
-- **AI:** Anthropic API (Claude) via Netlify Functions — powers the Aime™ tool and the
-  content generators. The API key lives in an environment variable `ANTHROPIC_API_KEY`,
-  never in the code.
+- **Hosting/Deploy:** Vercel. Pushing to GitHub `main` auto-deploys to production; every
+  branch gets a preview URL.
+- **AI:** Anthropic API (Claude) via the **Vercel AI SDK**, running in Next.js route
+  handlers / Vercel Functions — powers the Aime™ tool and the content generators. The API
+  key lives in an environment variable `ANTHROPIC_API_KEY`, never in the code. Single
+  provider (Claude) — no AI gateway needed.
+- **Scheduling:** Vercel Cron runs the monthly editorial generator.
+- **Payments:** Stripe **Payment Links** (hosted by Stripe). These are just URLs — keep
+  them exactly as-is. No Stripe API code lives in this project.
+- **Forms / lead capture:** writes to a Supabase `submissions` table (replaces the old
+  Netlify Forms). Every newsletter / waitlist / quiz / purchase-lead form must save here.
 - **Testing:** Basic tests must pass before anything goes live, especially for anything
-  that auto-generates content.
+  that auto-generates content or captures leads.
 
 ## How content works
 - **Articles** live in a Supabase `articles` table (migrated from the old
@@ -60,7 +70,8 @@ components/          # reusable UI pieces (header, footer, article blocks)
 lib/                 # shared code
   db/                #   Drizzle schema + queries (talks to Supabase)
   ai/                #   Claude prompts + content generators
-netlify/functions/  # back-end functions (Aime chat, schedulers)
+app/api/            # back-end route handlers (Aime chat, form submit, generators)
+  cron/             #   scheduled jobs (monthly editorial) — triggered by Vercel Cron
 tests/              # automated checks
 setup-docs/         # onboarding docs (this file's neighbors)
 ```

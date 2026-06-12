@@ -20,7 +20,7 @@
 | **Authentication** | Login — how the site knows who someone is. |
 | **Testing** | Automatic safety checks before anything goes live. |
 | **GitHub** | Cloud backup + full history of your site. Your safety net. |
-| **Deployment** | Publishing changes to the live internet (Netlify does this). |
+| **Deployment** | Publishing changes to the live internet (Vercel does this). |
 | **Commit** | "Save this version." | 
 | **Push** | "Publish it" → the live site updates. |
 | **Revert** | "Undo — go back to the last good version." |
@@ -37,6 +37,8 @@
 ## When to STOP and ask the engineer
 - It wants to change the live site / domain and you're not sure.
 - It mentions deleting data or a database table.
+- It touches the **"Register Now" / "Gift Now"** buttons — those are your live Stripe
+  checkout (real money). Leave them alone unless your engineer is involved.
 - Something on the live aimoms.ai looks broken.
 - It asks for a password or API key — never paste secrets into chat.
 
