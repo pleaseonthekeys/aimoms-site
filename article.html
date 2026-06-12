@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="UTF-8">
+<meta id="og-title" property="og:title" content="The Edit — ai moms™">
+<meta id="og-desc" property="og:description" content="AI-powered insights for mothers.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta id="tw-title" name="twitter:title" content="The Edit — ai moms™">
+<meta id="tw-desc" name="twitter:description" content="AI-powered insights for mothers.">
+<meta id="meta-desc" name="description" content="The Edit by ai moms™.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title id="page-title">The Edit — ai moms™</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#060d26;
+  --pink:#ff63d8;
+  --ivory:#faf8f5;
+  --mid:#6b7280;
+  --line:#EFEFED;
+}
+body{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--navy);background:#fff;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.tnl{transition:color 0.2s;text-transform:uppercase!important}
+.tnl:hover{color:var(--pink)!important}
+@media(max-width:900px){.tnl{display:none!important}}
+button,a,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif!important}
+#mobilemenu a,nav a,nav button{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif!important}
+
+/* ARTICLE LAYOUT */
+.article-wrap{max-width:720px;margin:0 auto;padding:0 24px 80px}
+
+/* HERO */
+.hero-img{width:100%;height:480px;object-fit:cover;display:block}
+@media(max-width:600px){.hero-img{height:280px}}
+
+/* ARTICLE META */
+.article-meta{display:flex;align-items:center;gap:16px;padding:24px 0 0;border-bottom:1px solid var(--line);margin-bottom:36px}
+.article-cat{font-size:11px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink)}
+.article-read{font-size:11px;color:var(--mid);letter-spacing:0.05em}
+.article-dot{width:3px;height:3px;border-radius:50%;background:var(--line)}
+
+/* TYPOGRAPHY */
+.article-title{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.8em,4vw,2.6em);line-height:1.1;color:var(--navy);margin-bottom:12px}
+.article-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.3em;font-style:italic;color:var(--mid);line-height:1.5;margin-bottom:32px}
+.article-intro{font-size:1.05em;line-height:1.75;color:#374151;margin-bottom:28px;font-weight:500}
+.article-h2{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:var(--navy);margin:36px 0 12px;line-height:1.2}
+.article-text{font-size:0.95em;line-height:1.8;color:#374151;margin-bottom:18px}
+.article-img{width:100%;border-radius:12px;margin:28px 0;display:block}
+
+/* PULL QUOTE */
+.pullquote{border-left:3px solid var(--pink);padding:16px 24px;margin:32px 0;background:var(--ivory);border-radius:0 8px 8px 0}
+.pullquote p{font-family:'Cormorant Garamond',serif;font-size:1.3em;font-style:italic;color:var(--navy);line-height:1.5}
+
+/* PROMPT BOX */
+.prompt-box{background:#f0f4ff;border:1.5px solid #c7d4f5;border-radius:12px;padding:20px 24px;margin:24px 0}
+.prompt-label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:10px;display:block}
+.prompt-text{font-family:'Courier New',monospace;font-size:0.85em;line-height:1.75;color:#1e3a5f;white-space:pre-wrap;word-break:break-word}
+.copy-btn{margin-top:12px;background:var(--navy);color:#fff;border:none;padding:8px 18px;border-radius:100px;font-size:11px;font-weight:600;cursor:pointer;letter-spacing:0.05em;transition:background 0.2s}
+.copy-btn:hover{background:#1a2f6b}
+.copy-btn.copied{background:var(--pink)}
+
+/* CTA BLOCK */
+.article-cta{background:var(--ivory);border-radius:16px;padding:32px;margin:48px 0 24px;text-align:center}
+.article-cta h3{font-family:'Cormorant Garamond',serif;font-size:1.5em;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.article-cta p{font-size:0.85em;color:var(--mid);margin-bottom:20px}
+.btn-pink{display:inline-block;background:var(--pink);color:#fff;padding:12px 28px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none}
+.btn-ghost{display:inline-block;border:1.5px solid var(--navy);color:var(--navy);padding:11px 26px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+
+/* BYLINE */
+.article-byline{font-size:11px;color:#ccc;padding-top:12px;border-top:1px solid var(--line);margin-top:40px}
+
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--mid);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:32px;transition:color 0.2s}
+.back-link:hover{color:var(--navy)}
+.back-link::before{content:'←';font-size:14px}
+
+/* RELATED */
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+@media(max-width:600px){.related-grid{grid-template-columns:1fr}}
+.related-card{cursor:pointer;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:box-shadow 0.2s}
+.related-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.related-card img{width:100%;height:140px;object-fit:cover;display:block}
+.related-card-body{padding:16px}
+.related-cat{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:6px;display:block}
+.related-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:0.9em;color:var(--navy);line-height:1.3}
+
+/* MOBILE */
+@media(max-width:600px){
+  .article-wrap{padding:0 16px 60px}
+  footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr 1fr!important;gap:20px!important}
+}
+@media(max-width:480px){
+  footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr!important}
+}
+
+/* MOTHERS DAY INLINE CTA */
+.md-cta-inline{background:linear-gradient(135deg,#fff0f9 0%,#faf8f5 100%);border:1.5px solid #ffd6f5;border-radius:16px;padding:32px;margin:36px 0;text-align:center}
+.md-cta-inline h3{font-family:'Cormorant Garamond',serif;font-size:1.6em;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.md-cta-inline p{font-size:0.88em;color:var(--mid);margin-bottom:24px;line-height:1.6}
+.md-path-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0}
+@media(max-width:500px){.md-path-cards{grid-template-columns:1fr}}
+.md-path-card{border:2px solid var(--line);border-radius:12px;padding:20px 16px;cursor:pointer;transition:all 0.2s;background:#fff;text-align:left}
+.md-path-card:hover{border-color:var(--pink);box-shadow:0 4px 20px rgba(255,99,216,0.12)}
+.md-path-card .path-emoji{font-size:1.8em;margin-bottom:8px;display:block}
+.md-path-card .path-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:0.95em;color:var(--navy);margin-bottom:4px}
+.md-path-card .path-sub{font-size:0.78em;color:var(--mid);line-height:1.4}
+
+/* GIFT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(6,13,38,0.6);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal-box{background:#fff;border-radius:20px;padding:40px;max-width:480px;width:100%;position:relative;transform:translateY(20px);transition:transform 0.3s}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:20px;color:var(--mid);cursor:pointer;line-height:1}
+.modal-step{display:none}
+.modal-step.active{display:block}
+.modal-title{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.3em;color:var(--navy);margin-bottom:6px}
+.modal-sub{font-size:0.85em;color:var(--mid);margin-bottom:24px;line-height:1.5}
+
+/* FORM STYLES */
+.gift-form input{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--navy);margin-bottom:12px;outline:none;transition:border-color 0.2s;font-family:'Be Vietnam Pro',sans-serif}
+.gift-form input:focus{border-color:var(--pink)}
+.gift-form input::placeholder{color:#bbb}
+.gift-form .form-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px;display:block}
+.gift-submit{width:100%;background:var(--pink);color:#fff;border:none;padding:14px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;margin-top:4px;transition:background 0.2s;font-family:'Be Vietnam Pro',sans-serif}
+.gift-submit:hover{background:#e040c0}
+.modal-note{font-size:11px;color:#bbb;text-align:center;margin-top:12px;line-height:1.5}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1206405304980852');fbq('track','PageView');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:1px solid var(--line);padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8">ai.</span><span style="color:#060d26">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.4;color:#060d26">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(6,13,38,0.35);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer.&#8482;</div>
+</a>
+<div style="display:flex;align-items:center;gap:4px">
+<a href="index.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">ON-DEMAND</a>
+<a href="editorial.html" class="tnl" style="color:#ff63d8;padding:7px 10px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">AI TOOLKIT</a>
+<a href="experiences.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">EXPERIENCES</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;margin-left:4px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px">
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="index.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">ON-DEMAND</a>
+<a href="aime.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEET AIME</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;font-family:'Outfit',sans-serif;letter-spacing:0.04em">AI TOOLKIT</a>
+</div>
+</nav>
+<div style="height:57px"></div>
+
+<!-- HERO IMAGE -->
+<div id="article-hero" style="overflow:hidden;max-height:480px">
+<img id="hero-img" class="hero-img" src="" alt="">
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-wrap">
+<div style="padding-top:32px">
+<a href="editorial.html" class="back-link">The Edit</a>
+</div>
+
+<div class="article-meta">
+<span id="art-cat" class="article-cat"></span>
+<span class="article-dot"></span>
+<span id="art-read" class="article-read"></span>
+<span class="article-dot"></span>
+<span class="article-read" style="color:#ccc">ai moms&#8482; editorial</span>
+</div>
+
+<h1 id="art-title" class="article-title"></h1>
+<p id="art-subtitle" class="article-subtitle"></p>
+
+<div id="art-body"></div>
+
+<div id="art-cta" class="article-cta"></div>
+
+<p class="article-byline">ai moms&#8482; editorial &mdash; The Edit</p>
+
+<div id="related-section" style="margin-top:48px">
+<div style="font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--mid);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--line)">Keep Reading</div>
+<div id="related-grid" class="related-grid"></div>
+</div>
+</div>
+
+<!-- GIFT MODAL -->
+<div class="modal-overlay" id="gift-modal">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+
+  <!-- Step 1: Choose path -->
+  <div class="modal-step active" id="modal-step-1">
+    <div class="modal-title">Who is this for?</div>
+    <div class="modal-sub">The gift that actually gives her something back.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="md-path-card" onclick="choosePath('self')">
+        <span class="path-emoji">🌸</span>
+        <div class="path-title">I'm a mom, and I deserve this.</div>
+        <div class="path-sub">Buying for myself — finally.</div>
+      </div>
+      <div class="md-path-card" onclick="choosePath('gift')">
+        <span class="path-emoji">🎁</span>
+        <div class="path-title">I'm gifting this to a mom I love.</div>
+        <div class="path-sub">The gift she actually wants.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2a: Self purchase — just a name + email then redirect -->
+  <div class="modal-step" id="modal-step-self">
+    <div class="modal-title">You deserve this. 🌸</div>
+    <div class="modal-sub">Quick details so we can personalize your experience — then straight to checkout.</div>
+    <form name="self-purchase" method="POST" netlify netlify-honeypot="bot-field" class="gift-form" onsubmit="handleSelfSubmit(event)">
+      <input type="hidden" name="form-name" value="self-purchase">
+      <input type="hidden" name="purchase-type" value="self">
+      <p style="display:none"><input name="bot-field"></p>
+      <label class="form-label">Your first name</label>
+      <input type="text" name="name" placeholder="Your name" required>
+      <label class="form-label">Your email</label>
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <button type="submit" class="gift-submit">Take Me to Checkout →</button>
+    </form>
+    <p class="modal-note">You'll go straight to secure checkout. No spam — we'll only send you course access and resources.</p>
+  </div>
+
+  <!-- Step 2b: Gift purchase -->
+  <div class="modal-step" id="modal-step-gift">
+    <div class="modal-title">What a beautiful gift. 🎁</div>
+    <div class="modal-sub">Tell us a little about who you're gifting — we'll make sure she feels seen from the moment she opens it.</div>
+    <form name="gift-purchase" method="POST" netlify netlify-honeypot="bot-field" class="gift-form" onsubmit="handleGiftSubmit(event)">
+      <input type="hidden" name="form-name" value="gift-purchase">
+      <input type="hidden" name="purchase-type" value="gift">
+      <p style="display:none"><input name="bot-field"></p>
+      <label class="form-label">Her name (the mom you're gifting)</label>
+      <input type="text" name="recipient-name" placeholder="Her first name" required>
+      <label class="form-label">Your name</label>
+      <input type="text" name="gifter-name" placeholder="Your name" required>
+      <label class="form-label">Your email (we'll send the gift details here)</label>
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <button type="submit" class="gift-submit">Take Me to Checkout →</button>
+    </form>
+    <p class="modal-note">Secure checkout. We'll send you a gift confirmation to forward to her.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',sans-serif">Retire from<br>Chief Everything Officer.&#8482;</p>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING</div>
+<a href="index.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">ai moms&#8482; On-Demand</a>
+<a href="aime.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Meet Aime</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The AI Toolkit</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="about.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">About ai moms&#8482;</a>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Community</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Press &amp; Media</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Prompt Packs</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">h&#101;llo&#64;aimoms&#46;ai</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3);font-family:'Be Vietnam Pro',sans-serif">&copy; 2026 ai.moms&#8482; All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="articles-data.js"></script>
+<script>
+// Get article ID from URL
+var params = new URLSearchParams(window.location.search);
+var articleId = params.get('id');
+var article = articleId ? getArticle(articleId) : null;
+
+if (!article) {
+  // If no article found, redirect to editorial
+  window.location.href = 'editorial.html';
+}
+
+// Set meta tags
+document.getElementById('page-title').textContent = article.title + ' — The Edit | ai moms™';
+document.getElementById('og-title').content = article.title;
+document.getElementById('og-desc').content = article.subtitle;
+document.getElementById('tw-title').content = article.title;
+document.getElementById('tw-desc').content = article.subtitle;
+document.getElementById('meta-desc').content = article.subtitle;
+
+// Hero image
+document.getElementById('hero-img').src = article.heroImage;
+document.getElementById('hero-img').alt = article.heroAlt;
+
+// Meta
+document.getElementById('art-cat').textContent = article.category;
+document.getElementById('art-read').textContent = article.readTime + ' read';
+document.getElementById('art-title').textContent = article.title;
+document.getElementById('art-subtitle').textContent = article.subtitle;
+
+// Render body blocks
+var bodyEl = document.getElementById('art-body');
+article.body.forEach(function(block) {
+  var el;
+  switch(block.type) {
+    case 'intro':
+      el = document.createElement('p');
+      el.className = 'article-intro';
+      el.textContent = block.text;
+      break;
+    case 'text':
+      el = document.createElement('p');
+      el.className = 'article-text';
+      el.textContent = block.text;
+      break;
+    case 'h2':
+      el = document.createElement('h2');
+      el.className = 'article-h2';
+      el.textContent = block.text;
+      break;
+    case 'pullquote':
+      el = document.createElement('div');
+      el.className = 'pullquote';
+      el.innerHTML = '<p>' + block.text + '</p>';
+      break;
+    case 'image':
+      el = document.createElement('img');
+      el.className = 'article-img';
+      el.src = block.src;
+      el.alt = block.alt;
+      el.loading = 'lazy';
+      break;
+    case 'mothers-day-cta':
+      el = document.createElement('div');
+      el.className = 'md-cta-inline';
+      el.innerHTML = '<h3>The gift she\'ll actually remember.</h3><p>Not another thing to find a place for. Give her the gift of time back — for herself, for good.</p><div class="md-path-cards"><div class="md-path-card" onclick="openModal()"><span class="path-emoji">🌸</span><div class="path-title">I\'m a mom buying this for myself.</div><div class="path-sub">You deserve this.</div></div><div class="md-path-card" onclick="openModal()"><span class="path-emoji">🎁</span><div class="path-title">I\'m gifting this to a mom I love.</div><div class="path-sub">The gift she actually wants.</div></div></div>';
+      break;
+      var btnId = 'copy-' + Math.random().toString(36).substr(2,6);
+      el.innerHTML = '<span class="prompt-label">' + block.label + '</span><div class="prompt-text">' + block.text.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div><button class="copy-btn" id="' + btnId + '" onclick="copyPrompt(this)">Copy Prompt</button>';
+      break;
+  }
+  if (el) bodyEl.appendChild(el);
+});
+
+// Copy prompt handler
+function copyPrompt(btn) {
+  var text = btn.previousElementSibling.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.textContent = 'Copy Prompt'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// CTA block
+var ctaEl = document.getElementById('art-cta');
+var cta = article.cta;
+var ctaMessages = {
+  course: { h: 'Ready to build the full system?', p: 'The ai.moms™ On-Demand course is 6 modules — go at your own pace, start seeing results immediately.' },
+  aime: { h: 'Meet Aime — your AI Chief Everything Officer™.', p: 'Built for mothers, at every stage. Ready when you are.' },
+  tool: { h: 'Ready to try it yourself?', p: 'Our ai.moms™ micro-tools do one thing exceptionally well — no setup, no learning curve.' },
+  email: { h: 'Join thousands of mothers doing this differently.', p: 'Weekly insights, prompts, and tools — straight to your inbox.' }
+};
+
+if (cta.type === 'mothers-day-gift') {
+  ctaEl.innerHTML = '<h3>Give her the one thing she actually wants.</h3><p>Not another thing to find a place for. The gift of time back — and herself back.</p><button onclick="openModal()" class="btn-pink" style="border:none;cursor:pointer;font-size:13px">Give Her Time Back →</button>';
+} else {
+  var ctaContent = ctaMessages[cta.type] || ctaMessages.course;
+  ctaEl.innerHTML = '<h3>' + ctaContent.h + '</h3><p>' + ctaContent.p + '</p><a href="' + cta.href + '" class="btn-pink">' + cta.label + '</a>';
+}
+
+// MODAL FUNCTIONS
+function openModal() {
+  var m = document.getElementById('gift-modal');
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Reset to step 1
+  showModalStep('modal-step-1');
+}
+function closeModal() {
+  document.getElementById('gift-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showModalStep(id) {
+  document.querySelectorAll('.modal-step').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+}
+function choosePath(path) {
+  showModalStep(path === 'self' ? 'modal-step-self' : 'modal-step-gift');
+}
+
+// Close modal on overlay click
+document.getElementById('gift-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// FORM HANDLERS — submit to Netlify then redirect to Stripe
+var STRIPE_SELF = 'https://buy.stripe.com/28EfZj6U8aEB7MRbBwdZ608';
+var STRIPE_GIFT = 'https://buy.stripe.com/8x2fZj6U83c98QV20WdZ60a';
+
+function handleSelfSubmit(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
+    .then(function() { window.location.href = STRIPE_SELF; })
+    .catch(function() { window.location.href = STRIPE_SELF; }); // redirect regardless
+}
+function handleGiftSubmit(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
+    .then(function() { window.location.href = STRIPE_GIFT; })
+    .catch(function() { window.location.href = STRIPE_GIFT; });
+}
+
+// Related articles — show 2 from same category, or random
+var related = ARTICLE_IDS.filter(function(id){ return id !== articleId && ARTICLES[id].category === article.category }).slice(0,2);
+if (related.length < 2) {
+  var others = ARTICLE_IDS.filter(function(id){ return id !== articleId && related.indexOf(id) === -1 });
+  while (related.length < 2 && others.length > 0) {
+    var idx = Math.floor(Math.random() * others.length);
+    related.push(others.splice(idx,1)[0]);
+  }
+}
+
+var relatedGrid = document.getElementById('related-grid');
+related.forEach(function(id) {
+  var a = ARTICLES[id];
+  var card = document.createElement('div');
+  card.className = 'related-card';
+  card.onclick = function(){ window.location.href = 'article.html?id=' + id };
+  card.innerHTML = '<img src="' + a.heroImage + '" alt="' + a.heroAlt + '" loading="lazy"><div class="related-card-body"><span class="related-cat">' + a.category + '</span><div class="related-title">' + a.title + '</div></div>';
+  relatedGrid.appendChild(card);
+});
+
+// Cookie banner
+(function(){
+  if(!localStorage.getItem("aimoms_cookies")){
+    var cb=document.createElement("div");
+    cb.innerHTML="<div style='position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#060d26;padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap'><p style='font-size:12px;color:rgba(255,255,255,0.5);margin:0'>We use cookies. <a href=privacy.html style=color:#ff63d8>Privacy Policy</a></p><button onclick=acceptCookies() style='background:#ff63d8;color:#fff;border:none;padding:8px 20px;border-radius:100px;font-size:11px;font-weight:600;cursor:pointer'>Accept</button><button onclick=declineCookies() style='background:none;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.1);padding:8px 20px;border-radius:100px;font-size:11px;cursor:pointer'>Essential Only</button></div>";
+    document.body.appendChild(cb);
+  }
+  window.acceptCookies=function(){localStorage.setItem("aimoms_cookies","all");document.body.lastChild.remove()};
+  window.declineCookies=function(){localStorage.setItem("aimoms_cookies","essential");document.body.lastChild.remove()};
+})();
+</script>
+</body>
+</html>

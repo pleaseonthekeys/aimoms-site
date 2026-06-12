@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta charset="UTF-8">
+<meta property="og:title" content="ai moms™ — Retire from Chief Everything Officer.™">
+<meta property="og:description" content="The #1 destination for mothers to learn AI, eliminate the invisible load, and build their own AI-powered family management team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimoms.ai">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ai moms™ — Retire from Chief Everything Officer.™">
+<meta name="twitter:description" content="The #1 destination for mothers to learn AI, eliminate the invisible load, and build their own AI-powered family management team.">
+<meta name="twitter:image" content="https://aimoms.ai/og-image.png">
+    <meta name="description" content="Join the ai moms community. A space for mothers learning AI together, building systems together, and retiring from Chief Everything Officer together.">
+<link rel="canonical" href="https://aimoms.ai/community">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community — ai moms™</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.6; color: #060d26; background-color: #FFFFFF; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        @media (max-width: 768px) {
+            nav > div:last-child a:not(:last-child) { display: none; }
+            nav { padding: 12px 16px; }
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {  line-height: 1.6; color: #060d26; background-color: #FFFFFF; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        header { background-color: #060d26; padding: 25px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #ff63d8; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8em; font-weight: 700; color: #FFFFFF; text-decoration: none; }
+        .logo .ai { color: #ff63d8; }
+        .nav-links { display: flex; gap: 35px; list-style: none; align-items: center; }
+        .nav-links a { color: #FFFFFF; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #ff63d8; }
+        .hero { background: #060d26; color: #FFFFFF; padding: 120px 0 100px; text-align: center; }
+        .hero h1 { font-size: 3.5em; margin-bottom: 30px; font-weight: 700; line-height: 1.2; }
+        .hero .highlight { color: #ff63d8; }
+        .hero .subhead { font-size: 1.5em; margin-bottom: 50px; line-height: 1.6; max-width: 900px; margin-left: auto; margin-right: auto; font-weight: 300; }
+        .truth-section { padding: 100px 0; background: #F5F5F5; }
+        .truth-section h2 { font-size: 2.5em; margin-bottom: 40px; text-align: center; color: #060d26; font-weight: 700; }
+        .truth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
+        .truth-card { background: #FFFFFF; padding: 40px; border-left: 4px solid #ff63d8; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .truth-card h3 { font-size: 1.5em; margin-bottom: 20px; color: #060d26; }
+        .truth-card p { font-size: 1.1em; line-height: 1.8; color: #060d26; }
+        .neuro-section { padding: 100px 0; background: #060d26; color: #FFFFFF; }
+        .neuro-section h2 { font-size: 2.8em; margin-bottom: 30px; text-align: center; font-weight: 700; }
+        .neuro-section .intro { font-size: 1.3em; text-align: center; max-width: 900px; margin: 0 auto 60px; line-height: 1.8; }
+        .neuro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
+        .neuro-card { background: rgba(255,255,255,0.05); padding: 40px; border-left: 4px solid #ff63d8; }
+        .neuro-card h3 { font-size: 1.4em; margin-bottom: 15px; color: #ff63d8; font-weight: 700; }
+        .neuro-card p { font-size: 1.05em; line-height: 1.8; }
+        .neuro-callout { background: rgba(255,255,255,0.05); padding: 50px; margin-top: 60px; text-align: center; border-left: 4px solid #ff63d8; }
+        .neuro-callout p { font-size: 1.5em; font-weight: 700; line-height: 1.6; }
+        .experiences-section { padding: 100px 0; background: #FFFFFF; }
+        .experiences-section h2 { font-size: 3em; margin-bottom: 30px; text-align: center; color: #060d26; font-weight: 700; line-height: 1.3; }
+        .experiences-section .intro { font-size: 1.4em; text-align: center; max-width: 900px; margin: 0 auto 80px; line-height: 1.8; color: #060d26; }
+        .experience-card { background: #F5F5F5; padding: 60px; margin-bottom: 40px; border-left: 6px solid #ff63d8; }
+        .experience-card h3 { font-size: 2em; margin-bottom: 20px; color: #060d26; font-weight: 700; }
+        .experience-card .tagline { font-size: 1.3em; font-style: italic; color: #ff63d8; margin-bottom: 30px; }
+        .experience-card p { font-size: 1.15em; line-height: 1.9; margin-bottom: 20px; }
+        .experience-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; padding-top: 30px; border-top: 2px solid #FFFFFF; }
+        .experience-detail { font-size: 1em; color: #060d26; }
+        .experience-detail strong { display: block; color: #ff63d8; margin-bottom: 5px; font-size: 1.1em; }
+        .pillars-section { padding: 100px 0; background: #060d26; color: #FFFFFF; }
+        .pillars-section h2 { font-size: 2.8em; margin-bottom: 60px; text-align: center; font-weight: 700; }
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; }
+        .pillar { text-align: center; }
+        .pillar h3 { font-size: 1.8em; margin-bottom: 20px; color: #ff63d8; font-weight: 700; }
+        .pillar p { font-size: 1.15em; line-height: 1.8; }
+        .permission-section { padding: 100px 0; background: #060d26; text-align: center; }
+        .permission-section h2 { font-size: 3.5em; margin-bottom: 40px; font-weight: 700; line-height: 1.3; color: #FFFFFF; }
+        .permission-section p { font-size: 1.5em; line-height: 1.8; max-width: 1000px; margin: 0 auto; color: #FFFFFF; }
+        .permission-section p span { color: #ff63d8; }
+        .how-section { padding: 100px 0; background: #060d26; color: #FFFFFF; }
+        .how-section h2 { font-size: 2.5em; margin-bottom: 60px; text-align: center; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+        .step { text-align: center; }
+        .step-number { font-size: 3em; color: #ff63d8; font-weight: 700; margin-bottom: 20px; }
+        .step h3 { font-size: 1.5em; margin-bottom: 15px; }
+        .step p { font-size: 1.1em; line-height: 1.7; }
+        .final-cta { padding: 120px 0; background: #060d26; color: #FFFFFF; text-align: center; }
+        .final-cta h2 { font-size: 3.5em; margin-bottom: 30px; font-weight: 700; }
+        .final-cta p { font-size: 1.5em; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-block; background: #ff63d8; color: #FFFFFF; padding: 25px 60px; font-size: 1.3em; font-weight: 700; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 3px solid #ff63d8; margin: 10px; min-width: 450px; text-align: center; }
+        .cta-button:hover { background: #FFFFFF; color: #ff63d8; }
+        footer { background-color: #060d26; color: #FFFFFF; padding: 60px 0 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-section h4 { color: #ff63d8; margin-bottom: 20px; font-size: 1.2em; }
+        .footer-section a { color: #FFFFFF; text-decoration: none; display: block; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-section a:hover { color: #ff63d8; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } .hero .subhead { font-size: 1.2em; } .nav-links { display: none; } .experience-card { padding: 40px 30px; } .permission-section h2 { font-size: 2.5em; } .final-cta h2 { font-size: 2.5em; } }
+    
+    
+@media(max-width:768px){
+  footer [style*="grid-template-columns:2fr"] { grid-template-columns:1fr 1fr !important; gap:20px !important; }
+}
+@media(max-width:480px){
+  footer [style*="grid-template-columns:2fr"] { grid-template-columns:1fr !important; }
+}
+
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif !important;}
+
+.tnl{transition:color 0.2s;text-transform:uppercase !important}
+.tnl:hover{color:#ff63d8 !important}
+@media(max-width:900px){
+  .tnl{display:none !important}
+}
+</style>
+    <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1206405304980852');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1206405304980852&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+<style>
+#mobilemenu a, nav a, nav button {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+footer a, footer p, footer div {
+  font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+
+.tnl{transition:color 0.2s;text-transform:uppercase !important}
+.tnl:hover{color:#ff63d8 !important}
+@media(max-width:900px){
+  .tnl{display:none !important}
+}
+</style>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:none;padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8">ai.</span><span style="color:#060d26">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.4;color:#060d26">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:9px;font-weight:400;color:rgba(6,13,38,0.35);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer.&#8482;</div>
+</a>
+<div style="display:flex;align-items:center;gap:4px">
+<a href="index.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em;text-transform:uppercase">ON-DEMAND</a>
+<a href="editorial.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em;text-transform:uppercase">THE EDIT</a>
+<a href="toolkit.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em;text-transform:uppercase">AI TOOLKIT</a>
+<a href="experiences.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em;text-transform:uppercase">EXPERIENCES</a>
+<a href="corporate.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em;text-transform:uppercase">FOR COMPANIES</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;margin-left:4px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px">
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="index.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">ON-DEMAND</a>
+<a href="aime.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">MEET AIME</a>
+<a href="quiz.html" onclick="if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Click'})" target="_blank" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">TAKE THE QUIZ</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">EXPERIENCES</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="science.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">THE SCIENCE</a>
+<a href="about.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.04em">ABOUT</a>
+</div>
+</nav>
+<div style="height:56px"></div>
+
+
+
+<section style="min-height:480px;display:flex;align-items:center;" class="hero">
+        <div class="container">
+            <h1 style="font-weight:900;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:clamp(2.4em,5vw,3.2em);text-transform:uppercase;letter-spacing:-0.03em">THIS IS WHERE YOU <span class="highlight">REMEMBER WHO YOU WERE</span><br>BEFORE YOU BECAME CHIEF EVERYTHING OFFICER&#8482;</h1>
+            <p class="subhead">A community of ambitious, exhausted, brilliant mothers who refuse to accept that "having it all" means doing it all—alone.</p>
+        </div>
+    </section>
+    <section class="truth-section">
+        <div class="container">
+            <h2>Let's Be Honest About What You're Actually Feeling</h2>
+            <div class="truth-grid">
+                <div class="truth-card">
+                    <h3>You're drowning</h3>
+                    <p>Every night you fall into bed with a mental list of everything you didn't get to. The invisible workload never stops. Your brain never rests. And everyone thinks you have it together.</p>
+                </div>
+                <div class="truth-card">
+                    <h3>You're isolated</h3>
+                    <p>Your partner tries but can't understand the weight of it. You've stopped even trying to explain the 50 browser tabs running in your head at all times.</p>
+                </div>
+                <div class="truth-card">
+                    <h3>You feel guilty</h3>
+                    <p>When you take time for yourself, you feel selfish. When you're at work, you feel like you're failing your kids. When you're with your kids, you're thinking about work. There's no winning.</p>
+                </div>
+                <div class="truth-card">
+                    <h3>You've forgotten yourself</h3>
+                    <p>Who were you before you became Mom? Before you became the default parent? Before your identity became "the person who remembers everything"? You can barely remember.</p>
+                </div>
+                <div class="truth-card">
+                    <h3>You're exhausted by productivity advice</h3>
+                    <p>"Just do less." But you can't just not make the dentist appointment or the doctor's appointment. The advice from people who don't carry your load makes you want to scream. You don't need tips. You need actual help.</p>
+                </div>
+                <div class="truth-card">
+                    <h3>You're done apologizing</h3>
+                    <p>You're tired of saying sorry for wanting both the career and the life. For having ambition. For being "too much" or "not enough." You're done shrinking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="neuro-section">
+        <div class="container">
+            <h2>The Science Says: <span style="color: #ff63d8;">You're Not Failing. The System Is.</span></h2>
+            <p class="intro">Here's what happens in your brain when you're carrying the invisible mental load alone—and why connecting with other women who truly understand isn't just nice, it's neurologically essential.</p>
+            <div class="neuro-grid">
+                <div class="neuro-card">
+                    <h3>Amygdala Calming</h3>
+                    <p>Your threat-detection center relaxes when you feel understood and validated. The constant low-level panic? It eases when other moms say "I feel that too."</p>
+                </div>
+                <div class="neuro-card">
+                    <h3>Cortisol Reduction</h3>
+                    <p>Stress hormones decrease through social connection and empathy. Being in community with women who get it literally lowers your stress response.</p>
+                </div>
+                <div class="neuro-card">
+                    <h3>Prefrontal Cortex Relief</h3>
+                    <p>You're not alone in problem-solving—shared understanding lightens the cognitive load. Your executive function gets a break when you realize you're not uniquely failing.</p>
+                </div>
+                <div class="neuro-card">
+                    <h3>Oxytocin Release</h3>
+                    <p>The "bonding hormone" activates, creating feelings of safety and connection. This is why you feel lighter after talking to another mom who truly gets it.</p>
+                </div>
+            </div>
+            <div class="neuro-callout">
+                <p>This is why community matters. You're not just "complaining"—you're engaging in neural co-regulation. When other moms say "I feel that too," your nervous system literally calms down. You're reminded you're not failing—you're facing a systemic problem that deserves systemic solutions.</p>
+            </div>
+        </div>
+    </section>
+    <section class="experiences-section">
+        <div class="container">
+            <h2>Real Life.<br>Real Women.<br>Real Relief.</h2>
+            <p class="intro">This isn't just a Slack channel. This is a movement of women reclaiming themselves through in-person experiences that restore what motherhood and burnout have taken.</p>
+            <div class="experience-card">
+                <h3>City Gatherings: Your Local Tribe</h3>
+                <p class="tagline">"Finally, friends who don't think I'm crazy for using AI to meal plan."</p>
+                <p>We're building local gatherings in major cities where ai moms™ meet quarterly for dinners, workshops, and the kind of conversations you can't have anywhere else.</p>
+                <p><strong>What happens:</strong> Quarterly dinners at beautiful restaurants where we talk about AI automation, career moves, the impossibility of school pickup logistics, and the books we're reading. Skill-share workshops where one mom teaches the group her superpower (negotiation tactics, prompt engineering, setting boundaries, whatever). Spontaneous chat about whatever is on your mind.</p>
+                <p><strong>Current cities:</strong> NYC, San Francisco, Los Angeles, Boston, Chicago, Austin, Seattle, DC. (Your city next? Let us know.)</p>
+                <div class="experience-details">
+                    <div class="experience-detail">
+                        <strong>Frequency</strong>
+                        Quarterly dinners and events
+                    </div>
+                    <div class="experience-detail">
+                        <strong>Vibe</strong>
+                        Book club meets masterclass meets therapy meets girls' night
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card">
+                <h3>Wellness Wednesdays: Mind + Body</h3>
+                <p class="tagline">"Self-care that actually works, not just face masks and bubble baths."</p>
+                <p>Quarterly virtual wellness sessions (with occasional in-person pop-ups) that address the mind-body impact of chronic stress and invisible labor.</p>
+                <p><strong>What we cover:</strong> Somatic practices to release stored stress. Breathwork to regulate your nervous system. Movement that feels good, not punishing. Sleep protocols that work when you're waking up at 3am with racing thoughts. Nutrition for sustained energy when you're running on fumes. Therapy-informed tools for processing the rage and grief of carrying it all.</p>
+                <p><strong>Led by:</strong> Therapists, somatic practitioners, nutritionists, and sleep specialists who understand motherhood—not the wellness industrial complex that tells you to "just relax."</p>
+                <div class="experience-details">
+                    <div class="experience-detail">
+                        <strong>When</strong>
+                        One Wellness Wednesday each quarter
+                    </div>
+                    <div class="experience-detail">
+                        <strong>Format</strong>
+                        Virtual (recorded) + quarterly in-person pop-ups
+                    </div>
+                    <div class="experience-detail">
+                        <strong>Vibe</strong>
+                        Evidence-based wellness meets real talk
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card">
+                <h3>the ai moms™ summit</h3>
+                <p class="tagline">"Where mothers shape the future of AI—and our own futures."</p>
+                <p>An annual 2-day conference bringing together ai moms™ for learning, networking, and celebrating how far we've come.</p>
+                <p><strong>What happens:</strong> Keynotes from AI leaders and mother pioneers. Workshops on advanced automation, career pivots, entrepreneurship, and using AI for professional advancement. Networking that actually leads to friendships and business opportunities. Panel discussions on the future of work, parenting, and technology. An evening gala where we dress up and toast to retiring from Chief Everything Officer™.</p>
+                <p><strong>Why it matters:</strong> This is where career pivots happen, business partnerships form, and you realize what's actually possible when you're surrounded by women who've already done it. Meet the CMO who pivoted to AI consulting, the Google exec launching her startup, the mom who used AI to get promoted twice in one year—and leave knowing your next move.</p>
+                <div class="experience-details">
+                    <div class="experience-detail">
+                        <strong>When</strong>
+                        October 2026 (first annual)
+                    </div>
+                    <div class="experience-detail">
+                        <strong>Where</strong>
+                        Major city TBD (SF, NYC, or Austin)
+                    </div>
+                    <div class="experience-detail">
+                        <strong>Vibe</strong>
+                        TED meets summit meets reunion
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pillars-section">
+        <div class="container">
+            <h2>What Makes ai moms™ Different</h2>
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <h3>Learning</h3>
+                    <p>Cutting-edge AI education that keeps you ahead of the curve. Monthly workshops on new tools, advanced techniques, and career-building skills. You're not just using AI—you're mastering it.</p>
+                </div>
+                <div class="pillar">
+                    <h3>Community</h3>
+                    <p>Real friendships with women who understand. Virtual daily connection plus in-person experiences that restore your sense of self. This is your tribe.</p>
+                </div>
+                <div class="pillar">
+                    <h3>Wellness</h3>
+                    <p>Evidence-based practices to heal from burnout. Neuroscience-backed tools to regulate your nervous system. Permission to prioritize yourself without guilt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="permission-section">
+        <div class="container">
+            <h2>You Have Permission To Want More</h2>
+            <p><span>To want the career AND the life. To take time for yourself without apologizing. To have friends who aren't just other parents at school pickup.</span> To laugh until you cry at a dinner where no one asks you to cut their food. <span>To remember what you loved before you became Chief Everything Officer™. To be ambitious, exhausted, brilliant, and still figuring it out.</span> To not have it all together. <span>To be supported instead of being the support. To retire from managing everything and let AI handle the cognitive load. To be whole.</span></p>
+        </div>
+    </section>
+    <section class="how-section">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Immediate Access to Slack</h3>
+                    <p>Daily connection with women who understand</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Monthly Workshops</h3>
+                    <p>New AI tools, advanced techniques, career-building skills</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Join IRL Experiences</h3>
+                    <p>Register for dinners and experiences as they're announced</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>The Annual Summit</h3>
+                    <p>Priority access when registration opens</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- QUIZ CTA -->
+<section style="padding:80px 24px;background:linear-gradient(135deg,#fff0fb 0%,#f8f0ff 100%);text-align:center">
+<div style="max-width:540px;margin:0 auto">
+<div style="font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#ff63d8;margin-bottom:14px">WHAT'S YOUR SCORE?</div>
+<h2 style="font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:900;font-size:clamp(1.6em,4vw,2.2em);line-height:1.1;margin-bottom:14px;letter-spacing:-0.02em;color:#060d26">What&#8217;s Your Invisible Load Score?</h2>
+<p style="font-size:14px;color:#666;max-width:420px;margin:0 auto 8px;line-height:1.6;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">8 quick questions. 2 minutes. Find out how much you&#8217;re carrying &#8212; and discover what AI can take off your plate.</p>
+<p style="font-size:15px;color:#060d26;font-weight:700;margin-bottom:24px;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Real life. Real women. Real relief.</p>
+<a href="quiz.html" onclick="if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Click'})" style="display:inline-block;background:#ff63d8;color:#fff;padding:14px 36px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:0.02em">Take the Quiz &#8594;</a>
+</div>
+</section>
+
+<section class="final-cta" id="join">
+        <div class="container">
+            <h2>Your Tribe Is Waiting</h2>
+            <p>Join the waitlist and become part of a community of women who refuse to do it all alone.</p>
+            <a href="index.html#pricing" class="cta-button">Join the Waitlist</a>
+            <p style="margin-top: 30px; font-size: 1.1em; opacity: 0.9;">Founding Member Pricing: $247 (Standard: $497) • Limited to 60 members</p>
+        </div>
+    </section>
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Retire from<br>Chief Everything Officer.&#8482;</p>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
+<a href="index.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">ai moms&#8482; 101 On-Demand</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">AI+Me Hour</a>
+<a href="aime.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Meet Aime</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">The AI Toolkit</a>
+
+<a href="experiences.html#outofoffice" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Out of Office Weekends&#8482;</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">FOR COMPANIES</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="about.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">About ai moms&#8482;</a>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Community</a>
+<a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">The Science</a>
+<a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Careers</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Prompt Packs</a>
+<a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Merch &amp; Gifts</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">h&#101;llo&#64;aimoms&#46;ai</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Partnerships, Press &amp; Media</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3);font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">&copy; 2026 ai.moms&#8482; All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Terms &amp; Conditions</a>
+</div>
+</div>
+<div style="margin-top:20px;padding:16px 20px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.03)">
+<p style="font-size:11px;color:rgba(255,255,255,0.35);line-height:1.7;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;margin:0">ai.moms&#8482; is an educational platform. All content is for informational and educational purposes only and does not constitute professional, legal, financial, medical, or therapeutic advice. Individual results vary. AI tools referenced are third-party products not owned or operated by ai.moms&#8482;. Use of third-party AI tools is at your own risk. <strong style="color:rgba(255,255,255,0.5)">Please review our full <a href="terms.html" style="color:#ff63d8;text-decoration:underline">Terms &amp; Conditions</a> and <a href="privacy.html" style="color:#ff63d8;text-decoration:underline">Privacy Policy</a> before using this site or enrolling in any program.</strong></p>
+</div>
+</div>
+</footer>
+
+<!-- Floating Quiz CTA -->
+<div id="floating-quiz" style="position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:998;transition:transform 0.3s ease,opacity 0.3s ease;opacity:0;pointer-events:none">
+<a href="quiz.html" onclick="if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Click'})" target="_blank" style="display:flex;align-items:center;gap:0;text-decoration:none;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.15))">
+<div style="background:#ff63d8;color:#fff;padding:14px 10px;border-radius:10px 0 0 10px;writing-mode:vertical-rl;text-orientation:mixed;font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;line-height:1">
+WHAT'S YOUR SCORE?
+</div>
+</a>
+</div>
+<script>
+(function(){
+  var fq=document.getElementById('floating-quiz');
+  if(!fq)return;
+  function checkScroll(){
+    if(window.scrollY>400){fq.style.opacity='1';fq.style.pointerEvents='auto';}
+    else{fq.style.opacity='0';fq.style.pointerEvents='none';}
+  }
+  window.addEventListener('scroll',checkScroll);
+  checkScroll();
+})();
+</script>
+
+
+<script>
+(function(){
+  if(!localStorage.getItem("aimoms_cookies")){
+    var cb=document.createElement("div");cb.id="cookie-banner";
+    cb.innerHTML="<div style='position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#060d26;padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:Be Vietnam Pro,sans-serif'><p style='font-size:12px;color:rgba(255,255,255,0.5);margin:0'>We use cookies to improve your experience. <a href=privacy.html style=color:#ff63d8>Privacy Policy</a></p><button onclick=acceptCookies() style='background:#ff63d8;color:#fff;border:none;padding:8px 20px;border-radius:100px;font-size:11px;font-weight:600;cursor:pointer'>Accept All</button><button onclick=declineCookies() style='background:none;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.1);padding:8px 20px;border-radius:100px;font-size:11px;cursor:pointer'>Essential Only</button></div>";
+    document.body.appendChild(cb);
+  }
+  window.acceptCookies=function(){localStorage.setItem("aimoms_cookies","all");document.getElementById("cookie-banner").remove()};
+  window.declineCookie

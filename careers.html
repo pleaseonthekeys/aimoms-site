@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — ai moms™</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #060d26;
+    --pink: #ff63d8;
+    --light-pink: rgba(255,99,216,0.08);
+    --mid-pink: rgba(255,99,216,0.25);
+    --white: #ffffff;
+    --off-white: #FAFAFA;
+    --gray: #666666;
+  }
+  body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--white); color: var(--navy); -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 60px; border-bottom: 1px solid #EFEFED; position: sticky; top: 0; background: var(--white); z-index: 100; }
+  .nav-logo { text-decoration: none; display: flex; flex-direction: column; }
+  .nav-logo-text { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.04em; line-height: 1; }
+  .nav-logo-text .ai { color: var(--pink); }
+  .nav-logo-text .moms { color: var(--navy); }
+  .nav-logo-text .tm { font-size: 8px; vertical-align: super; opacity: 0.4; color: var(--navy); }
+  .nav-tagline { font-size: 9px; font-weight: 400; color: rgba(6,13,38,0.35); letter-spacing: 0.01em; margin-top: 1px; }
+  .nav-link { font-size: 11px; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+  .nav-link:hover { color: var(--pink); }
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 80px 60px 72px; position: relative; overflow: hidden; }
+  .hero-label { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 16px; }
+  .hero h1 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--white); line-height: 1.1; max-width: 900px; margin-bottom: 20px; }
+  .hero h1 em { color: var(--pink); font-style: normal; }
+  .hero p { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 520px; line-height: 1.75; }
+
+  /* OPEN POSITIONS */
+  .positions { padding: 64px 60px; }
+  .positions-label { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+  .positions h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--navy); margin-bottom: 40px; }
+
+  .position-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+    border-bottom: 1px solid #EFEFED;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    gap: 24px;
+  }
+  .position-row:first-of-type { border-top: 1px solid #EFEFED; }
+  .position-row:hover .position-title { color: var(--pink); }
+  .position-row:hover .position-arrow { color: var(--pink); transform: translateX(4px); }
+
+  .position-left { flex: 1; }
+  .position-type { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 6px; }
+  .position-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--navy); margin-bottom: 10px; transition: color 0.2s; }
+  .position-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); background: var(--light-pink); border: 1px solid var(--mid-pink); padding: 4px 12px; border-radius: 100px; }
+  .position-arrow { font-size: 1.2rem; color: #ccc; transition: all 0.2s; flex-shrink: 0; }
+
+  /* FOOTER */
+  footer { padding: 24px 60px; border-top: 1px solid #EFEFED; display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
+  .footer-logo-text { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: -0.04em; }
+  .footer-logo-text .ai { color: var(--pink); }
+  .footer-logo-text .moms { color: var(--navy); }
+  footer p { font-size: 0.75rem; color: var(--gray); }
+
+  @media (max-width: 768px) {
+    nav, .hero, .positions, footer { padding-left: 24px; padding-right: 24px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-text"><span class="ai">ai.</span><span class="moms">moms</span><span class="tm">™</span></div>
+    <div class="nav-tagline">Retire from Chief Everything Officer.™</div>
+  </a>
+  <a href="mailto:hello@aimoms.ai" class="nav-link">hello@aimoms.ai</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">Careers</div>
+  <h1>We're building something <em>real.</em> Come build it with us.</h1>
+  <p>ai moms™ is on a mission to retire working mothers from Chief Everything Officer™. We have a course, a community, and a movement. Now we're growing our team.</p>
+</section>
+
+<section class="positions">
+  <h2>Available Experiences</h2>
+
+  <a href="certified-teacher.html" class="position-row">
+    <div class="position-left">
+      <div class="position-type">Paid Role · For Moms</div>
+      <div class="position-title">Certified ai.moms™ Teacher</div>
+      <div class="position-pills">
+        <span class="pill">Paid · Per Workshop</span>
+        <span class="pill">Remote or In-Person</span>
+        <span class="pill">For Moms</span>
+      </div>
+    </div>
+    <div class="position-arrow">→</div>
+  </a>
+
+  <a href="social-intern.html" class="position-row">
+    <div class="position-left">
+      <div class="position-type">Internship · For Academic Credit</div>
+      <div class="position-title">Social Media Intern</div>
+      <div class="position-pills">
+        <span class="pill">Unpaid · For Course Credit</span>
+        <span class="pill">NY-Based or Remote</span>
+        <span class="pill">Part-Time Volunteer Hours</span>
+      </div>
+    </div>
+    <div class="position-arrow">→</div>
+  </a>
+
+  <a href="marketing-intern.html" class="position-row">
+    <div class="position-left">
+      <div class="position-type">Internship · For Academic Credit</div>
+      <div class="position-title">Brand Marketing Intern</div>
+      <div class="position-pills">
+        <span class="pill">Unpaid · For Course Credit</span>
+        <span class="pill">NY-Based or Remote</span>
+        <span class="pill">Part-Time Volunteer Hours</span>
+      </div>
+    </div>
+    <div class="position-arrow">→</div>
+  </a>
+
+  <a href="brand-partnerships-intern.html" class="position-row">
+    <div class="position-left">
+      <div class="position-type">Internship · For Academic Credit</div>
+      <div class="position-title">Brand Partnerships Intern</div>
+      <div class="position-pills">
+        <span class="pill">Unpaid · For Course Credit</span>
+        <span class="pill">NY-Based or Remote</span>
+        <span class="pill">Part-Time Volunteer Hours</span>
+      </div>
+    </div>
+    <div class="position-arrow">→</div>
+  </a>
+
+  <a href="editorial-intern.html" class="position-row">
+    <div class="position-left">
+      <div class="position-type">Internship · For Academic Credit</div>
+      <div class="position-title">Editorial Intern</div>
+      <div class="position-pills">
+        <span class="pill">Unpaid · For Course Credit</span>
+        <span class="pill">NY-Based or Remote</span>
+        <span class="pill">Part-Time Volunteer Hours</span>
+      </div>
+    </div>
+    <div class="position-arrow">→</div>
+  </a>
+
+  <a href="ai-product-ops-intern.html" class="position-row">
+    <div class="position-left">
+      <div class="position-type">Internship · For Academic Credit</div>
+      <div class="position-title">AI Product & Operations Intern</div>
+      <div class="position-pills">
+        <span class="pill">Unpaid · For Course Credit</span>
+        <span class="pill">NY-Based or Remote</span>
+        <span class="pill">Part-Time Volunteer Hours</span>
+      </div>
+    </div>
+    <div class="position-arrow">→</div>
+  </a>
+
+</section>
+
+<footer>
+  <div class="footer-logo-text"><span class="ai">ai.</span><span class="moms">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.4;color:#060d26">™</span></div>
+  <p>Retire from Chief Everything Officer™ · ai.moms · hello@aimoms.ai</p>
+</footer>
+
+</body>
+</html>

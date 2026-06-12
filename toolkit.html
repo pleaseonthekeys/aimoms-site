@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="The AI Toolkit for Moms — ai.moms™">
+<meta property="og:description" content="80+ AI tools for mothers, scored and ranked. The complete guide to AI apps for family life.">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="description" content="The AI Toolkit for Moms. 80+ AI tools scored on ease, time saved, family fit, and value. Mom-tested, mom-reviewed.">
+<link rel="canonical" href="https://aimoms.ai/toolkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Toolkit for Moms — ai.moms™</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;color:#060d26;background:#fff;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Outfit',sans-serif}
+#mobilemenu a{font-family:"Outfit",sans-serif !important}
+footer a,footer p,footer div{font-family:"Be Vietnam Pro",sans-serif !important}
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif !important}
+
+/* GRID */
+.tk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;padding:0 24px;align-items:stretch}
+@media(max-width:900px){.tk-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.tk-grid{grid-template-columns:1fr}}
+
+/* FILTERS */
+.tk-filters{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:8px}
+.tk-btn{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:8px 18px;border:1.5px solid #EFEFED;border-radius:100px;cursor:pointer;background:transparent;color:#999;transition:all 0.2s;white-space:nowrap}
+.tk-btn:hover{border-color:#ff63d8;color:#ff63d8}
+.tk-btn.active{background:#060d26;color:#fff;border-color:#060d26}
+@media(max-width:768px){
+  .tk-filters{flex-wrap:nowrap;overflow-x:auto;padding:0 16px;gap:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tk-filters::-webkit-scrollbar{display:none}
+  .tk-btn{flex-shrink:0;padding:7px 14px;font-size:10px}
+  #filter-bar{padding:10px 0 10px !important}
+}
+
+/* CARDS */
+.tk-card{transition:transform 0.2s,box-shadow 0.2s;height:100%;border-radius:14px;border:1px solid #EFEFED;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.tk-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.tk-card-aimoms{border:1px solid #EFEFED}
+.card-header{background:linear-gradient(135deg,#060d26,#1a2340);padding:20px 24px;min-height:76px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
+.card-header-aimoms{background:linear-gradient(135deg,#060d26,#1a2340) !important}
+.card-name{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15em;color:#fff;margin:0}
+.card-price{font-size:11px;color:rgba(255,255,255,0.45);margin-top:3px}
+.card-body{padding:16px 20px;flex:1;display:flex;flex-direction:column}
+.card-tagline{font-size:13px;color:#555;line-height:1.5;margin-bottom:12px}
+.card-review{font-size:12px;color:#999;line-height:1.6;margin-bottom:14px;flex:1}
+.card-link-wrap{margin-top:auto;padding-top:10px;border-top:1px solid #EFEFED}
+.card-link{font-size:11px;color:#ff63d8;font-weight:700;text-decoration:none}
+
+/* SCORE SYSTEM */
+.score-block{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}
+.score-overall{display:flex;flex-direction:column;align-items:center;background:#060d26;color:#fff;border-radius:10px;padding:8px 12px;min-width:52px;flex-shrink:0}
+.score-overall-num{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.4em;line-height:1;color:#fff}
+.score-overall-label{font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-top:2px}
+.score-bars{flex:1;display:flex;flex-direction:column;gap:4px}
+.score-row{display:flex;align-items:center;gap:6px}
+.score-row-label{font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#999;width:56px;flex-shrink:0}
+.score-bar-track{flex:1;height:4px;background:#EFEFED;border-radius:2px;overflow:hidden}
+.score-bar-fill{height:100%;border-radius:2px;background:#060d26}
+.score-row-num{font-size:9px;font-weight:700;color:#060d26;width:14px;text-align:right;flex-shrink:0}
+
+/* score-overall color tiers */
+.score-9{color:#fff !important}
+.score-8{color:#fff !important}
+.score-7{color:rgba(255,255,255,0.85) !important}
+.score-6{color:rgba(255,255,255,0.7) !important}
+
+/* BADGES */
+.badge{position:absolute;top:12px;right:12px;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:3px 9px;border-radius:100px}
+.badge-aimoms{text-transform:none;letter-spacing:0.05em}
+.badge-top{background:#ff63d8;color:#fff}
+.badge-new{background:rgba(255,255,255,0.2);color:#fff}
+.badge-soon{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6)}
+.badge-aimoms{background:#ff63d8;color:#fff}
+
+/* SECTION HEADERS */
+.tk-section{display:block}
+.tk-section.hidden{display:none}
+.sec-header{max-width:1100px;margin:0 auto;padding:40px 24px 16px}
+.sec-label{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#ff63d8;margin-bottom:4px}
+.sec-bar{height:2px;width:40px;background:#ff63d8}
+.sec-note{font-size:12px;color:#bbb;margin-top:8px}
+
+/* NAV */
+.tnl{transition:color 0.2s;text-transform:uppercase !important}
+.tnl:hover{color:#ff63d8 !important}
+@media(max-width:900px){.tnl{display:none !important}}
+
+/* MOBILE */
+@media(max-width:768px){
+  [style*="grid-template-columns:2fr"]{grid-template-columns:1fr 1fr !important;gap:20px !important}
+  [style*="display:flex;gap:32px"]{flex-direction:column !important}
+  [style*="display:flex;gap:28px"]{flex-direction:column !important}
+  section{padding-left:16px !important;padding-right:16px !important}
+  nav{padding:12px 16px !important}
+}
+@media(max-width:480px){
+  [style*="grid-template-columns:2fr"]{grid-template-columns:1fr !important}
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+}
+</style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1206405304980852');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1206405304980852&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;padding:12px 24px">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none"><div style="font-family:Be Vietnam Pro,sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8">ai.</span><span style="color:#060d26">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.4">&#8482;</span></div><div style="font-size:9px;color:rgba(6,13,38,0.35);margin-top:1px">Retire from Chief Everything Officer.&#8482;</div></a>
+<div style="display:flex;align-items:center;gap:4px">
+<a href="index.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">ON-DEMAND</a>
+<a href="editorial.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" class="tnl" style="color:#ff63d8;font-weight:700;padding:7px 10px;font-size:12px;text-decoration:none;letter-spacing:0.04em">AI TOOLKIT</a>
+<a href="experiences.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">EXPERIENCES</a>
+<a href="corporate.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;margin-left:4px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px"><div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div><div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div><div style="width:20px;height:2px;background:#060d26"></div></div>
+</div></div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">THE EDIT</a>
+<a href="index.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">ON-DEMAND</a>
+<a href="aime.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED">MEET AIME</a>
+<a href="quiz.html" target="_blank" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED">TAKE THE QUIZ</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">THE AI TOOLKIT</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">SHOP</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">FOR COMPANIES</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">COMMUNITY</a>
+<a href="about.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none">ABOUT</a>
+</div>
+</nav>
+<div style="height:56px"></div>
+
+<!-- HERO -->
+<section style="min-height:380px;padding:90px 24px 56px;background:#060d26;text-align:center;color:white;display:flex;align-items:center;justify-content:center">
+<div style="max-width:700px;margin:0 auto">
+<p style="text-transform:uppercase;letter-spacing:0.25em;font-size:11px;color:#ff63d8;font-weight:700;margin-bottom:14px">Mom-Tested. Mom-Reviewed.</p>
+<h1 style="font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(2em,5vw,3.2em);letter-spacing:-0.03em;margin-bottom:14px;text-transform:uppercase;line-height:1.05">The AI Toolkit<br><span style="font-size:0.55em;opacity:0.6;letter-spacing:0.05em">for Moms</span></h1>
+<p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;max-width:520px;margin:0 auto 20px">Every tool scored on what actually matters to moms: ease of use, time saved, family fit, and value. Ranked highest to lowest within every category.</p>
+<div style="display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
+<div style="border:1.5px solid #ff63d8;color:#ff63d8;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:7px 18px;border-radius:100px">80+ Tools Curated</div>
+<div style="border:1.5px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:7px 18px;border-radius:100px">Updated Weekly</div>
+</div>
+</div>
+</section>
+
+<!-- SCORING KEY -->
+<section style="background:#fafafa;border-bottom:1px solid #EFEFED;padding:16px 24px">
+<div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+<span style="font-size:11px;font-weight:700;color:#060d26;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap">How We Score:</span>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<span style="font-size:11px;color:#666"><strong style="color:#060d26">⚡ Ease</strong> — No learning curve</span>
+<span style="font-size:11px;color:#666"><strong style="color:#060d26">⏱ Time</strong> — Reduces invisible load</span>
+<span style="font-size:11px;color:#666"><strong style="color:#060d26">👨‍👩‍👧 Family</strong> — Built for family life</span>
+<span style="font-size:11px;color:#666"><strong style="color:#060d26">💰 Value</strong> — Worth the cost</span>
+</div>
+<span style="font-size:11px;color:#bbb;margin-left:auto;white-space:nowrap">Each scored 1–10 → Overall</span>
+</div>
+</section>
+
+<!-- FILTER BAR -->
+<section id="filter-bar" style="padding:16px 0;position:sticky;top:56px;background:#fff;z-index:90;border-bottom:1px solid #EFEFED">
+<div class="tk-filters">
+<button class="tk-btn active" data-filter="ALL">All Tools</button>
+<button class="tk-btn" data-filter="AIMOMS" style="text-transform:none;letter-spacing:0.04em">⭐ ai.moms<sup style="font-size:0.45em;vertical-align:super;opacity:0.6">™</sup> Tools</button>
+<button class="tk-btn" data-filter="BIG_PLATFORMS">Big Platforms</button>
+<button class="tk-btn" data-filter="PRODUCTIVITY">Productivity &amp; Voice</button>
+<button class="tk-btn" data-filter="FAMILY">Family &amp; Scheduling</button>
+<button class="tk-btn" data-filter="MEAL">Meal &amp; Nutrition</button>
+<button class="tk-btn" data-filter="KIDS">Kids &amp; Education</button>
+<button class="tk-btn" data-filter="HEALTH">Health &amp; Wellness</button>
+<button class="tk-btn" data-filter="CREATIVE">Creative &amp; Visual</button>
+<button class="tk-btn" data-filter="FINANCE">Money &amp; Finance</button>
+<button class="tk-btn" data-filter="HOME">Home &amp; Errands</button>
+<button class="tk-btn" data-filter="TRAVEL">Travel &amp; Activities</button>
+</div>
+</section>
+
+<section style="padding:0 0 80px">
+
+<!-- ========== HELPER MACRO (scores rendered inline per card) ========== -->
+
+<!-- ===== AI MOMS™ MICRO-TOOLS ===== -->
+<div class="tk-section" data-cat="AIMOMS">
+<div class="sec-header">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+<div><div class="sec-label" style="text-transform:none;letter-spacing:0.12em">⭐ ai.moms<sup style="font-size:0.45em;vertical-align:super;opacity:0.6">™</sup> Micro-Tools</div><div class="sec-bar"></div></div>
+
+</div>
+<p style="font-size:13px;color:#999;margin-top:10px;max-width:600px">Free AI-powered tools built specifically for the invisible load of motherhood. No signup needed — just open and use.</p>
+</div>
+<div class="tk-grid">
+
+<!-- SafeSitter 9.5 -->
+<div class="tk-card tk-card-aimoms">
+<div class="card-header" style="background:linear-gradient(135deg,#4a6fa5,#2d4e7e)"><span class="badge badge-soon">Coming Soon</span>
+<div class="card-name">SafeSitter<sup style="font-size:0.35em;vertical-align:super;opacity:0.5">™</sup></div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Vet any babysitter in minutes. Public records, social media sweep, interview checklist, and an AI safety report — all in one place.</p>
+<p style="font-size:11px;color:#bbb;margin-bottom:14px;flex:1"><span style="color:#ff63d8">·</span> Free to use &nbsp;<span style="color:#ff63d8">·</span> Built on Claude &nbsp;<span style="color:#ff63d8">·</span> No signup needed</p>
+<p class="card-review"><strong style="color:#060d26">What it does:</strong> Enter your sitter's name and social handles. SafeSitter™ instantly generates clickable search links to the national sex offender registry, court records, Google News, and all major social platforms — then walks you through an interview checklist and produces an AI safety assessment plus a ready-to-read reference call script.</p>
+<div class="card-link-wrap"><span style="font-size:11px;color:#ccc;font-weight:600">Coming Soon</span></div>
+</div></div>
+
+<!-- Meal Planner 9.3 -->
+<div class="tk-card tk-card-aimoms">
+<div class="card-header" style="background:linear-gradient(135deg,#4a6fa5,#2d4e7e)"><span class="badge badge-soon">Coming Soon</span>
+<div class="card-name">Meal Planner<sup style="font-size:0.35em;vertical-align:super;opacity:0.5">™</sup></div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Family meal plan in 60 seconds. Picky eaters, allergies, busy weeknights — handled.</p>
+<p style="font-size:11px;color:#bbb;margin-bottom:14px;flex:1"><span style="color:#ff63d8">·</span> Free to use &nbsp;<span style="color:#ff63d8">·</span> Built on Claude &nbsp;<span style="color:#ff63d8">·</span> No signup needed</p>
+<p class="card-review"><strong style="color:#060d26">What it does:</strong> Input your family's preferences, dietary needs, and what's in your fridge. Get a full week of dinners, a sorted grocery list, and prep instructions. Built on Claude AI.</p>
+<div class="card-link-wrap"><span style="font-size:11px;color:#ccc;font-weight:600">Coming Soon</span></div>
+</div></div>
+
+<!-- Camp Finder 9.0 -->
+<div class="tk-card tk-card-aimoms">
+<div class="card-header" style="background:linear-gradient(135deg,#4a6fa5,#2d4e7e)"><span class="badge badge-soon">Coming Soon</span>
+<div class="card-name">Camp Finder<sup style="font-size:0.35em;vertical-align:super;opacity:0.5">™</sup></div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Find the perfect summer camp. AI-matched by interest, location, age, and budget.</p>
+<p style="font-size:11px;color:#bbb;margin-bottom:14px;flex:1"><span style="color:#ff63d8">·</span> Free to use &nbsp;<span style="color:#ff63d8">·</span> Built on Claude &nbsp;<span style="color:#ff63d8">·</span> No signup needed</p>
+<p class="card-review"><strong style="color:#060d26">What it does:</strong> Answer a few questions about your child and get curated camp recommendations with registration links, pricing, and a comparison checklist. Covers day camps, sleepaway, specialty, and STEM.</p>
+<div class="card-link-wrap"><span style="font-size:11px;color:#ccc;font-weight:600">Coming Soon</span></div>
+</div></div>
+
+<!-- Mom Decoder — coming soon -->
+<div class="tk-card tk-card-aimoms">
+<div class="card-header" style="background:linear-gradient(135deg,#4a6fa5,#2d4e7e)"><span class="badge badge-soon">Coming Soon</span>
+<div class="card-name">The Mom Decoder<sup style="font-size:0.35em;vertical-align:super;opacity:0.5">™</sup></div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Paste any confusing school email, insurance form, or pediatrician note. Get plain English + action items.</p>
+<p style="font-size:11px;color:#bbb;margin-bottom:14px;flex:1"><span style="color:#ff63d8">·</span> Free to use &nbsp;<span style="color:#ff63d8">·</span> Built on Claude &nbsp;<span style="color:#ff63d8">·</span> No signup needed</p>
+<p class="card-review" style="color:#ccc">Decodes school communications, medical jargon, and legal documents into clear action items. No more reading the same email four times.</p>
+<div class="card-link-wrap"><span style="font-size:11px;color:#ccc;font-weight:600">Coming Spring 2026</span></div>
+</div></div>
+
+<!-- School Year Planner — coming soon -->
+<div class="tk-card tk-card-aimoms">
+<div class="card-header" style="background:linear-gradient(135deg,#4a6fa5,#2d4e7e)"><span class="badge badge-soon">Coming Soon</span>
+<div class="card-name">School Year Planner<sup style="font-size:0.35em;vertical-align:super;opacity:0.5">™</sup></div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Back-to-school command center. Supplies, schedules, teacher info, and activity signups — organized.</p>
+<p style="font-size:11px;color:#bbb;margin-bottom:14px;flex:1"><span style="color:#ff63d8">·</span> Free to use &nbsp;<span style="color:#ff63d8">·</span> Built on Claude &nbsp;<span style="color:#ff63d8">·</span> No signup needed</p>
+<p class="card-review" style="color:#ccc">AI-generated back-to-school checklist, supply lists by grade, and a printable first-week schedule.</p>
+<div class="card-link-wrap"><span style="font-size:11px;color:#ccc;font-weight:600">Coming August 2026</span></div>
+</div></div>
+
+<!-- Homework Helper — coming soon -->
+<div class="tk-card tk-card-aimoms">
+<div class="card-header" style="background:linear-gradient(135deg,#4a6fa5,#2d4e7e)"><span class="badge badge-soon">Coming Soon</span>
+<div class="card-name">Homework Helper<sup style="font-size:0.35em;vertical-align:super;opacity:0.5">™</sup></div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Stop doing your kid's homework. Start teaching them how to think.</p>
+<p style="font-size:11px;color:#bbb;margin-bottom:14px;flex:1"><span style="color:#ff63d8">·</span> Free to use &nbsp;<span style="color:#ff63d8">·</span> Built on Claude &nbsp;<span style="color:#ff63d8">·</span> No signup needed</p>
+<p class="card-review" style="color:#ccc">AI that coaches kids through problems with Socratic questioning instead of just giving answers. Ages 6–18.</p>
+<div class="card-link-wrap"><span style="font-size:11px;color:#ccc;font-weight:600">Coming Fall 2026</span></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== BIG PLATFORMS ===== -->
+<div class="tk-section" data-cat="BIG_PLATFORMS">
+<div class="sec-header"><div class="sec-label">The Big Platforms</div><div class="sec-bar"></div>
+<p class="sec-note">The foundational AI platforms every mom should know. Sorted by overall mom-relevance score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Claude 9.4 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Our #1 Pick</span>
+<div class="card-name">Claude</div><div class="card-price">Free / $20 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">Your thinking partner. Best for nuanced conversations, hard decisions, and real context-keeping.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.4</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Our #1 pick. Best for the hard stuff — parenting dilemmas, medical questions, school advocacy letters. Projects give it permanent memory of your family. The primary AI powering our course.</p>
+<div class="card-link-wrap"><a href="https://claude.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- NotebookLM 9.1 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">NotebookLM</div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Upload any document and have a full conversation with it. School handbooks, IEPs, insurance policies.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.1</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Completely free and mind-blowing. Upload school handbooks, medical records, work docs — ask anything. Audio Overview turns your documents into a podcast you can listen to on the go.</p>
+<div class="card-link-wrap"><a href="https://notebooklm.google.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Perplexity 8.8 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">#1 for Research</span>
+<div class="card-name">Perplexity</div><div class="card-price">Free / $20 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI research that replaces Google. Real answers with sources you can actually verify.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Stop Googling everything. Medical questions, product comparisons, school options — it synthesizes sources and cites everything. Collections keep your family research organized by topic.</p>
+<div class="card-link-wrap"><a href="https://perplexity.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- ChatGPT 8.6 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">ChatGPT</div><div class="card-price">Free / $20 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">The most versatile AI platform. Custom GPTs, image generation, voice mode, and document analysis.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.6</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Still the most widely used AI and the best for Custom GPTs — personalized assistants loaded with your family's details. Free tier gets you started; Plus unlocks Custom GPTs and image generation.</p>
+<div class="card-link-wrap"><a href="https://chatgpt.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Gemini 8.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Gemini</div><div class="card-price">Free / $20 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">Google's AI. Lives inside Gmail, Docs, Sheets, and Calendar — where you already work.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The power is the integration. Summarize emails, build spreadsheets in plain English, get meeting summaries in Google Meet. If you live in Google Workspace, Gemini is a natural upgrade.</p>
+<div class="card-link-wrap"><a href="https://gemini.google.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Meta AI 6.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Meta AI</div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Built into WhatsApp, Instagram, and Facebook. AI where you already spend your time.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-6">6.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Zero friction — it's right in the apps you're already in. Good for quick questions mid-conversation. Not a substitute for deeper AI work. The convenience is real; the depth isn't there yet.</p>
+<div class="card-link-wrap"><a href="https://ai.meta.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Grok 6.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Grok</div><div class="card-price">Free / X Premium</div></div>
+<div class="card-body">
+<p class="card-tagline">xAI's model with real-time access to X/Twitter data and breaking news.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-6">6.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Strength is real-time info from live X posts. Not built for family life, but useful when you need to know what's happening right now. Still maturing — check back in 6 months.</p>
+<div class="card-link-wrap"><a href="https://x.ai/grok" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Copilot — unscored -->
+<div class="tk-card" style="opacity:0.8">
+<div class="card-header"><span class="badge badge-new">Review Coming</span>
+<div class="card-name">Copilot</div><div class="card-price">Free / Microsoft 365</div></div>
+<div class="card-body">
+<p class="card-tagline">Microsoft's AI built into Word, Excel, Outlook, and Teams.</p>
+<div style="font-size:11px;color:#ccc;font-style:italic;margin-bottom:12px">Full review and scoring coming soon</div>
+<p class="card-review">If your work or kids' school runs Microsoft 365, this is a powerful upgrade. Drafts emails, summarizes Word docs, builds Excel formulas in plain English. Review pending.</p>
+<div class="card-link-wrap"><a href="https://copilot.microsoft.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== PRODUCTIVITY & VOICE ===== -->
+<div class="tk-section" data-cat="PRODUCTIVITY">
+<div class="sec-header"><div class="sec-label">Productivity &amp; Voice</div><div class="sec-bar"></div>
+<p class="sec-note">Tools that give you back time at work and at home. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Wispr Flow 9.5 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">We Use Daily</span>
+<div class="card-name">Wispr Flow</div><div class="card-price">$10 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI voice-to-text that works everywhere on your computer. Talk instead of type.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Changed how we work. Talk naturally, get clean formatted text anywhere — emails, Claude, Notion, anywhere on your screen. Perfect for the mom with thoughts but no free hands. We use it every single day.</p>
+<div class="card-link-wrap"><a href="https://wispr.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Granola 9.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Granola</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI meeting notes. Listens and creates perfect structured summaries automatically.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Join a meeting, let Granola listen, walk away with perfect structured notes. No more frantic scribbling. Works with Zoom, Google Meet, and Teams. Also great for school meetings and IEP calls.</p>
+<div class="card-link-wrap"><a href="https://granola.so" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Reclaim 8.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Reclaim.ai</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI calendar assistant that auto-schedules tasks, habits, focus time, and real breaks.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Protects time for exercise, deep work, and real lunch breaks — then reschedules automatically when conflicts arise. For the mom whose calendar owns her, Reclaim fights back.</p>
+<div class="card-link-wrap"><a href="https://reclaim.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Notion AI 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Notion AI</div><div class="card-price">$16 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI second brain. Documents, databases, and notes — all searchable and AI-enhanced.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Build your family command center — babysitter contacts, school info, medical records, all in one searchable place. Ask Notion AI a question and it finds the answer from everything you've saved.</p>
+<div class="card-link-wrap"><a href="https://www.notion.so/product/ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Otter 8.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Otter.ai</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI transcription and meeting assistant. Real-time notes, summaries, and action items.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Great for work meetings, but we also use it for pediatrician appointments and school conferences. Never miss a detail when someone's talking fast. Free tier is genuinely generous.</p>
+<div class="card-link-wrap"><a href="https://otter.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Todoist 7.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Todoist</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">Smart task manager with AI natural language input and smart scheduling.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Type "buy birthday present for Saturday" and it creates the task with the right due date. AI understands how you naturally talk about tasks. Best starting task manager for the non-techy mom.</p>
+<div class="card-link-wrap"><a href="https://todoist.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Motion 7.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Motion</div><div class="card-price">$34 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI project manager that builds and rebuilds your entire schedule automatically every day.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Combines calendar, tasks, and project management and auto-reschedules everything when something runs long. Steeper learning curve and price — for the seriously overwhelmed working mom.</p>
+<div class="card-link-wrap"><a href="https://usemotion.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Superhuman 7.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Superhuman</div><div class="card-price">$25 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI email client. Blazing fast with smart triage, drafting, and follow-up reminders.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Genuinely transformative if email is drowning you. AI auto-triages your inbox, drafts replies, and reminds you to follow up. The $25/mo price and learning curve are real — but so is the payoff.</p>
+<div class="card-link-wrap"><a href="https://superhuman.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== FAMILY & SCHEDULING ===== -->
+<div class="tk-section" data-cat="FAMILY">
+<div class="sec-header"><div class="sec-label">Family &amp; Scheduling</div><div class="sec-bar"></div>
+<p class="sec-note">Apps built to tame the chaos of running a household. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Bumo 9.2 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Founder Pick</span>
+<div class="card-name">Bumo</div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">Book childcare, camps, and activities on demand. The Airbnb for childcare — 17,000+ providers.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.2</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Founded by moms, backed by $10M, already the largest instantly bookable childcare platform in the US. The upcoming AI assistant Bennie will make finding care as easy as texting a friend.</p>
+<div class="card-link-wrap"><a href="https://book.bumo.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Jam 8.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Jam</div><div class="card-price">Free trial / then paid</div></div>
+<div class="card-body">
+<p class="card-tagline">Family calendar built by moms. Forward school emails, events auto-populate instantly.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Forward your school newsletter to Jam, dates appear on your shared family calendar automatically. Built by moms who get the problem. Simple, effective, and completely free.</p>
+<div class="card-link-wrap"><a href="https://www.jamfamilycalendar.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Aviva 8.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Aviva</div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">AI family calendar that scans your email and auto-creates events. Zero manual entry.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Finds events buried in your inbox and calendars them automatically. For the mom who misses things because she never opened the email — this is your fix.</p>
+<div class="card-link-wrap"><a href="https://www.withaviva.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Ohai 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Ohai</div><div class="card-price">Free trial / $9.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI home manager with smart shopping lists, tasks, and a daily morning brief.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The morning summary of what's on your plate is genuinely useful. Shopping AI learns your family's patterns over time. A solid all-rounder that keeps improving.</p>
+<div class="card-link-wrap"><a href="https://ohai.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Honeydew 8.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Honeydew</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI family assistant with voice and photo input. Snap a school flyer, event gets added.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Photograph a school flyer and the event gets added automatically. Voice and photo input make it feel natural and fast. Impressive feature count for a newer app.</p>
+<div class="card-link-wrap"><a href="https://www.gethoneydew.app" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Cozi 7.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Cozi</div><div class="card-price">Free / $29.99 yr</div></div>
+<div class="card-body">
+<p class="card-tagline">The OG family organizer. Shared calendar, to-do lists, and meal planning — all in one.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Still reliable and loved by millions of families. Color-coded by family member, shared grocery lists, and a great agenda view. The AI features are basic, but the core product works and everyone can use it.</p>
+<div class="card-link-wrap"><a href="https://www.cozi.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Hiava 7.5 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-new">New</span>
+<div class="card-name">Hiava</div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-powered family life platform designed to reduce the mental load of parenting.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> A newer entrant built squarely around reducing mental load — right in our wheelhouse. Covers family tasks, schedules, and coordination with an AI layer that learns how your household operates. One to watch.</p>
+<div class="card-link-wrap"><a href="https://hiava.xyz" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- FamilyWall 7.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">FamilyWall</div><div class="card-price">Free / $4.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">All-in-one family hub: calendar, tasks, messages, location sharing, and memories.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Good for families who want everything in one place. Location sharing for kids, private messaging, and a family photo wall all in one app. Especially useful for extended family coordination.</p>
+<div class="card-link-wrap"><a href="https://www.familywall.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Skylight 7.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Skylight Cal</div><div class="card-price">$99 yr</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-connected touchscreen family command center for your kitchen wall.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The physical calendar your family will actually look at. Syncs with Google Calendar. Kids can check off chores. The AI features are still evolving but the hardware is genuinely excellent. Worth it if your family is visual.</p>
+<div class="card-link-wrap"><a href="https://www.skylightframe.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Milo 6.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Milo</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI collaborator for managing the invisible load of running a family.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-6">6.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> They understand the invisible load problem — which earns immediate points. The product is still finding its footing. Mission is right, execution needs work. Worth revisiting as it matures.</p>
+<div class="card-link-wrap"><a href="https://www.joinmilo.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== MEAL & NUTRITION ===== -->
+<div class="tk-section" data-cat="MEAL">
+<div class="sec-header"><div class="sec-label">Meal &amp; Nutrition</div><div class="sec-bar"></div>
+<p class="sec-note">From weekly planning to what's-in-the-fridge moments. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Ollie 9.3 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Ollie</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI meal planner that learns your family. Auto grocery lists organized by store aisle.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The one. Learns what your family actually eats, builds plans around your schedule, and generates grocery lists organized by store section. Meal planning as a conversation, not a chore.</p>
+<div class="card-link-wrap"><a href="https://ollie.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Samsung Food 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Samsung Food</div><div class="card-price">Free / $60 yr</div></div>
+<div class="card-body">
+<p class="card-tagline">AI meal planner with 160K+ recipes, personalized plans, and grocery delivery. Formerly Whisk.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Massive recipe library and solid AI meal planning. Shared grocery lists work well for families. Less mom-specific than Ollie but more sheer volume. Free tier is very generous — worth trying first.</p>
+<div class="card-link-wrap"><a href="https://samsungfood.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Hungryroot 8.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Hungryroot</div><div class="card-price">From $69 wk</div></div>
+<div class="card-body">
+<p class="card-tagline">AI grocery and meal kit service. Plans your week and delivers all the ingredients.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> AI learns your taste profile and automatically fills your weekly cart. The overlap between meal planning and grocery delivery is a genuine time-saver — though the cost adds up quickly for larger families.</p>
+<div class="card-link-wrap"><a href="https://www.hungryroot.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Cronometer 7.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Cronometer</div><div class="card-price">Free / $9.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">Precision nutrition tracking. Know exactly what your family is eating and what's missing.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The gold standard for nutrition tracking — especially families with dietary needs, kids with allergies, or postpartum moms tracking iron and folate. More detailed than MyFitnessPal. Not casual, but powerful.</p>
+<div class="card-link-wrap"><a href="https://cronometer.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== KIDS & EDUCATION ===== -->
+<div class="tk-section" data-cat="KIDS">
+<div class="sec-header"><div class="sec-label">Kids &amp; Education</div><div class="sec-bar"></div>
+<p class="sec-note">AI tools for learning, safety, and raising capable kids. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Bark 9.5 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Bark</div><div class="card-price">$14 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI child safety monitor. Alerts you to cyberbullying, predators, and mental health concerns across 30+ apps.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Monitors 30+ platforms without reading every message — AI alerts you only when something concerning is detected. Respects kids' privacy while keeping them genuinely safe. Worth every cent.</p>
+<div class="card-link-wrap"><a href="https://www.bark.us" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Goally 9.2 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Goally</div><div class="card-price">$9.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">Visual routine app for kids with ADHD, autism, and executive function challenges.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.2</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> AI-built visual schedules that reduce morning meltdowns and after-school battles. Works for all kids but genuinely life-changing for neurodiverse families. Therapist recommended, mom-loved.</p>
+<div class="card-link-wrap"><a href="https://getgoally.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Khanmigo 9.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Khanmigo</div><div class="card-price">Free for students</div></div>
+<div class="card-body">
+<p class="card-tagline">Khan Academy's AI tutor. Guides kids through problems without just giving the answer.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The right way to use AI for homework — asks questions instead of providing answers, building real understanding. Works across all grades and subjects. Parents get progress insights. Free and exceptional.</p>
+<div class="card-link-wrap"><a href="https://www.khanacademy.org/khanmigo" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Synthesis 8.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Synthesis</div><div class="card-price">$35 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-powered math tutor that adapts in real time to how your child thinks. Originally built for SpaceX.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Built at SpaceX's Ad Astra school and now available to everyone. Personalized math curriculum that adjusts in real time. Worth every penny for math-anxious kids or any child who needs a different pace.</p>
+<div class="card-link-wrap"><a href="https://www.synthesis.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Readability 8.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Readability</div><div class="card-price">$9.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI reading tutor that listens to your child read aloud and gives real-time coaching.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> For early readers, this is remarkable. It listens as your child reads aloud, catches mispronunciations, and adapts difficulty level. Parent dashboard shows real progress over time. One of the most parent-friendly EdTech apps we've seen.</p>
+<div class="card-link-wrap"><a href="https://www.readability.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- IXL 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">IXL Learning</div><div class="card-price">$9.95 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-adaptive practice across math, ELA, science, and social studies. K–12.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Used by 14 million students. AI adjusts difficulty in real time, identifies gaps, and gives parents detailed progress reports. Aligns with state standards. Trusted by teachers and parents alike.</p>
+<div class="card-link-wrap"><a href="https://www.ixl.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Duolingo 8.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Duolingo</div><div class="card-price">Free / $7 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI language learning for the whole family. 40+ languages, 5 minutes a day.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Now deeply AI-powered with personalized lesson paths and an AI conversation partner. Family plan lets everyone learn together. Great for bilingual households, pre-trip prep, or kids learning a second language.</p>
+<div class="card-link-wrap"><a href="https://www.duolingo.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Bedtime.ai 7.8 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-new">New</span>
+<div class="card-name">Bedtimestory.ai</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI bedtime stories personalized with your child's name, interests, and the values you want to reinforce.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Kids light up when they're the hero of the story. Choose themes — courage, kindness, processing a big change — and get a custom story in seconds. Wonderful for anxious bedtimes or helping kids work through emotions.</p>
+<div class="card-link-wrap"><a href="https://www.bedtimestory.ai" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== HEALTH & WELLNESS ===== -->
+<div class="tk-section" data-cat="HEALTH">
+<div class="sec-header"><div class="sec-label">Health &amp; Wellness</div><div class="sec-bar"></div>
+<p class="sec-note">AI tools that take care of the person taking care of everyone else. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Oura 9.3 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Oura Ring</div><div class="card-price">$299 + $5.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-powered smart ring tracking sleep, recovery, readiness, and hormonal cycles.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Especially powerful for women. Tracks cycle phases and shows how they affect your energy and readiness. The AI Advisor explains your data in plain English. Our top wellness hardware pick for moms.</p>
+<div class="card-link-wrap"><a href="https://ouraring.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Hinge Health 9.0 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Hinge Health</div><div class="card-price">Often employer-covered</div></div>
+<div class="card-body">
+<p class="card-tagline">AI physical therapy for back pain, knee pain, and joint issues. No office visit required.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> If your employer offers it — use it immediately. AI-guided PT exercises on your schedule. For moms with postpartum back pain or decades of carrying children. Often 100% covered by insurance.</p>
+<div class="card-link-wrap"><a href="https://www.hingehealth.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- WHOOP 8.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">WHOOP</div><div class="card-price">$30 mo (hardware included)</div></div>
+<div class="card-body">
+<p class="card-tagline">AI health coach that tracks sleep, recovery, and stress. Tells you what your body actually needs.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The AI Coach answers questions about your own data. "Why am I exhausted?" gets a science-backed answer. For moms running on empty, this replaces guesswork with actual data about what your body needs.</p>
+<div class="card-link-wrap"><a href="https://www.whoop.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Calm 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Calm</div><div class="card-price">$69.99 yr</div></div>
+<div class="card-body">
+<p class="card-tagline">Meditation, sleep stories, and mental wellness for the whole family.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Gold standard for sleep and stress management. The kids' section is excellent — age-appropriate mindfulness your whole family can use. Even 5 minutes makes a real difference when you're running on nothing.</p>
+<div class="card-link-wrap"><a href="https://www.calm.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Noom 7.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Noom</div><div class="card-price">From $70 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI wellness program that addresses the psychology of eating alongside the nutrition.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Approaches health through behavioral psychology — the why behind eating patterns. AI coach daily check-ins keep you accountable without shame. Good for postpartum and high-stress periods. Pricey but committed.</p>
+<div class="card-link-wrap"><a href="https://www.noom.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Woebot 7.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Woebot</div><div class="card-price">Free</div></div>
+<div class="card-body">
+<p class="card-tagline">AI mental health companion using clinically-validated CBT techniques. Available at 2am.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Not a replacement for therapy — a supplement for the 2am spiral when your therapist isn't available. Built on Stanford-validated CBT techniques. Free, private, and genuinely helpful for anxious moments.</p>
+<div class="card-link-wrap"><a href="https://woebothealth.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== CREATIVE & VISUAL ===== -->
+<div class="tk-section" data-cat="CREATIVE">
+<div class="sec-header"><div class="sec-label">Creative &amp; Visual</div><div class="sec-bar"></div>
+<p class="sec-note">AI tools for content, design, and preserving family memories. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Canva 9.5 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Canva AI</div><div class="card-price">Free / $15 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI design platform. Create anything from birthday invites to professional presentations — in minutes.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Magic Design generates full presentations from a prompt. Magic Write drafts copy. Magic Media creates images and videos. The most versatile creative tool for the non-designer who needs to look polished and professional.</p>
+<div class="card-link-wrap"><a href="https://www.canva.com/ai-image-generator/" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Adobe Firefly 8.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Adobe Firefly</div><div class="card-price">Freemium / Adobe CC</div></div>
+<div class="card-body">
+<p class="card-tagline">Adobe's AI image and video generator. Built into Photoshop and Illustrator — commercially safe.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Generative Fill in Photoshop is the most practical AI photo tool Adobe has ever shipped. Remove backgrounds, extend images, fix photos from the wrong angle. Great for moms creating content or managing memories.</p>
+<div class="card-link-wrap"><a href="https://firefly.adobe.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Midjourney 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Midjourney</div><div class="card-price">$10 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">The gold standard AI image generator. Photorealistic to fine art — all from text prompts.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> For printable wall art, custom storybook illustrations for kids, or professional-looking content imagery. The quality still leads the industry — but there is a learning curve to prompting well.</p>
+<div class="card-link-wrap"><a href="https://www.midjourney.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Motif 8.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Motif</div><div class="card-price">From $14 book</div></div>
+<div class="card-body">
+<p class="card-tagline">AI photo book creator. Upload your photos, get a beautifully designed book in minutes.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-row-num">5</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> AI selects your best photos, designs the layouts, and suggests captions. The family photo books you keep meaning to make — done in 20 minutes. Softcover books start at $13.99; hardcover from $29.99. Gorgeous print quality.</p>
+<div class="card-link-wrap"><a href="https://www.motifphotos.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Descript 7.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Descript</div><div class="card-price">Freemium / $24 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI video and podcast editor. Edit video like a Word doc — just delete the words you don't want.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> For moms building content businesses — this is how you edit video without learning video editing. Transcribes your footage, you delete the words you don't want, it edits the video. Genuinely magical if you create content.</p>
+<div class="card-link-wrap"><a href="https://www.descript.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== MONEY & FINANCE ===== -->
+<div class="tk-section" data-cat="FINANCE">
+<div class="sec-header"><div class="sec-label">Money &amp; Finance</div><div class="sec-bar"></div>
+<p class="sec-note">AI tools to get your family's finances working for you. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Greenlight 9.3 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Greenlight</div><div class="card-price">$5.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-assisted kids' debit card and financial education. Teach money while they spend it.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The best way to teach kids about money in real time. Give chores, pay allowance digitally, set savings goals, even invest real stocks. Parents approve every purchase. Financial literacy that actually sticks.</p>
+<div class="card-link-wrap"><a href="https://greenlight.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Copilot Money 9.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Copilot Money</div><div class="card-price">$13 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-powered personal finance with smart budgets, spending insights, and net worth tracking.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The Mint replacement we actually like. Beautiful interface, AI detects unusual spending, and budget categories that make sense for real families. The best personal finance app available right now.</p>
+<div class="card-link-wrap"><a href="https://copilot.money" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Monarch 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Monarch Money</div><div class="card-price">$14.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">Collaborative household finances. Both partners see everything in one place — no more money surprises.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Built specifically for couples managing household finances together. AI-powered spending insights surface patterns you didn't notice. The shared financial dashboard finally gets both partners on the same page.</p>
+<div class="card-link-wrap"><a href="https://www.monarchmoney.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- YNAB 8.0 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">YNAB</div><div class="card-price">$14.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">Zero-based budgeting with AI-assisted categorization. Every dollar has a job.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The gold standard for family budgets. The "every dollar has a job" philosophy genuinely changes spending behavior. Steep learning curve but massive payoff. AI now handles most of the boring categorization work.</p>
+<div class="card-link-wrap"><a href="https://www.ynab.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== HOME & ERRANDS ===== -->
+<div class="tk-section" data-cat="HOME">
+<div class="sec-header"><div class="sec-label">Home &amp; Errands</div><div class="sec-bar"></div>
+<p class="sec-note">AI tools that handle the household to-do list so you don't have to. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Instacart 9.0 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Instacart AI</div><div class="card-price">$9.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI grocery assistant that builds lists from recipes and auto-adds your staples.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Caper AI asks what you're cooking and builds your shopping list automatically. "Ask Instacart" suggests recipes based on what's on sale at your local store. The time savings are genuinely real — and addictive.</p>
+<div class="card-link-wrap"><a href="https://www.instacart.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Homey 8.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Homey</div><div class="card-price">Freemium</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-powered chore chart and allowance system. Kids actually engage because it's gamified.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Assign chores, track completions with photo confirmation, and manage allowance all in one place. Kids stay motivated because it gamifies responsibilities. One of the best chore systems we've found for families.</p>
+<div class="card-link-wrap"><a href="https://www.homeyapp.net" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- TaskRabbit 8.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">TaskRabbit</div><div class="card-price">Pay per task</div></div>
+<div class="card-body">
+<p class="card-tagline">Hire local help for anything: furniture assembly, home repairs, cleaning, moving help.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The AI matching has gotten very good at finding the right tasker for the right job quickly. Stop putting off that furniture assembly or home project — it's done in hours and costs less than the stress of DIY.</p>
+<div class="card-link-wrap"><a href="https://www.taskrabbit.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Thumbtack 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Thumbtack</div><div class="card-price">Free to search</div></div>
+<div class="card-body">
+<p class="card-tagline">AI-powered home services marketplace. Find and book vetted local pros for any home project.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Describe your project and get matched with vetted local pros instantly. The AI cost estimator tells you what's fair before you reach out. Excellent for first-time homeowners or anyone who doesn't know what things should cost.</p>
+<div class="card-link-wrap"><a href="https://www.thumbtack.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Myne 7.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Myne</div><div class="card-price">Free / $49.99 yr</div></div>
+<div class="card-body">
+<p class="card-tagline">AI home inventory tracker. Snap a photo, AI identifies the item, estimates its value, and catalogs everything.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Photograph your belongings and the AI identifies what it is, categorizes it, and estimates the replacement value. Invaluable for insurance claims, moving, and knowing what you actually own. Free tier covers most households.</p>
+<div class="card-link-wrap"><a href="https://getmyne.app" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+<!-- ===== TRAVEL & ACTIVITIES ===== -->
+<div class="tk-section" data-cat="TRAVEL">
+<div class="sec-header"><div class="sec-label">Travel &amp; Activities</div><div class="sec-bar"></div>
+<p class="sec-note">Plan family trips and adventures without the research rabbit hole. Sorted by overall score.</p>
+</div>
+<div class="tk-grid">
+
+<!-- Wanderlog 9.3 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-top">Top Pick</span>
+<div class="card-name">Wanderlog</div><div class="card-price">Free / $4.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI trip planner that turns inspiration into full family itineraries. Collaborative and shareable.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> AI generates full itineraries from destination + days + interests. Hotel confirmations import automatically. Share the plan with your partner, family, or grandparents who are joining. We used this to plan our France trip.</p>
+<div class="card-link-wrap"><a href="https://wanderlog.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Airbnb 9.0 -->
+<div class="tk-card">
+<div class="card-header"><span class="badge badge-new">New AI Features</span>
+<div class="card-name">Airbnb</div><div class="card-price">Free to search</div></div>
+<div class="card-body">
+<p class="card-tagline">AI search that actually understands "5 bedrooms, pool, near beach, kid-friendly" — and delivers.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-9">9.0</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> The new AI search understands complex family needs. Filter by cribs, high chairs, pool fences, and proximity to family attractions. AI summarizes host reviews by topic so you don't read 200 reviews to find the one about noise.</p>
+<div class="card-link-wrap"><a href="https://www.airbnb.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- TripIt 8.5 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">TripIt</div><div class="card-price">Free / $49 yr</div></div>
+<div class="card-body">
+<p class="card-tagline">Forward any travel confirmation email and it builds your complete master itinerary automatically.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.5</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-row-num">10</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Forward flights, hotels, restaurants — it assembles your full trip plan automatically. Pro version adds flight alerts, seat tracking, and refund notifications. The organizational layer that makes family travel sane.</p>
+<div class="card-link-wrap"><a href="https://www.tripit.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Roadtrippers 8.3 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Roadtrippers</div><div class="card-price">Freemium / $8.99 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI road trip planner. Discovers hidden gems, quirky stops, and family adventures along any route.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-8">8.3</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-row-num">9</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-row-num">6</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Enter your route and it surfaces the world's largest roadside attraction database with AI suggestions. The family-friendly filter is genuinely useful. Kids love the unexpected stops — and so do we.</p>
+<div class="card-link-wrap"><a href="https://roadtrippers.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+<!-- Komoot 7.8 -->
+<div class="tk-card">
+<div class="card-header">
+<div class="card-name">Komoot</div><div class="card-price">Free / $5 mo</div></div>
+<div class="card-body">
+<p class="card-tagline">AI outdoor adventure planner for hiking, biking, and family nature days.</p>
+<div class="score-block">
+<div class="score-overall"><span class="score-overall-num score-7">7.8</span><span class="score-overall-label">Score</span></div>
+<div class="score-bars">
+<div class="score-row"><span class="score-row-label">⚡ Ease</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">⏱ Time</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">👨‍👩‍👧 Family</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-row-num">8</span></div>
+<div class="score-row"><span class="score-row-label">💰 Value</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-row-num">7</span></div>
+</div></div>
+<p class="card-review"><strong style="color:#060d26">What we think:</strong> Find kid-appropriate hikes and bike trails with AI-suggested routes based on fitness level and stroller or carrier compatibility. Planning a nature day doesn't have to mean an hour of research.</p>
+<div class="card-link-wrap"><a href="https://www.komoot.com" target="_blank" rel="noopener" class="card-link">Visit Site &#8594;</a></div>
+</div></div>
+
+</div></div>
+
+</section>
+
+<!-- CTA BANNER -->
+<section style="background:#060d26;padding:64px 24px;text-align:center">
+<div style="max-width:600px;margin:0 auto">
+<p style="font-size:11px;color:#ff63d8;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px">Ready to Put AI to Work?</p>
+<h2 style="font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(1.8em,4vw,2.6em);color:#fff;letter-spacing:-0.03em;margin-bottom:16px">AI Foundations for Moms</h2>
+<p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:28px">Our on-demand course teaches you how to actually use AI in your daily life — with hands-on demos, templates, and a family management system you'll use every single day. No tech background required.</p>
+<a href="index.html" style="display:inline-block;background:#ff63d8;color:#fff;padding:14px 32px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.05em">Get Instant Access &#8594;</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5">Retire from<br>Chief Everything Officer.&#8482;</p>
+</div>
+<div>
+<div style="font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
+<a href="index.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">ai.moms<sup style="font-size:0.55em;vertical-align:super">™</sup> 101 On-Demand</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">AI+Me Hour</a>
+<a href="aime.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Meet Aime</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">The AI Toolkit</a>
+<a href="experiences.html#outofoffice" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Out of Office Weekends&#8482;</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">FOR COMPANIES</a>
+</div>
+<div>
+<div style="font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="about.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">About ai.moms<sup style="font-size:0.55em;vertical-align:super">™</sup></a>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Community</a>
+<a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">The Science</a>
+<a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Careers</a>
+</div>
+<div>
+<div style="font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Prompt Packs</a>
+<a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Merch &amp; Gifts</a>
+</div>
+<div>
+<div style="font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="/cdn-cgi/l/email-protection#2048454c4c4f6041494d4f4d530e4149" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px"><span class="__cf_email__" data-cfemail="d8b0bdb4b4b798b9b1b5b7b5abf6b9b1">[email&#160;protected]</span></a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Partnerships, Press &amp; Media</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3)">&copy; 2026 ai.moms<sup style="font-size:0.55em;vertical-align:super">™</sup> All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none">Terms &amp; Conditions</a>
+</div>
+</div>
+<div style="margin-top:20px;padding:16px 20px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.03)">
+<p style="font-size:11px;color:rgba(255,255,255,0.35);line-height:1.7;margin:0">ai.moms<sup style="font-size:0.55em;vertical-align:super">™</sup> is an educational platform. All content is for informational and educational purposes only and does not constitute professional, legal, financial, medical, or therapeutic advice. Individual results vary. AI tools referenced are third-party products not owned or operated by ai.moms<sup style="font-size:0.55em;vertical-align:super">™</sup>. Use of third-party AI tools is at your own risk. <strong style="color:rgba(255,255,255,0.5)">Please review our full <a href="terms.html" style="color:#ff63d8;text-decoration:underline">Terms &amp; Conditions</a> and <a href="privacy.html" style="color:#ff63d8;text-decoration:underline">Privacy Policy</a> before using this site or enrolling in any program.</strong></p>
+</div>
+</div>
+</footer>
+
+<!-- Floating Quiz CTA -->
+<div id="floating-quiz" style="position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:998;transition:opacity 0.3s ease;opacity:0;pointer-events:none">
+<a href="quiz.html" onclick="if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Click'})" target="_blank" style="display:flex;text-decoration:none;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.15))">
+<div style="background:#ff63d8;color:#fff;padding:14px 10px;border-radius:10px 0 0 10px;writing-mode:vertical-rl;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;line-height:1">WHAT'S YOUR SCORE?</div>
+</a>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){var fq=document.getElementById('floating-quiz');if(!fq)return;function c(){if(window.scrollY>400){fq.style.opacity='1';fq.style.pointerEvents='auto';}else{fq.style.opacity='0';fq.style.pointerEvents='none';}}window.addEventListener('scroll',c);c();})();
+</script>
+
+<!-- FILTER SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var btns=document.querySelectorAll('.tk-btn');
+  var secs=document.querySelectorAll('.tk-section');
+  function setFilter(cat){
+    btns.forEach(function(b){
+      if(b.getAttribute('data-filter')===cat){b.classList.add('active');b.style.background='#060d26';b.style.color='#fff';b.style.borderColor='#060d26';}
+      else{b.classList.remove('active');b.style.background='transparent';b.style.color='#999';b.style.borderColor='#EFEFED';}
+    });
+    secs.forEach(function(s){
+      s.style.display=(cat==='ALL'||s.getAttribute('data-cat')===cat)?'':'none';
+    });
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){setFilter(this.getAttribute('data-filter'));});});
+  setFilter('ALL');
+});
+</script>
+
+<!-- Cookie Banner -->
+<script>
+(function(){
+  if(!localStorage.getItem("aimoms_cookies")){
+    var cb=document.createElement("div");cb.id="cookie-banner";
+    cb.innerHTML="<div style='position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#060d26;padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap'><p style='font-size:12px;color:rgba(255,255,255,0.5);margin:0'>We use cookies to improve your experience. <a href=privacy.html style=color:#ff63d8>Privacy Policy</a></p><button onclick=acceptCookies() style='background:#ff63d8;color:#fff;border:none;padding:8px 20px;border-radius:100px;font-size:11px;font-weight:600;cursor:pointer'>Accept All</button><button onclick=declineCookies() style='background:none;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.1);padding:8px 20px;border-radius:100px;font-size:11px;cursor:pointer'>Essential Only</button></div>";
+    document.body.appendChild(cb);
+  }
+  window.acceptCookies=function(){localStorage.setItem("aimoms_cookies","all");var b=document.

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Partnerships Intern — ai moms™</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #060d26;
+    --pink: #ff63d8;
+    --white: #ffffff;
+    --gray: #666666;
+    --light-gray: #AAAAAA;
+    --border: #EFEFED;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--white); color: var(--navy); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+  .top-bar { background: var(--navy); padding: 14px 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .top-bar-logo { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -0.04em; text-decoration: none; }
+  .top-bar-logo .ai { color: var(--pink); }
+  .top-bar-logo .moms { color: var(--white); }
+  .top-bar-logo .tm { font-size: 7px; vertical-align: super; opacity: 0.4; color: var(--white); }
+  .back-link { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+  .back-link:hover { color: var(--pink); }
+
+  .hero { background: var(--navy); padding: 80px 60px 96px; }
+  .hero-inner { max-width: 880px; margin: 0 auto; }
+  .hero-label { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 18px; }
+  .hero h1 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(2.4rem, 5.5vw, 4rem); color: var(--white); line-height: 1.05; margin-bottom: 28px; letter-spacing: -0.02em; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+  .pill { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); padding: 8px 16px; border-radius: 100px; }
+  .hero-desc { font-size: 1.15rem; color: rgba(255,255,255,0.78); line-height: 1.7; max-width: 640px; border-left: 3px solid var(--pink); padding-left: 24px; }
+
+  .content { max-width: 760px; margin: 0 auto; padding: 80px 40px; }
+  .section { margin-bottom: 72px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+  .section-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.9rem; color: var(--navy); margin-bottom: 24px; line-height: 1.15; letter-spacing: -0.01em; }
+  .body-text { font-size: 1rem; color: #333; line-height: 1.75; margin-bottom: 18px; }
+  .body-text strong { color: var(--navy); font-weight: 700; }
+
+  .item-list { list-style: none; margin-bottom: 18px; }
+  .item-list li { font-size: 1rem; color: #333; line-height: 1.7; padding: 14px 0 14px 28px; position: relative; border-bottom: 1px solid var(--border); }
+  .item-list li:last-child { border-bottom: none; }
+  .item-list li::before { content: ''; position: absolute; left: 0; top: 24px; width: 16px; height: 2px; background: var(--pink); }
+  .item-list li strong { color: var(--navy); font-weight: 700; }
+
+  .highlight-box { background: rgba(255,99,216,0.06); border-left: 3px solid var(--pink); padding: 28px 32px; margin: 36px 0; border-radius: 2px; }
+  .highlight-box p { font-size: 1.05rem; color: var(--navy); line-height: 1.65; font-style: italic; margin-bottom: 0; }
+  .highlight-box .attribution { display: block; font-style: normal; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); font-weight: 700; margin-top: 14px; }
+
+  .apply-block { background: var(--navy); padding: 56px 56px 60px; margin: 80px 0 0; border-radius: 2px; }
+  .apply-block .section-label { color: var(--pink); margin-bottom: 14px; }
+  .apply-block h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.9rem; color: var(--white); margin-bottom: 18px; line-height: 1.2; letter-spacing: -0.01em; }
+  .apply-block p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 12px; }
+  .apply-block .lead { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 28px; }
+  .apply-block ol { list-style: none; counter-reset: apply-counter; margin: 20px 0 28px; }
+  .apply-block ol li { counter-increment: apply-counter; font-size: 0.98rem; color: rgba(255,255,255,0.85); line-height: 1.65; padding: 10px 0 10px 40px; position: relative; }
+  .apply-block ol li::before { content: counter(apply-counter); position: absolute; left: 0; top: 8px; color: var(--pink); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 0.85rem; width: 26px; height: 26px; border: 1.5px solid var(--pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .apply-btn { display: inline-block; margin-top: 8px; background: var(--pink); color: var(--navy); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 36px; text-decoration: none; border-radius: 100px; transition: all 0.2s; }
+  .apply-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,99,216,0.3); }
+
+  .closing-line { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--navy); text-align: center; margin-top: 64px; font-style: italic; }
+
+  footer { padding: 32px 60px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
+  .footer-logo { font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: -0.04em; }
+  .footer-logo .ai { color: var(--pink); }
+  .footer-logo .moms { color: var(--navy); }
+  .footer-logo .tm { font-size: 8px; vertical-align: super; opacity: 0.4; color: var(--navy); }
+  footer p { font-size: 0.78rem; color: var(--gray); }
+
+  @media (max-width: 768px) {
+    .top-bar { padding: 12px 24px; }
+    .hero { padding: 56px 24px 72px; }
+    .content { padding: 56px 24px; }
+    .apply-block { padding: 40px 28px 44px; }
+    footer { flex-direction: column; gap: 8px; padding: 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="/" class="top-bar-logo"><span class="ai">ai.</span><span class="moms">moms</span><span class="tm">™</span></a>
+  <a href="careers.html" class="back-link">← Back to Careers</a>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Internship · For Course Credit</div>
+    <h1>Brand Partnerships Intern</h1>
+    <div class="hero-pills">
+      <span class="pill">Unpaid · For Course Credit</span>
+      <span class="pill">NY-Based or Remote</span>
+      <span class="pill">Part-Time Volunteer Hours</span>
+    </div>
+    <p class="hero-desc">For a thoughtful, relationship-minded student who wants hands-on learning in how brands actually find, evaluate, and grow meaningful partnerships — by deeply researching the landscape, identifying mutually-beneficial fits, and learning how aligned partnerships are built from the ground up.</p>
+  </div>
+</section>
+
+<div class="content">
+
+  <section class="section">
+    <div class="section-label">About the Opportunity</div>
+    <h2 class="section-title">What This Is</h2>
+    <p class="body-text">ai moms™ is on a mission to retire working mothers from Chief Everything Officer™ — teaching them to use AI to eliminate the invisible load of running a household and a career at the same time. We have a course, a community, and a movement that's just getting started.</p>
+    <p class="body-text">We're offering a hands-on learning experience for a thoughtful, relationship-minded student who wants real exposure to brand partnerships — observing and supporting how a growing brand identifies, evaluates, and approaches partners (corporate, community, affiliate, and beyond) under the direct mentorship of our founder and Head of Brand Partnerships.</p>
+    <p class="body-text">Much of the work is research and identification — studying brands and organizations across categories, evaluating fit, and contributing to a growing partnership pipeline alongside our founder and Head of Brand Partnerships.</p>
+
+    <div class="highlight-box">
+      <p>"This is a research-driven learning experience. You'll spend real time studying brand landscapes, identifying like-minded companies and communities, and learning how partnerships that genuinely benefit both sides actually come together."</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">This Experience Is For You If</h2>
+    <ul class="item-list">
+      <li>You're a natural researcher who can spend hours going down rabbit holes about brands, companies, and the people behind them</li>
+      <li>You think in terms of mutual benefit — what makes a partnership actually work for both sides</li>
+      <li>You're observant and pattern-oriented — you notice which brands fit together before others do</li>
+      <li>You're organized and process-oriented — you don't let things slip through the cracks</li>
+      <li>You write warmly and professionally, and welcome feedback on your drafts</li>
+      <li>You're comfortable in spreadsheets and learning new tools (CRMs, research platforms)</li>
+      <li>You've studied business, marketing, communications — or are pursuing a related degree and eager to learn</li>
+      <li>You get what it means to be a working mom trying to do it all — even if you're not one yet</li>
+      <li>You come with curiosity, energy, and a willingness to learn</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-label">The Experience</div>
+    <h2 class="section-title">What You'll Learn</h2>
+    <ul class="item-list">
+      <li>How a founder-led brand approaches partnerships across multiple categories</li>
+      <li>Brand research and landscape analysis — the foundational work behind every meaningful partnership</li>
+      <li>Corporate partnership identification — how companies are evaluated as potential workshop or program partners</li>
+      <li>Community partnership identification — how aligned mom groups, schools, and adjacent organizations are surfaced</li>
+      <li>Affiliate and ambassador identification — how brands find aligned voices for authentic referral relationships</li>
+      <li>How partnership pipelines are organized, tracked, and nurtured over time</li>
+      <li>How research and identification work flows into real partnership conversations</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">What You'll Get</h2>
+    <ul class="item-list">
+      <li><strong>Hands-on learning experience</strong> with a real, growing brand</li>
+      <li><strong>A portfolio piece</strong> that actually means something</li>
+      <li><strong>A founder</strong> who will be your loudest reference</li>
+      <li><strong>Academic credit</strong> (we'll work with your school)</li>
+      <li><strong>A front-row seat</strong> to building an AI company from the ground up</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">About ai moms™</h2>
+    <p class="body-text">Founded by Raquel Cadourcy — a mom of two with 20+ years of marketing leadership, from LVMH to CMO of luxury and lifestyle brands. AI systems architect and organizational neuroscience specialist. Built ai.moms™ because she needed it first.</p>
+  </section>
+
+  <section class="apply-block">
+    <div class="section-label">Apply</div>
+    <h2>How to Apply</h2>
+    <p class="lead">We keep the process simple. If this feels like yours, show us.</p>
+    <p>Send us an email at <strong>hello@aimoms.ai</strong> and include the following:</p>
+    <ol>
+      <li>A brand partnership you've observed (across any industry) that you thought was particularly smart — and why it worked for both sides</li>
+      <li>Your initial thinking on what kinds of partners would be a strong fit for ai moms™ over the next 30 days — early ideas across corporate, community, or affiliate</li>
+      <li>Three specific companies, communities, or organizations you'd want to explore as potential ai moms™ partners — and why each one would be a fit</li>
+      <li>Why this feels like your internship</li>
+    </ol>
+    <a href="mailto:hello@aimoms.ai?subject=Brand Partnerships Intern — Application" class="apply-btn">Apply Now</a>
+  </section>
+
+  <p class="closing-line">We move fast here. So should you.</p>
+
+</div>
+
+<footer>
+  <div class="footer-logo"><span class="ai">ai.</span><span class="moms">moms</span><span class="tm">™</span></div>
+  <p>Retire from Chief Everything Officer™ · ai.moms · hello@aimoms.ai</p>
+</footer>
+
+</body>
+</html>

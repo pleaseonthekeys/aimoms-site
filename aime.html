@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="UTF-8">
+<meta property="og:title" content="Meet Aime — ai moms™">
+<meta property="og:description" content="Onboard your personal AI Chief Everything Officer™. A guided conversation that builds your family's complete knowledge base.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimoms.ai/aime">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meet Aime — ai moms™">
+<meta name="twitter:description" content="Onboard your personal AI Chief Everything Officer™. A guided conversation that builds your family's complete knowledge base.">
+<meta name="twitter:image" content="https://aimoms.ai/og-image.png">
+<link rel="canonical" href="https://aimoms.ai/aime">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Aime — Your AI Chief Everything Officer™ | ai moms™</title>
+<meta name="description" content="Onboard your personal AI Chief Everything Officer™. A 60-minute guided conversation that builds your family's complete knowledge base so your AI can support you like no one else can.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#060d26;--pink:#ff63d8;--cream:#FAF9F7;--warm-gray:#F3F1EE;--text-secondary:#8A8A87;--border:#E8E6E3}
+body{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#060d26;background:#060d26;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+#mobilemenu a,nav a,nav button{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 24px 100px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:800px;height:800px;background:radial-gradient(circle,rgba(255,99,216,0.07) 0%,rgba(255,99,216,0.02) 40%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-55%);pointer-events:none}
+.hero::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(168,130,255,0.04) 0%,transparent 60%);bottom:-10%;right:-5%;pointer-events:none}
+
+.aime-av{width:68px;height:68px;border-radius:50%;background:linear-gradient(145deg,#ff63d8 0%,#c44aff 50%,#7b61ff 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;position:relative;animation:avIn .8s ease}
+.aime-av::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:linear-gradient(145deg,rgba(255,99,216,0.25),rgba(123,97,255,0.25));z-index:-1;filter:blur(10px)}
+.aime-av span{font-family:'Outfit',sans-serif;font-weight:800;font-size:26px;color:#fff}
+@keyframes avIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+.hero-ey{font-family:'Be Vietnam Pro',sans-serif;font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);margin-top:8px;margin-bottom:28px;animation:fu .6s ease .2s both}
+.hero h1{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(2.8em,6vw,4.4em);line-height:1.02;color:#fff;margin-bottom:4px;letter-spacing:-.04em;animation:fu .6s ease .3s both}
+.hero h1 em{font-style:normal;font-weight:800;background:linear-gradient(135deg,#ff63d8,#c44aff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-p{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.85);max-width:560px;margin:0 auto 44px;font-weight:300;animation:fu .6s ease .4s both}
+
+/* AI+ME BLOCK */
+.aime-meaning{max-width:560px;margin:0 auto 40px;padding:24px 28px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);text-align:center;animation:fu .6s ease .45s both}
+.aime-eq{display:block;font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.01em}
+.aime-eq em{font-style:normal;background:linear-gradient(135deg,#ff63d8,#c44aff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.aime-meaning p{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.7)}
+
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;animation:fu .6s ease .5s both}
+.pill{display:flex;align-items:center;gap:7px;padding:10px 18px;border-radius:100px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);font-size:12px;color:rgba(255,255,255,0.5);backdrop-filter:blur(4px)}
+.pill .d{width:5px;height:5px;border-radius:50%;background:var(--pink);flex-shrink:0}
+
+/* HOW IT WORKS */
+.how-it-works{display:flex;flex-direction:column;gap:16px;max-width:560px;margin:0 auto 44px;text-align:left;animation:fu .6s ease .52s both}
+.step{display:flex;align-items:flex-start;gap:16px}
+.step-num{width:28px;height:28px;border-radius:50%;background:rgba(255,99,216,0.15);border:1px solid rgba(255,99,216,0.3);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:12px;color:var(--pink);flex-shrink:0;margin-top:2px}
+.step-text{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.7)}
+.step-text strong{color:#fff;font-weight:600}
+
+.cta{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--navy);padding:18px 48px;border-radius:100px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;letter-spacing:.01em;border:none;cursor:pointer;transition:all .3s;animation:fu .6s ease .6s both;position:relative}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(255,99,216,0.2)}
+.hero-legal{margin-top:24px;font-size:11px;color:rgba(255,255,255,0.18);animation:fu .6s ease .7s both}
+.hero-legal a{color:rgba(255,255,255,0.3);text-decoration-color:rgba(255,255,255,0.1)}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== CHAT VIEW ===== */
+.cv{display:none;background:var(--cream);min-height:100vh;padding-top:88px}
+.cv.on{display:block}
+
+/* CHAT TOP BAR */
+.ct{position:fixed;top:56px;left:0;right:0;z-index:50;background:rgba(250,249,247,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 24px}
+.cti{max-width:640px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.cw{display:flex;align-items:center;gap:10px}
+.cw .a{width:30px;height:30px;border-radius:50%;background:linear-gradient(145deg,#ff63d8,#c44aff);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:800;font-size:12px;color:#fff;flex-shrink:0}
+.cw .n{font-size:13px;font-weight:600;font-family:'Outfit',sans-serif}
+.cw .s{font-size:11px;color:var(--text-secondary);font-weight:400}
+.pw{display:flex;align-items:center;gap:10px}
+.pt{font-size:10px;color:var(--text-secondary);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.pb{width:80px;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,var(--pink),#c44aff);border-radius:2px;transition:width .6s ease;width:0%}
+
+/* VOICE TOGGLE */
+.voice-toggle{background:none;border:1.5px solid var(--border);border-radius:100px;padding:5px 10px;display:flex;align-items:center;gap:5px;cursor:pointer;color:var(--text-secondary);transition:all .2s;margin-right:8px}
+.voice-toggle:hover{border-color:var(--pink);color:var(--pink)}
+.voice-toggle.on{border-color:var(--pink);color:var(--pink);background:rgba(255,99,216,0.06)}
+.voice-toggle svg{width:14px;height:14px}
+
+/* MESSAGES */
+.ma{max-width:640px;margin:0 auto;padding:80px 20px 160px}
+.msg{margin-bottom:24px;display:flex;gap:10px;animation:ms .3s ease}
+@keyframes ms{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.msg.ai{align-items:flex-start}
+.msg.ai .av2{width:26px;height:26px;border-radius:50%;flex-shrink:0;margin-top:2px;background:linear-gradient(145deg,#ff63d8,#c44aff);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:800;font-size:9px;color:#fff}
+.msg.u{justify-content:flex-end}
+.bb{max-width:80%;padding:16px 20px;font-size:14px;line-height:1.75}
+.msg.ai .bb{background:#fff;border-radius:2px 18px 18px 18px;box-shadow:0 1px 3px rgba(0,0,0,0.03);color:var(--navy)}
+.msg.u .bb{background:var(--navy);color:#fff;border-radius:18px 2px 18px 18px}
+
+/* TYPING */
+.td{display:flex;gap:5px;padding:4px 0;align-items:center;height:18px}
+.td span{width:5px;height:5px;border-radius:50%;background:var(--pink);opacity:.3;animation:dt 1.4s infinite ease-in-out}
+.td span:nth-child(2){animation-delay:.16s}
+.td span:nth-child(3){animation-delay:.32s}
+@keyframes dt{0%,80%,100%{opacity:.3;transform:scale(1)}40%{opacity:.9;transform:scale(1.3)}}
+
+/* INPUT DOCK */
+.id{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(250,249,247,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:14px 20px 24px;display:none}
+.id.on{display:block}
+.idi{max-width:640px;margin:0 auto;display:flex;gap:8px;align-items:flex-end}
+.idi textarea{flex:1;padding:13px 18px;border:1.5px solid var(--border);border-radius:24px;font-size:14px;font-family:'Be Vietnam Pro',sans-serif;resize:none;outline:none;min-height:46px;max-height:120px;line-height:1.5;background:#fff;transition:border-color .2s}
+.idi textarea:focus{border-color:var(--pink)}
+.idi textarea::placeholder{color:#C0BFBC}
+.db{width:44px;height:44px;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .2s}
+.mic{background:#fff;border:1.5px solid var(--border);color:var(--navy)}
+.mic:hover{border-color:var(--pink);color:var(--pink)}
+.mic.on{background:var(--pink);border-color:var(--pink);color:#fff;animation:pu 1.6s infinite}
+@keyframes pu{0%,100%{box-shadow:0 0 0 0 rgba(255,99,216,.25)}50%{box-shadow:0 0 0 10px rgba(255,99,216,0)}}
+.snd{background:var(--navy);color:#fff}
+.snd:hover{background:#1a2340}
+.snd:disabled{opacity:.3;cursor:not-allowed}
+.db svg{width:17px;height:17px}
+.mic-hint{text-align:center;font-size:11px;color:var(--text-secondary);margin-top:8px;max-width:640px;margin-left:auto;margin-right:auto}
+.mic-hint.on{color:var(--pink);font-weight:600}
+
+/* REPORT CARD */
+.rc{display:none;max-width:640px;margin:0 auto 60px;padding:0 20px}
+.rc.on{display:block}
+.rci{border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05)}
+.rch{background:linear-gradient(135deg,var(--navy),#1a2340);padding:28px 24px;color:#fff}
+.rch h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15em;margin-bottom:4px}
+.rch p{font-size:12px;color:rgba(255,255,255,0.45)}
+.ecb{padding:24px}
+.ecb>p{font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6}
+.cr{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.cr input{flex:1;min-width:140px;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-family:'Be Vietnam Pro',sans-serif;outline:none;background:var(--cream);transition:border-color .2s}
+.cr input:focus{border-color:var(--pink)}
+.svb{width:100%;padding:14px;border-radius:100px;border:none;background:var(--navy);color:#fff;font-size:14px;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .2s}
+.svb:hover{background:#1a2340;transform:translateY(-1px)}
+.sbn{display:none;padding:20px 24px;background:#f0fdf4;text-align:center}
+.sbn p{font-size:14px;font-weight:600;color:#166534}
+.sbn .sub{font-size:12px;color:#4ade80;font-weight:400;margin-top:4px}
+.rbd{display:none;padding:24px;max-height:400px;overflow-y:auto;font-size:14px;line-height:1.8;white-space:pre-wrap;border-top:1px solid var(--border)}
+.ra{display:none;padding:16px 24px 24px;gap:8px;flex-wrap:wrap}
+.ra.on{display:flex}
+.rb{flex:1;min-width:140px;padding:12px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;border:none;transition:all .2s}
+.rb.pk{background:var(--pink);color:#fff}
+.rb.gh{background:var(--warm-gray);color:var(--navy)}
+.rb:hover{opacity:.9;transform:translateY(-1px)}
+
+/* VOICE MODAL */
+.voice-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(6,13,38,0.6);backdrop-filter:blur(6px);align-items:flex-end;justify-content:center}
+.voice-modal.open{display:flex}
+.voice-modal-inner{background:#fff;border-radius:24px 24px 0 0;padding:32px 24px 40px;width:100%;max-width:480px;position:relative}
+.voice-modal-head{margin-bottom:24px}
+.voice-modal-head h3{font-family:'Outfit',sans-serif;font-size:1.2em;font-weight:700;margin-bottom:4px;color:var(--navy)}
+.voice-modal-head p{font-size:13px;color:var(--text-secondary)}
+.voice-close{position:absolute;top:20px;right:20px;background:var(--warm-gray);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;color:var(--navy);display:flex;align-items:center;justify-content:center}
+.voice-list{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;max-height:320px;overflow-y:auto}
+.voice-option{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:14px;border:1.5px solid var(--border);cursor:pointer;transition:all .2s;background:#fff}
+.voice-option:hover{border-color:var(--pink)}
+.voice-option.selected{border-color:var(--pink);background:rgba(255,99,216,0.04)}
+.voice-option-info{display:flex;flex-direction:column;gap:2px}
+.voice-option-name{font-size:14px;font-weight:600;color:var(--navy);font-family:'Outfit',sans-serif}
+.voice-option-lang{font-size:11px;color:var(--text-secondary)}
+.voice-preview{background:var(--warm-gray);border:none;border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;color:var(--navy);font-family:'Be Vietnam Pro',sans-serif;transition:all .2s}
+.voice-preview:hover{background:var(--pink);color:#fff}
+.voice-confirm{width:100%;padding:16px;border-radius:100px;background:var(--navy);color:#fff;border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s}
+.voice-confirm:hover{background:#1a2340}
+
+@media(max-width:600px){
+  .hero{padding:90px 20px 50px}
+  .hero h1{font-size:clamp(2.2em,9vw,3em)}
+  .pills{flex-direction:column;align-items:center}
+  .bb{max-width:88%}
+  .cr{flex-direction:column}
+  .cr input{width:100%}
+}
+@media(max-width:768px){
+  footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr 1fr !important;gap:20px !important}
+}
+@media(max-width:480px){
+  footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr !important}
+}
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif !important}
+.tnl{transition:color 0.2s;text-transform:uppercase !important}
+.tnl:hover{color:#ff63d8 !important}
+@media(max-width:900px){.tnl{display:none !important}}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1206405304980852');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1206405304980852&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:none;padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8">ai.</span><span style="color:#060d26">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.4;color:#060d26">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(6,13,38,0.35);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer&#8482;.</div>
+</a>
+<div style="display:flex;align-items:center;gap:4px">
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px">
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="index.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">ON-DEMAND</a>
+<a href="aime.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEET AIME</a>
+<a href="quiz.html" onclick="if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Click'})" target="_blank" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">TAKE THE QUIZ</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EXPERIENCES</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="science.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE SCIENCE</a>
+<a href="about.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">ABOUT</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="aime-av"><span>A</span></div>
+  <h1>Meet <em>Aime</em></h1>
+  <div class="hero-ey">YOUR AI CHIEF EVERYTHING OFFICER&#8482;</div>
+  <p class="hero-p">You've been the Chief Everything Officer&#8482; of your family for too long. It&#8217;s time to onboard your clone &#8212; and finally retire from the role.</p>
+
+  <div class="aime-meaning">
+    <span class="aime-eq"><em>Aime</em> = AI + Me</span>
+    <p>She&#8217;s not a generic AI. She&#8217;s a clone of you &#8212; built from your values, your family, your way of doing things. She thinks like you. She operates like you. She just never burns out.</p>
+  </div>
+
+  <div class="pills">
+    <div class="pill"><span class="d"></span>20 guided sections</div>
+    <div class="pill"><span class="d"></span>Voice or text</div>
+    <div class="pill"><span class="d"></span>~60 minutes</div>
+  </div>
+
+  <div class="how-it-works">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Onboard your new Chief Everything Officer&#8482;</strong><br>Aime interviews you across 20 sections &#8212; your family, values, kids, schedule, mental load, and dreams. She learns everything so she can think like you, act like you, and show up for your family the way only you would.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>She becomes your clone</strong><br>Everything you share becomes part of who Aime is. Your values. Your rules. Your way of running the house. She doesn&#8217;t just learn about your family &#8212; she learns to think like you.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Just start talking to her</strong><br>Meal plans, difficult emails, scheduling chaos, 11pm anxiety spirals &#8212; Aime handles all of it. And unlike a generic AI, she already knows your family. She doesn&#8217;t need context. She doesn&#8217;t need explaining. She just knows. Because she&#8217;s you.</div>
+    </div>
+  </div>
+
+  <span class="cta" style="opacity:0.5;cursor:default">Coming Soon</span>
+  <div class="hero-legal">By starting you agree to our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</div>
+</section>
+
+<!-- CHAT VIEW -->
+<div class="cv" id="chatView">
+
+  <!-- Hidden Netlify form -->
+  <form name="aime-onboarding" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:none" id="aimeForm">
+    <input type="hidden" name="form-name" value="aime-onboarding">
+    <input type="hidden" name="bot-field">
+    <input type="hidden" name="email" id="formEmail">
+    <input type="hidden" name="first-name" id="formName">
+    <textarea name="report" id="formReport"></textarea>
+    <textarea name="conversation" id="formConversation"></textarea>
+  </form>
+
+  <!-- TOP BAR -->
+  <div class="ct"><div class="cti">
+    <div class="cw">
+      <div class="a">A</div>
+      <div>
+        <div class="n">Aime</div>
+        <div class="s" id="chatStatus">Chief Everything Officer&#8482;</div>
+      </div>
+    </div>
+    <div class="pw">
+      <button class="voice-toggle" id="voiceToggle" onclick="toggleVoice()" title="Choose Aime&#8217;s voice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+      </button>
+      <div class="pt" id="progressLabel">0 / 20</div>
+      <div class="pb"><div class="pf" id="progressFill"></div></div>
+    </div>
+  </div></div>
+
+  <!-- MESSAGES -->
+  <div class="ma" id="messages"></div>
+
+  <!-- REPORT CARD -->
+  <div class="rc" id="reportCard"><div class="rci">
+    <div class="rch">
+      <h3>Your Family Knowledge Base &#10022;</h3>
+      <p>Your Aime is ready. Save your report to get started.</p>
+    </div>
+    <div class="ecb" id="emailCapture">
+      <p>Enter your details and we&#8217;ll save your report and send you a copy.</p>
+      <div class="cr">
+        <input type="text" id="captureFirstName" placeholder="First name">
+        <input type="email" id="captureEmail" placeholder="Email address">
+      </div>
+      <button class="svb" onclick="saveReport()">Save My Report &#8594;</button>
+    </div>
+    <div class="sbn" id="savedBanner"><p>&#10003; Report Saved</p><div class="sub">We&#8217;ve got it. You can also download a copy below.</div></div>
+    <div class="rbd" id="reportContent"></div>
+    <div class="ra" id="reportActions">
+      <button class="rb pk" onclick="downloadReport()">Download Text File</button>
+      <button class="rb gh" onclick="copyReport()">Copy to Clipboard</button>
+    </div>
+  </div></div>
+
+</div>
+
+<!-- INPUT DOCK -->
+<div class="id" id="inputDock"><div class="idi">
+  <textarea id="userInput" rows="1" placeholder="Type your answer..." oninput="autoGrow(this)" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+  <button class="db mic" id="micBtn" onclick="toggleMic()" title="Tap to speak">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+  </button>
+  <button class="db snd" id="sendBtn" onclick="sendMessage()" title="Send">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+  </button>
+</div>
+<div class="mic-hint" id="micHint">&#127908; Tap the microphone to speak your answer instead of typing</div>
+</div>
+
+<!-- VOICE PICKER MODAL -->
+<div class="voice-modal" id="voiceModal">
+  <div class="voice-modal-inner">
+    <div class="voice-modal-head">
+      <h3>Choose Aime&#8217;s Voice</h3>
+      <p>Pick the voice that feels most like yours</p>
+      <button class="voice-close" onclick="closeVoicePicker()">&#10005;</button>
+    </div>
+    <div class="voice-list" id="voiceList"></div>
+    <button class="voice-confirm" onclick="closeVoicePicker()">Done</button>
+  </div>
+</div>
+
+<script>
+let conversationHistory=[],isProcessing=false,currentSection=0,recognition=null,isRecording=false,fullReport='';
+let voiceEnabled=false,selectedVoice=null,availableVoices=[],isSpeaking=false;
+
+// ===== VOICE SYSTEM =====
+function loadVoices(){
+  availableVoices=window.speechSynthesis.getVoices().filter(v=>v.lang.startsWith('en'));
+  if(availableVoices.length===0){setTimeout(loadVoices,200);return;}
+  selectedVoice=availableVoices.find(v=>v.name.toLowerCase().includes('samantha')||v.name.toLowerCase().includes('victoria')||v.name.toLowerCase().includes('karen')||v.name.toLowerCase().includes('moira')||v.name.toLowerCase().includes('tessa')||v.name.toLowerCase().includes('female'))||availableVoices[0];
+  renderVoiceList();
+}
+function renderVoiceList(){
+  const list=document.getElementById('voiceList');
+  if(!list)return;
+  list.innerHTML='';
+  availableVoices.forEach((voice,i)=>{
+    const div=document.createElement('div');
+    div.className='voice-option'+(voice===selectedVoice?' selected':'');
+    div.innerHTML=`<div class="voice-option-info"><div class="voice-option-name">${voice.name}</div><div class="voice-option-lang">${voice.lang}</div></div><button class="voice-preview" onclick="previewVoice(event,${i})">Preview</button>`;
+    div.onclick=(e)=>{
+      if(e.target.classList.contains('voice-preview'))return;
+      selectedVoice=availableVoices[i];
+      document.querySelectorAll('.voice-option').forEach(el=>el.classList.remove('selected'));
+      div.classList.add('selected');
+    };
+    list.appendChild(div);
+  });
+}
+function previewVoice(e,index){
+  e.stopPropagation();
+  window.speechSynthesis.cancel();
+  const utt=new SpeechSynthesisUtterance("Hi, I'm Aime, your Chief Everything Officer. I'm here to clone you.");
+  utt.voice=availableVoices[index];utt.rate=0.95;utt.pitch=1.05;
+  window.speechSynthesis.speak(utt);
+}
+function toggleVoice(){
+  if(availableVoices.length===0)loadVoices();
+  document.getElementById('voiceModal').classList.add('open');
+  if(!voiceEnabled){voiceEnabled=true;document.getElementById('voiceToggle').classList.add('on');}
+}
+function closeVoicePicker(){document.getElementById('voiceModal').classList.remove('open');}
+function speakText(text){
+  if(!voiceEnabled||!selectedVoice)return;
+  window.speechSynthesis.cancel();
+  const clean=text.replace(/\*\*(.*?)\*\*/g,'$1').replace(/\*(.*?)\*/g,'$1').replace(/\n/g,' ');
+  const utt=new SpeechSynthesisUtterance(clean);
+  utt.voice=selectedVoice;utt.rate=0.95;utt.pitch=1.05;
+  utt.onstart=()=>{isSpeaking=true;document.getElementById('chatStatus').textContent='speaking...';};
+  utt.onend=()=>{isSpeaking=false;document.getElementById('chatStatus').textContent='Chief Everything Officer\u2122';};
+  window.speechSynthesis.speak(utt);
+}
+window.speechSynthesis.onvoiceschanged=loadVoices;
+loadVoices();
+
+// ===== CHAT SYSTEM =====
+function startOnboarding(){
+  document.getElementById('hero').style.display='none';
+  document.getElementById('chatView').classList.add('on');
+  document.getElementById('inputDock').classList.add('on');
+  document.querySelector('footer').style.display='none';
+  document.body.style.background='var(--cream)';
+  window.scrollTo(0,0);
+  if(window.fbq)fbq('track','InitiateCheckout',{content_name:'Aime Onboarding Start'});
+  sendToAPI([{role:'user',content:"Hi Aime! I'm ready to start my onboarding. Please introduce yourself and let's begin."}],true);
+}
+
+function addMessage(text,isUser){
+  const msgs=document.getElementById('messages');
+  const div=document.createElement('div');
+  div.className='msg '+(isUser?'u':'ai');
+  if(!isUser)div.innerHTML='<div class="av2">A</div>';
+  const b=document.createElement('div');b.className='bb';
+  b.innerHTML=text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/\n/g,'<br>');
+  div.appendChild(b);msgs.appendChild(div);
+  setTimeout(()=>div.scrollIntoView({behavior:'smooth',block:'end'}),80);
+  if(!isUser)speakText(text);
+}
+
+function showTyping(){
+  const msgs=document.getElementById('messages');
+  const div=document.createElement('div');div.className='msg ai';div.id='typingInd';
+  div.innerHTML='<div class="av2">A</div><div class="bb"><div class="td"><span></span><span></span><span></span></div></div>';
+  msgs.appendChild(div);div.scrollIntoView({behavior:'smooth',block:'end'});
+  document.getElementById('chatStatus').textContent='typing...';
+}
+function hideTyping(){
+  const el=document.getElementById('typingInd');if(el)el.remove();
+  document.getElementById('chatStatus').textContent='Chief Everything Officer\u2122';
+}
+
+function updateProgress(){
+  const mc=conversationHistory.length;currentSection=Math.min(20,Math.floor(mc/2));
+  document.getElementById('progressFill').style.width=(currentSection/20*100)+'%';
+  document.getElementById('progressLabel').textContent=currentSection+' / 20';
+}
+
+async function sendToAPI(messages,isInitial){
+  if(isProcessing)return;isProcessing=true;
+  if(!isInitial)addMessage(messages[messages.length-1].content,true);
+  showTyping();document.getElementById('sendBtn').disabled=true;
+  try{
+    const r=await fetch('/.netlify/functions/aime-chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages})});
+    const data=await r.json();hideTyping();
+    if(data.content&&data.content[0]){
+      const reply=data.content[0].text;
+      conversationHistory=messages.concat([{role:'assistant',content:reply}]);
+      addMessage(reply,false);updateProgress();
+      if(reply.includes('FAMILY SNAPSHOT')||(reply.includes('Thank you for trusting me')&&currentSection>=18)){
+        fullReport=reply;
+        document.getElementById('reportContent').textContent=reply;
+        document.getElementById('reportContent').style.display='block';
+        document.getElementById('reportCard').classList.add('on');
+        if(window.fbq)fbq('track','Lead',{content_name:'Aime Onboarding Complete'});
+      }
+    }
+  }catch(err){
+    hideTyping();
+    addMessage("I had a brief connection issue. Could you try sending that again?",false);
+  }
+  isProcessing=false;document.getElementById('sendBtn').disabled=false;
+}
+
+function sendMessage(){
+  const input=document.getElementById('userInput');const text=input.value.trim();
+  if(!text||isProcessing)return;input.value='';input.style.height='auto';
+  sendToAPI(conversationHistory.concat([{role:'user',content:text}]),false);
+}
+function autoGrow(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px';}
+
+// ===== MIC =====
+function toggleMic(){
+  const btn=document.getElementById('micBtn');
+  const hint=document.getElementById('micHint');
+  if(!('webkitSpeechRecognition' in window)&&!('SpeechRecognition' in window)){
+    hint.textContent='⚠️ Voice input works best in Chrome or Safari';
+    hint.classList.add('on');return;
+  }
+  if(isRecording){recognition.stop();return;}
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  recognition=new SR();recognition.continuous=true;recognition.interimResults=true;recognition.lang='en-US';
+  const input=document.getElementById('userInput');let final=input.value;
+  recognition.onstart=()=>{isRecording=true;btn.classList.add('on');input.placeholder='Listening... speak now';hint.textContent='🔴 Recording — tap mic again to stop';hint.classList.add('on');};
+  recognition.onresult=(e)=>{let interim='';for(let i=e.resultIndex;i<e.results.length;i++){if(e.results[i].isFinal)final+=e.results[i][0].transcript+' ';else interim+=e.results[i][0].transcript;}input.value=final+interim;autoGrow(input);};
+  recognition.onend=()=>{isRecording=false;btn.classList.remove('on');input.placeholder='Type your answer...';input.value=final.trim();hint.textContent='🎤 Tap the microphone to speak your answer instead of typing';hint.classList.remove('on');};
+  recognition.onerror=()=>{isRecording=false;btn.classList.remove('on');input.placeholder='Type your answer...';hint.classList.remove('on');};
+  recognition.start();
+}
+
+// ===== SAVE REPORT =====
+function saveReport(){
+  const email=document.getElementById('captureEmail').value.trim();
+  const fn=document.getElementById('captureFirstName').value.trim();
+  if(!email||!email.includes('@')){document.getElementById('captureEmail').style.borderColor='#f87171';return;}
+  if(!fn){document.getElementById('captureFirstName').style.borderColor='#f87171';return;}
+  document.getElementById('formEmail').value=email;
+  document.getElementById('formName').value=fn;
+  document.getElementById('formReport').value=fullReport;
+  const convo=conversationHistory.map(m=>m.role.toUpperCase()+': '+m.content.substring(0,500)).join('\n\n---\n\n');
+  document.getElementById('formConversation').value=convo;
+  const fd=new FormData(document.getElementById('aimeForm'));
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()})
+  .then(()=>{
+    document.getElementById('emailCapture').style.display='none';
+    document.getElementById('savedBanner').style.display='block';
+    document.getElementById('reportActions').classList.add('on');
+    if(window.fbq)fbq('track','CompleteRegistration',{content_name:'Aime Onboarding'});
+  })
+  .catch(()=>{
+    document.getElementById('emailCapture').style.display='none';
+    document.getElementById('savedBanner').innerHTML='<p style="color:#f87171">Connection issue — please download your report below.</p>';
+    document.getElementById('savedBanner').style.display='block';
+    document.getElementById('savedBanner').style.background='#fef2f2';
+    document.getElementById('reportActions').classList.add('on');
+  });
+}
+function downloadReport(){const b=new Blob([fullReport||document.getElementById('reportContent').textContent],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='aime-family-knowledge-base.txt';a.click();}
+function copyReport(){navigator.clipboard.writeText(fullReport||document.getElementById('reportContent').textContent).then(()=>{const btn=event.target;btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy to Clipboard',2000);});}
+</script>
+
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div><div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div><p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',sans-serif">Retire from<br>Chief Everything Officer&#8482;.</p></div>
+<div><div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div><a href="index.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">ai moms&#8482; 101 On-Demand</a><a href="aime.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Meet Aime</a><a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The AI Toolkit</a><a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">AI+Me Hour</a><a href="experiences.html#outofoffice" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Out of Office Weekends&#8482;</a><a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">For Companies</a></div>
+<div><div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div><a href="about.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">About ai moms&#8482;</a><a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Community</a><a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Science</a><a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Careers</a></div>
+<div><div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div><a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Prompt Packs</a><a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Merch &amp; Gifts</a></div>
+<div><div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div><a href="/cdn-cgi/l/email-protection#bcd4d9d0d0d3fcddd5d1d3d1cf92ddd5" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif"><span class="__cf_email__" data-cfemail="f59d9099999ab5949c989a9886db949c">[email&#160;protected]</span></a><a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Partnerships, Press &amp; Media</a></div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+<p style="font-size:11px;color:rgba(255,255,255,0.25);font-family:'Be Vietnam Pro',sans-serif">&copy; 2026 ai moms&#8482;. All rights reserved. Aime and Chief Everything Officer&#8482; are trademarks of ai moms&#8482;.</p>
+<div style="display:flex;gap:16px"><a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,0.25);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Privacy Policy</a><a href="terms.html" style="font-size:11px;color:rgba(255,255,25

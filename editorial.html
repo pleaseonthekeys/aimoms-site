@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="UTF-8">
+<meta property="og:title" content="The Edit — ai moms™">
+<meta property="og:description" content="AI-powered insights, guides, and stories for mothers navigating the invisible load of modern motherhood.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimoms.ai/editorial">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Edit — ai moms™">
+<meta name="twitter:description" content="AI-powered insights, guides, and stories for mothers navigating the invisible load of modern motherhood.">
+<meta name="twitter:image" content="https://aimoms.ai/og-image.png">
+<meta name="description" content="The Edit by ai moms™. AI-powered insights, guides, and stories for mothers navigating the invisible load of modern motherhood.">
+<link rel="canonical" href="https://aimoms.ai/editorial">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Edit — ai moms™</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#060d26;
+  --pink:#ff63d8;
+  --ivory:#faf8f5;
+  --mid:#6b7280;
+  --line:#EFEFED;
+}
+body{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--navy);background:#fff;-webkit-font-smoothing:antialiased}
+
+.tnl{transition:color 0.2s;text-transform:uppercase!important}
+.tnl:hover{color:var(--pink)!important}
+@media(max-width:900px){.tnl{display:none!important}}
+
+.slide{
+  position:absolute;top:0;left:0;width:100%;
+  opacity:0;transition:opacity 0.7s ease;pointer-events:none;
+}
+.slide.active{opacity:1;pointer-events:auto;position:relative;}
+@media(max-width:768px){
+  .slide>div{flex-direction:column!important}
+  .slide>div>div:last-child{flex:0 0 180px!important}
+}
+@media(max-width:600px){
+  .slide>div{min-height:360px!important}
+}
+
+/* CATEGORY BAR */
+.cat-bar{position:sticky;top:56px;z-index:50;background:#fff;border-bottom:1px solid var(--line);padding:14px 0;display:flex;gap:8px;flex-wrap:wrap;overflow-x:auto}
+.cat-btn{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;padding:8px 16px;border:1.5px solid;border-radius:100px;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.cat-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cat-btn:not(.active){background:transparent;color:#999;border-color:var(--line)}
+.cat-btn:not(.active):hover{border-color:var(--navy);color:var(--navy)}
+
+/* STORY ROW */
+.story-row{cursor:pointer;transition:background 0.15s;display:flex;gap:0;border-bottom:1px solid var(--line)}
+.story-row:hover{background:#fafafa}
+.story-thumb{flex:0 0 240px;min-height:180px;max-height:180px;overflow:hidden;position:relative}
+.story-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 0.4s ease}
+.story-row:hover .story-thumb img{transform:scale(1.04)}
+.story-body{flex:1;padding:28px 32px;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:768px){
+  .story-row{flex-direction:column!important}
+  .story-thumb{flex:0 0 160px!important;min-height:160px!important;max-height:160px!important}
+}
+
+/* BADGES */
+.video-badge{display:inline-flex;align-items:center;gap:5px;background:var(--navy);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px 4px 8px;border-radius:100px;margin-top:10px;width:fit-content}
+.video-badge::before{content:'▶';font-size:8px}
+.tool-badge{display:inline-flex;align-items:center;gap:5px;background:transparent;color:var(--pink);border:1.5px solid var(--pink);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-top:10px;width:fit-content}
+.seasonal-badge{display:inline-flex;align-items:center;gap:4px;background:transparent;color:#b07d2e;border:1.5px solid #b07d2e;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-top:10px;width:fit-content}
+
+/* CTA STRIP */
+.cta-strip{background:var(--ivory);border-radius:12px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:8px 0}
+.cta-strip h4{font-family:'Cormorant Garamond',serif;font-size:1.4em;font-weight:600;color:var(--navy);line-height:1.25}
+.cta-strip p{font-size:0.82em;color:var(--mid);margin-top:4px}
+
+/* BTN */
+.btn-pink{display:inline-block;background:var(--pink);color:#fff;padding:10px 24px;border-radius:100px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Be Vietnam Pro',sans-serif;white-space:nowrap}
+.btn-ghost{display:inline-block;border:1.5px solid var(--navy);color:var(--navy);padding:9px 22px;border-radius:100px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Be Vietnam Pro',sans-serif;white-space:nowrap;transition:all 0.2s}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+
+/* CAT LABEL */
+.cat-label{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink);margin-bottom:8px;display:block}
+
+/* BYLINE */
+.byline{font-size:11px;color:#ccc;font-family:'Be Vietnam Pro',sans-serif;margin-top:10px;display:block}
+
+footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr 1fr!important;gap:20px!important}
+@media(max-width:480px){footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr!important}}
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif!important}
+#mobilemenu a,nav a,nav button{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif!important}
+footer a,footer p,footer div{font-family:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif!important}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1206405304980852');fbq('track','PageView');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:none;padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8">ai.</span><span style="color:#060d26">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.4;color:#060d26">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(6,13,38,0.35);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer™.</div>
+</a>
+<div style="display:flex;align-items:center;gap:4px">
+<a href="index.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.04em">ON-DEMAND</a>
+<a href="editorial.html" class="tnl" style="color:#ff63d8;padding:7px 10px;font-size:12px;font-weight:700;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.04em">AI TOOLKIT</a>
+<a href="experiences.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EXPERIENCES</a>
+<a href="corporate.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;margin-left:4px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px">
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#060d26"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="index.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">ON-DEMAND</a>
+<a href="aime.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEET AIME</a>
+<a href="quiz.html" onclick="if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Click'})" target="_blank" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">TAKE THE QUIZ</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EXPERIENCES</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="about.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;font-family:'Outfit',sans-serif;letter-spacing:0.04em">ABOUT</a>
+</div>
+</nav>
+<div style="height:56px"></div>
+
+<!-- HERO CAROUSEL — original Outfit font, uppercase, no serif, no "Cover Story" label -->
+<section style="max-width:1100px;margin:0 auto;padding:24px 24px 0">
+<div style="position:relative;overflow:hidden" id="carousel">
+
+<div class="slide active">
+<div style="position:relative;min-height:480px;border-radius:16px;overflow:hidden">
+<img src="img-unsplash-23.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(6,13,38,0.92) 0%,rgba(6,13,38,0.7) 50%,rgba(6,13,38,0.2) 100%)"></div>
+<div style="position:relative;z-index:2;padding:60px 48px;display:flex;flex-direction:column;justify-content:center;min-height:480px;max-width:560px">
+<span style="font-family:'Be Vietnam Pro',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#ff63d8;margin-bottom:12px">MOTHER'S DAY</span>
+<h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2em,4vw,2.8em);color:#fff;line-height:1.1;text-transform:uppercase;margin-bottom:16px">What Every Mom Actually Wants for Mother's Day</h2>
+<p style="font-size:1em;color:rgba(255,255,255,0.7);line-height:1.6;font-family:'Be Vietnam Pro',sans-serif;margin-bottom:24px">Not another thing to find a place for on a shelf. Not a 3-hour spa day. She wants her time back — and herself back.</p>
+<div><a href="article.html?id=mothers-day" style="display:inline-block;background:#ff63d8;color:#fff;padding:12px 28px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Read Story</a></div>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div style="position:relative;min-height:480px;border-radius:16px;overflow:hidden">
+<img src="img-unsplash-21.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(6,13,38,0.92) 0%,rgba(6,13,38,0.7) 50%,rgba(6,13,38,0.2) 100%)"></div>
+<div style="position:relative;z-index:2;padding:60px 48px;display:flex;flex-direction:column;justify-content:center;min-height:480px;max-width:560px">
+<span style="font-family:'Be Vietnam Pro',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#ff63d8;margin-bottom:12px">HOME</span>
+<h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2em,4vw,2.8em);color:#fff;line-height:1.1;text-transform:uppercase;margin-bottom:16px">Every Way to Use AI for Meal Planning — Ranked</h2>
+<p style="font-size:1em;color:rgba(255,255,255,0.7);line-height:1.6;font-family:'Be Vietnam Pro',sans-serif;margin-bottom:24px">Apps, one-off prompts, micro-tools, and the five-minute method that changed dinnertime forever.</p>
+<div><a href="article.html?id=meal-planning" style="display:inline-block;background:#ff63d8;color:#fff;padding:12px 28px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Read Story</a></div>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div style="position:relative;min-height:480px;border-radius:16px;overflow:hidden">
+<img src="img-unsplash-13.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(6,13,38,0.92) 0%,rgba(6,13,38,0.7) 50%,rgba(6,13,38,0.2) 100%)"></div>
+<div style="position:relative;z-index:2;padding:60px 48px;display:flex;flex-direction:column;justify-content:center;min-height:480px;max-width:560px">
+<span style="font-family:'Be Vietnam Pro',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#ff63d8;margin-bottom:12px">NEUROSCIENCE</span>
+<h2 style="font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2em,4vw,2.8em);color:#fff;line-height:1.1;text-transform:uppercase;margin-bottom:16px">Your Brain Wasn't Built for 300 Decisions a Day</h2>
+<p style="font-size:1em;color:rgba(255,255,255,0.7);line-height:1.6;font-family:'Be Vietnam Pro',sans-serif;margin-bottom:24px">The science behind the mental load — and why AI is the only fix that actually makes sense.</p>
+<div><a href="article.html?id=neuroscience-mental-load" style="display:inline-block;background:#ff63d8;color:#fff;padding:12px 28px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Read Story</a></div>
+</div>
+</div>
+</div>
+
+<div style="position:absolute;bottom:24px;right:24px;display:flex;gap:8px;z-index:10">
+<button onclick="prevSlide()" style="width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,0.15);color:white;font-size:18px;cursor:pointer">&larr;</button>
+<button onclick="nextSlide()" style="width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,0.15);color:white;font-size:18px;cursor:pointer">&rarr;</button>
+</div>
+<div style="position:absolute;bottom:24px;left:24px;display:flex;gap:6px;z-index:10" id="dots"></div>
+</div>
+</section>
+
+<!-- CATEGORY FILTER — expanded -->
+<div style="max-width:1100px;margin:0 auto;padding:0 24px">
+<div class="cat-bar">
+<button onclick="filterCat(this,'ALL')" class="cat-btn active">ALL</button>
+<button onclick="filterCat(this,'AI 101')" class="cat-btn">AI 101</button>
+<button onclick="filterCat(this,'HOME')" class="cat-btn">HOME</button>
+<button onclick="filterCat(this,'WORK')" class="cat-btn">WORK</button>
+<button onclick="filterCat(this,'TOOLS')" class="cat-btn">TOOLS &amp; AIME</button>
+<button onclick="filterCat(this,'NEUROSCIENCE')" class="cat-btn">NEUROSCIENCE</button>
+<button onclick="filterCat(this,'SEASONAL')" class="cat-btn">SEASONAL</button>
+<button onclick="filterCat(this,'MILESTONES')" class="cat-btn">MILESTONES</button>
+</div>
+</div>
+
+<!-- ARTICLES — endless scroll -->
+<section style="max-width:1100px;margin:0 auto;padding:0 24px 80px" id="stories">
+
+<!-- ── AI 101 ── -->
+<div class="story-row" onclick="window.location.href='article.html?id=start-here'" data-cat="AI 101">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80" alt="Woman at kitchen table with laptop and coffee, looking calm and focused"></div>
+<div class="story-body">
+<span class="cat-label">AI 101</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">New to AI? Start Here — Seriously, Right Here.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">No jargon, no overwhelm. The clearest starting point for mothers who are ready to try AI and actually get somewhere.</p>
+<div class="video-badge">Watch: 5-Min Intro</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=ai-tools-comparison'" data-cat="AI 101">
+<div class="story-thumb"><img src="img-unsplash-22.jpg" alt="Woman comparing notes with two open browser tabs"></div>
+<div class="story-body">
+<span class="cat-label">AI 101</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">We Tested the Top AI Tools for 6 Months. Here's What Actually Stuck.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">ChatGPT, Claude, Gemini — a real-world comparison from a mom who used all three. The winner might surprise you.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=what-is-a-prompt'" data-cat="AI 101">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80" alt="Woman writing in a notebook at a desk with warm lamp light"></div>
+<div class="story-body">
+<span class="cat-label">AI 101</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">What Is a Prompt, Really? The One Skill That Changes Everything.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">How you talk to AI is everything. This is the single skill that determines whether it saves you an hour — or wastes one.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=25-prompts-spring'" data-cat="AI 101">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80" alt="Woman smiling at her phone with a notepad nearby"></div>
+<div class="story-body">
+<span class="cat-label">AI 101</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">25 AI Prompts Every Mother Needs This Spring</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Copy, paste, customize. From camp applications to end-of-year teacher gifts — your spring prompt starter kit.</p>
+<div class="video-badge">Watch: Live Demo</div>
+<div class="seasonal-badge">🌸 Spring</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=ai-habits'" data-cat="AI 101">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?w=600&q=80" alt="Woman at window with laptop, morning light coming through"></div>
+<div class="story-body">
+<span class="cat-label">AI 101</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The AI Habits That Will Define the Next Five Years</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">The mothers who use AI well aren't the most tech-savvy — they have the right habits. Here's what to build, starting this week.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<!-- CTA strip -->
+<div class="cta-strip">
+<div><h4>Ready to go from curious to actually doing it?</h4><p>The ai.moms™ On-Demand course is 6 modules — go at your own pace, start seeing results immediately.</p></div>
+<a href="index.html" class="btn-pink">Explore the Course →</a>
+</div>
+
+<!-- ── HOME ── -->
+<div class="story-row" onclick="window.location.href='article.html?id=mothers-day'" data-cat="HOME">
+<div class="story-thumb"><img src="img-unsplash-23.jpg" alt="Mom and daughter laughing together outside, warm and genuine at a table with coffee, looking unhurried"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">What Every Mom Actually Wants for Mother's Day</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Not another thing to find a place for on a shelf. Not a 3-hour spa trip that ends at dinner prep. She wants her time back — not just on Mother's Day, but for good.</p>
+<div class="seasonal-badge">🌸 Mother's Day</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=meal-planning'" data-cat="HOME">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Woman with tablet in a bright kitchen, fresh ingredients on counter"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Every Way to Use AI for Meal Planning — Ranked</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">One-off prompts, our Meal Planner micro-tool, AI family apps, the weekly reset with Aime. We tested them all so you don't have to.</p>
+<div class="tool-badge">✦ Try the Meal Planner Tool</div>
+<div class="video-badge">Watch: Kitchen Demo</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=family-command-center'" data-cat="HOME">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&q=80" alt="Organized family calendar on wall, woman reviewing it with coffee"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How to Build a Family Command Center Powered by AI</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Schedules, meals, logistics, handoffs — one AI-powered system to run it all. We teach this step-by-step in the course.</p>
+<div class="video-badge">Watch: Quick Tour</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=voice-memo'" data-cat="HOME">
+<div class="story-thumb"><img src="img-unsplash-19.jpg" alt="Woman walking outside, holding phone up speaking into it"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The Voice Memo Trick That Cleared My Entire Mental Load</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Talk into your phone during carpool pickup. Let AI organize, prioritize, and respond. This is the invisible load fix nobody talks about.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=birthday-party'" data-cat="HOME">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Beautifully decorated children's birthday party setup with balloons"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">I Planned a Birthday Party in 4 Minutes With AI. Here's the Prompt.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Theme, vendors, invites, timeline, dietary restrictions, thank-you notes. The prompt is right here — take it.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=sunday-reset'" data-cat="HOME">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=600&q=80" alt="Woman with coffee and planner on a Sunday morning, looking calm"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Your Sunday Reset, Powered by Aime</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Run your weekly reset through Aime — meals, schedule, tasks, mental prep. Fifteen minutes on Sunday that changes everything about Monday.</p>
+<div class="tool-badge">✦ Meet Aime</div>
+<div class="video-badge">Watch: Reset Demo</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=kids-dinner'" data-cat="HOME">
+<div class="story-thumb"><img src="img-unsplash-5.jpg" alt="Family at dinner table, mom serving food, children eating happily"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How I Finally Got My Kids to Eat Dinner — With a Little Help From AI</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Picky eaters, dietary restrictions, the same four meals on rotation. AI knows your family's patterns — and knows how to break them.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=delegate-to-ai'" data-cat="HOME">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?w=600&q=80" alt="Confident woman at desk, pointing at laptop screen with purpose"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How to Delegate to AI Like You'd Delegate to an EA</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Stop asking questions. Start giving instructions. The mindset shift that turns AI from a novelty into a necessity.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=3-ai-setups'" data-cat="HOME">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80" alt="Woman setting up a calm organized home workspace with plants"></div>
+<div class="story-body">
+<span class="cat-label">HOME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The 3 AI Setups Every Mom Should Have Running by Monday</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Three systems. Twenty minutes. A completely different week.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<!-- ── SEASONAL ── -->
+<div class="story-row" onclick="window.location.href='article.html?id=summer-camp-research'" data-cat="SEASONAL">
+<div class="story-thumb"><img src="img-unsplash-9.jpg" alt="Kids at summer camp, laughing and playing outdoors in sunshine"></div>
+<div class="story-body">
+<span class="cat-label">SEASONAL</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Summer Camp Research Is a Part-Time Job. Here's How to Do It in an Afternoon.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Find the right camps, plot the full summer schedule, fill the gaps, and stop toggling between 15 browser tabs. AI does the research — you make the calls.</p>
+<div class="tool-badge">✦ Try the Summer Camp Finder</div>
+<div class="seasonal-badge">☀️ Summer</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=summer-family-trip'" data-cat="SEASONAL">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Mom and daughter at an airport with luggage, looking excited"></div>
+<div class="story-body">
+<span class="cat-label">SEASONAL</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How to Plan a Family Summer Trip in One Afternoon With AI</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Destination research, itinerary, packing lists, kid-friendly restaurants, backup plans. One session with AI, one summer your family will actually remember.</p>
+<div class="seasonal-badge">☀️ Summer Travel</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=end-of-school'" data-cat="SEASONAL">
+<div class="story-thumb"><img src="img-unsplash-15.jpg" alt="Children in graduation caps laughing with parents at end of school ceremony"></div>
+<div class="story-body">
+<span class="cat-label">SEASONAL</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">End of School Year? AI Can Handle the Entire Last Month.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Teacher gifts, end-of-year parties, summer planning, transition logistics — all of it, handed off to AI so you can actually be present for it.</p>
+<div class="seasonal-badge">🌸 Spring</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=end-of-school-party'" data-cat="SEASONAL">
+<div class="story-thumb"><img src="img-unsplash-29.jpg" alt="Colorful kids party with table decorations and balloons at the end of school"></div>
+<div class="story-body">
+<span class="cat-label">SEASONAL</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The End-of-School Party Prompt That Does All the Planning for You</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Class party, neighborhood cookout, grade-wide celebration — whatever it is, AI has the theme, the games, the shopping list, and the sign-up sheet draft.</p>
+<div class="seasonal-badge">🌸 Spring</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=back-to-school'" data-cat="SEASONAL">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="Mom and child looking at school backpack and supplies together"></div>
+<div class="story-body">
+<span class="cat-label">SEASONAL</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How to Automate the School Year — Before It Starts</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Forms, deadlines, supply lists, permission slips. Set it up with AI in one Sunday afternoon and run the whole year on autopilot.</p>
+<div class="seasonal-badge">🍂 Back to School</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=summer-childcare'" data-cat="SEASONAL">
+<div class="story-thumb"><img src="img-unsplash-26.jpg" alt="Mom and babysitter sitting together going over a checklist"></div>
+<div class="story-body">
+<span class="cat-label">SEASONAL</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Summer Childcare Planning Is a Part-Time Job. AI Can Do It for You.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Camps, babysitters, grandparent weeks, swim lessons — building the summer calendar is the invisible load nobody talks about. Until now.</p>
+<div class="seasonal-badge">☀️ Summer</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<!-- CTA strip -->
+<div class="cta-strip">
+<div><h4>Want the full system — not just the tips?</h4><p>The ai.moms™ course teaches you to build and run it all, module by module.</p></div>
+<a href="index.html" class="btn-ghost">See What's Inside</a>
+</div>
+
+<!-- ── MILESTONES ── -->
+<div class="story-row" onclick="window.location.href='article.html?id=new-mom'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80" alt="New mom holding a newborn baby, looking tender and slightly overwhelmed"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The New Mom's AI Starter Kit (For the 4th Trimester)</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">You just had a baby. Your brain is running on empty. Here's the AI setup that handles feeding schedules, thank-you notes, pediatrician questions, and all the decisions you shouldn't have to be making right now.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=toddler-years'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&q=80" alt="Mom sitting on floor playing with a toddler, both laughing"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The Toddler Years Are Chaos. AI Is Your Secret Weapon.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Sleep regression research at 2am. Activity ideas when you've run out. Pediatrician prep. The questions you're embarrassed to Google. AI handles all of it, without judgment.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=elementary-school'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=600&q=80" alt="Mom walking an elementary-age child to school, holding hands on a sunny morning"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Elementary School Mom: You're Now the Family Logistics Director</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Playdates, carpools, homework, reading logs, class parties, teacher emails. The volume just went up — here's how AI absorbs the operational load.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=middle-school'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=600&q=80" alt="Mom and teen daughter talking at the kitchen table, warm and honest moment"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Middle School: When the Emotional Load Gets as Heavy as the Logistics</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Friend drama, academic pressure, phone boundaries, the sudden need to be everywhere and nowhere at once. How AI helps you manage it all — and actually be present.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=high-school'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="img-unsplash-33.jpg" alt="Mom helping teenage child with college application paperwork at desk"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">High School Moms: The AI Guide to the Four Most Overwhelming Years</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">College prep, test schedules, college lists, visit logistics, application essays, financial aid research — let AI carry the cognitive weight of the process so you can actually enjoy the moment.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=empty-nest'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?w=600&q=80" alt="Mom hugging college-age child at a campus with an emotional smile"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">College Drop-Off Is a Grief Nobody Prepares You For</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">She's gone. Now what? How mothers in the empty nest chapter are using AI not just to organize — but to rediscover who they are when the job description changes.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=perimenopause'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="Woman working at desk at home with natural light, focused and calm"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Perimenopause + the Mental Load: The Double Burden Nobody Is Talking About</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Brain fog, hormonal shifts, still running the household, possibly at peak career demands. How AI becomes essential — not optional — at this life stage.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=menopause'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="img-mom-1.png" alt="Woman in her 50s looking confident outdoors, smiling freely"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Menopause Is the Beginning of Reclaiming Your Time. AI Helps.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Research shows post-menopausal women report clarity, ambition, and purpose. AI is the infrastructure that actually supports that chapter — finally.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=solo-mom'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Single mom on couch with laptop open and child nearby, managing it all"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Solo Mom, AI Co-Pilot: You Shouldn't Have to Do This Alone</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Single mothers carry 100% of the invisible load. AI doesn't replace support — but it does handle a significant portion of the cognitive labor that's been entirely on you.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=return-to-work'" data-cat="MILESTONES">
+<div class="story-thumb"><img src="img-unsplash-32.jpg" alt="Woman in a professional setting looking sharp and confident, walking purposefully"></div>
+<div class="story-body">
+<span class="cat-label">MILESTONES</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">AI for the Return-to-Work Mom: Your 30-Day Ramp Plan</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">How to close the gap, rebuild confidence, and show up sharper than you left — with AI running behind the scenes.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<!-- CTA strip -->
+<div class="cta-strip">
+<div><h4>Aime is your AI Chief Everything Officer™.</h4><p>Built for mothers, at every stage. Ready when you are.</p></div>
+<a href="aime.html" class="btn-pink">Meet Aime →</a>
+</div>
+
+<!-- ── WORK ── -->
+<div class="story-row" onclick="window.location.href='article.html?id=ai-at-work'" data-cat="WORK">
+<div class="story-thumb"><img src="img-unsplash-12.jpg" alt="Woman in a bright office with laptop, looking sharp and in control"></div>
+<div class="story-body">
+<span class="cat-label">WORK</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How to Use AI at Work Before Anyone Else Figures It Out</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">The quiet edge. Prep faster, write better, think clearer — and let the results speak for themselves.</p>
+<div class="video-badge">Watch: Work Workflow</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=email-prompt'" data-cat="WORK">
+<div class="story-thumb"><img src="img-unsplash-14.jpg" alt="Woman focused on laptop screen, coffee to her side, clearly in flow state"></div>
+<div class="story-body">
+<span class="cat-label">WORK</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The Email Prompt That Saved Me 6 Hours a Week</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Draft, refine, send — in your own voice, in a fraction of the time. The full prompt is inside.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=meeting-prep'" data-cat="WORK">
+<div class="story-thumb"><img src="img-unsplash-8.jpg" alt="Woman reviewing notes before a meeting, looking prepared and composed"></div>
+<div class="story-body">
+<span class="cat-label">WORK</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How to Prep for Any Meeting in 3 Minutes With AI</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Research, talking points, smart questions, and a follow-up email template — all before you walk through the door.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=working-mom-playbook'" data-cat="WORK">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=600&q=80" alt="Woman walking into a modern office building, confident stride, bag over shoulder"></div>
+<div class="story-body">
+<span class="cat-label">WORK</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The Working Mom's AI Playbook</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Six workflows that let you perform at your peak — even on the days when everything else is also happening at once.</p>
+<div class="video-badge">Watch: Playbook Walkthrough</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<!-- ── TOOLS & AIME ── -->
+<div class="story-row" onclick="window.location.href='article.html?id=meet-aime'" data-cat="TOOLS">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&q=80" alt="Woman relaxed on sofa with laptop open, looking peaceful and unbothered"></div>
+<div class="story-body">
+<span class="cat-label">TOOLS &amp; AIME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Meet Aime: Your AI Chief Everything Officer™</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">She runs your household. Manages your week. Never sleeps, never judges, and never needs to be thanked. Meet the assistant you actually deserve.</p>
+<div class="tool-badge">✦ Try Aime Free</div>
+<div class="video-badge">Watch: Aime in Action</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=micro-tools'" data-cat="TOOLS">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&q=80" alt="Woman scrolling through apps on her phone at a kitchen table"></div>
+<div class="story-body">
+<span class="cat-label">TOOLS &amp; AIME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The ai.moms™ Micro-Tools You Didn't Know You Needed</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Meal planning, camp finding, babysitter vetting — purpose-built tools that do one thing exceptionally well.</p>
+<div class="tool-badge">✦ Browse All Tools</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=safesitter'" data-cat="TOOLS">
+<div class="story-thumb"><img src="img-unsplash-16.jpg" alt="Mom and babysitter sitting together going over a checklist"></div>
+<div class="story-body">
+<span class="cat-label">TOOLS &amp; AIME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">How to Vet a Babysitter Using AI and SafeSitter™</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Interview questions, red flags, reference checks, and emergency protocol docs — all generated in minutes so you can trust who's in your home.</p>
+<div class="tool-badge">✦ Try SafeSitter™</div>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=ai-toolkit'" data-cat="TOOLS">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="Group of women around a table with laptops, collaborating and laughing"></div>
+<div class="story-body">
+<span class="cat-label">TOOLS &amp; AIME</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The AI Toolkit for Moms: What to Use — and When</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">The definitive guide to which tool does what — so you stop opening five apps and start getting things done.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<!-- ── NEUROSCIENCE ── -->
+<div class="story-row" onclick="window.location.href='article.html?id=invisible-load'" data-cat="NEUROSCIENCE">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=600&q=80" alt="Woman standing at a window, hands lightly on her head, thoughtful expression"></div>
+<div class="story-body">
+<span class="cat-label">NEUROSCIENCE</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The Invisible Load Has Finally Met Its Match</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">How AI is giving mothers the one thing we never had — a second brain that actually works. The science, the research, and what it means for you.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=neuroscience-mental-load'" data-cat="NEUROSCIENCE">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Close-up portrait of a woman thinking, serene and focused expression"></div>
+<div class="story-body">
+<span class="cat-label">NEUROSCIENCE</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The Neuroscience of the Mental Load — And Why AI Fixes It</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Your brain wasn't built for 300 decisions a day. Here's what's actually happening — and why offloading to AI isn't laziness, it's biology.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=mothers-brains'" data-cat="NEUROSCIENCE">
+<div class="story-thumb"><img src="img-mom-2.png" alt="Mom reading with a young child in warm afternoon light, a tender quiet moment"></div>
+<div class="story-body">
+<span class="cat-label">NEUROSCIENCE</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Why Mothers' Brains Are Wired Differently — And What That Means for AI</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">The science behind why delegation feels so hard, why guilt shows up when you try to rest — and why AI changes that equation.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=decision-fatigue'" data-cat="NEUROSCIENCE">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1490623970972-ae8bb3da443e?w=600&q=80" alt="Tired woman at a desk, head in hands, stacks of papers around her"></div>
+<div class="story-body">
+<span class="cat-label">NEUROSCIENCE</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">Decision Fatigue Is Real. Here's the Research — And the Fix.</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">What happens to your brain after decision 200 — and how mothers can use AI to protect the cognitive bandwidth that matters most.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<div class="story-row" onclick="window.location.href='article.html?id=delegation-science'" data-cat="NEUROSCIENCE">
+<div class="story-thumb"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Woman presenting confidently at a whiteboard to a small attentive group"></div>
+<div class="story-body">
+<span class="cat-label">NEUROSCIENCE</span>
+<h3 style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2em;color:#060d26;line-height:1.2;margin-bottom:8px">The Science Behind Why Delegation Feels So Hard — And How AI Rewires It</h3>
+<p style="font-size:0.85em;color:#6b7280;line-height:1.6;font-family:'Be Vietnam Pro',sans-serif">Perfectionism, over-responsibility, the hypervigilance loop. The neuroscience of why letting go is hard — and how AI gives you a guilt-free exit.</p>
+<span class="byline">ai moms&#8482; editorial</span>
+</div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="cta-strip">
+<div><h4>The science is why we built this. The course is how you use it.</h4><p>Start the on-demand course and build your AI-powered family system today.</p></div>
+<a href="index.html" class="btn-pink">Start the Course →</a>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',sans-serif">Retire from<br>Chief Everything Officer™.</p>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
+<a href="index.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">ai moms&#8482; On-Demand</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">AI+Me Hour</a>
+<a href="aime.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Meet Aime</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The AI Toolkit</a>
+<a href="experiences.html#outofoffice" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Out of Office Weekends&#8482;</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">FOR COMPANIES</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="about.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">About ai moms&#8482;</a>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Community</a>
+<a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Science</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Press &amp; Media</a>
+<a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Careers</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Prompt Packs</a>
+<a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Merch &amp; Gifts</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">h&#101;llo&#64;aimoms&#46;ai</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Partnerships &amp; Press</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3);font-family:'Be Vietnam Pro',sans-serif">&copy; 2026 ai.moms&#8482; All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Terms &amp; Conditions</a>
+</div>
+</div>
+<div style="margin-top:20px;padding:16px 20px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.03)">
+<p style="font-size:11px;color:rgba(255,255,255,0.35);line-height:1.7;font-family:'Be Vietnam Pro',sans-serif;margin:0">ai.moms&#8482; is an educational platform. All content is for informational and educational purposes only and does not constitute professional, legal, financial, medical, or therapeutic advice. Individual results vary. AI tools referenced are third-party products not owned or operated by ai.moms&#8482;. <strong style="color:rgba(255,255,255,0.5)">Please review our full <a href="terms.html" style="color:#ff63d8;text-decoration:underline">Terms &amp; Conditions</a> and <a href="privacy.html" style="color:#ff63d8;text-decoration:underline">Privacy Policy</a> before using this site or enrolling in any program.</strong></p>
+</div>
+</div>
+</footer>
+
+<!-- Floating Quiz -->
+<div id="floating-quiz" style="position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:998;transition:opacity 0.3s ease;opacity:0;pointer-events:none">
+<a href="quiz.html" onclick="if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Click'})" target="_blank" style="display:flex;text-decoration:none;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.15))">
+<div style="background:#ff63d8;color:#fff;padding:14px 10px;border-radius:10px 0 0 10px;writing-mode:vertical-rl;text-orientation:mixed;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;line-height:1">WHAT'S YOUR SCORE?</div>
+</a>
+</div>
+
+<script>
+var current=0;
+var slides=document.querySelectorAll('.slide');
+var dotsC=document.getElementById('dots');
+slides.forEach(function(s,i){
+  var d=document.createElement('div');
+  d.style.cssText='width:8px;height:8px;border-radius:50%;background:'+(i===0?'#ff63d8':'rgba(255,255,255,0.3)')+';cursor:pointer;transition:background 0.3s';
+  d.onclick=function(){showSlide(i)};
+  dotsC.appendChild(d);
+});
+function showSlide(n){
+  slides[current].classList.remove('active');
+  current=((n%slides.length)+slides.length)%slides.length;
+  slides[current].classList.add('active');
+  var dots=dotsC.children;
+  for(var i=0;i<dots.length;i++){dots[i].style.background=i===current?'#ff63d8':'rgba(255,255,255,0.3)'}
+}
+function nextSlide(){showSlide(current+1)}
+function prevSlide(){showSlide(current-1)}
+setInterval(nextSlide,7000);
+
+function filterCat(btn,cat){
+  document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.querySelectorAll('.story-row').forEach(function(row){
+    var rc=row.dataset.cat;
+    var match=cat==='ALL'||rc===cat||(cat==='TOOLS'&&rc==='TOOLS');
+    row.style.display=match?'flex':'none';
+  });
+  // Hide CTA strips when filtering to a specific category
+  document.querySelectorAll('.cta-strip').forEach(function(strip){
+    strip.style.display=cat==='ALL'?'flex':'none';
+  });
+}
+
+(function(){
+  var fq=document.getElementById('floating-quiz');
+  if(!fq)return;
+  function chk(){fq.style.opacity=window.scrollY>400?'1':'0';fq.style.pointerEvents=window.scrollY>400?'auto':'none'}
+  window.addEventListener('scroll',chk);chk();
+})();
+
+(function(){
+  if(!localStorage.getItem("aimoms_cookies")){
+    var cb=document.createElement("div");cb.id="cookie-banner";
+    cb.innerHTML="<div style='position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#060d26;padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap'><p style='font-size:12px;color:rgba(255,255,255,0.5);margin:0'>We use cookies to improve your experience. <a href=privacy.html style=color:#ff63d8>Privacy Policy</a></p><button onclick=acceptCookies() style='background:#ff63d8;color:#fff;border:none;padding:8px 20px;border-radius:100px;font-size:11px;font-weight:600;cursor:pointer'>Accept All</button><button onclick=declineCookies() style='background:none;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.1);padding:8px 20px;border-radius:100px;font-size:11px;cursor:pointer'>Essential Only</button></div>";
+    document.body.appendChild(cb);
+  }
+  window.acceptCookies=function(){localStorage.setItem("aimoms_cookies","all");document.getElementById("cookie-banner").remove()};
+  window.declineCookies=function(){localStorage.setItem("aimoms_cookies","essential");document.getElementById("cookie-banner").remove()};
+})();
+</script>
+</body>
+</html>

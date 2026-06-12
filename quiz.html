@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="description" content="What is your Invisible Load Score? Take the free quiz from ai moms and find out how many hours AI can give you back each week.">
+<link rel="canonical" href="https://aimoms.ai/quiz">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Your Invisible Load Score? — ai moms™</title>
+    <meta property="og:title" content="What's Your Invisible Load Score?">
+    <meta property="og:description" content="8 quick questions to uncover how much of your family's mental load you're carrying — and what to do about it. Free quiz from ai moms™.">
+    <meta property="og:image" content="https://aimoms.ai/social-share.jpg">
+    <meta property="og:url" content="https://aimomsquiz.netlify.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1206405304980852');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1206405304980852&ev=PageView&noscript=1"/></noscript>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #060d26;
+            --pink: #ff63d8;
+            --pink-light: #fff0fb;
+            --gray: #F5F5F5;
+            --white: #FFFFFF;
+            --text-mid: #4A5568;
+            --text-light: #999;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; }
+        .screen { display: none; min-height: 100vh; animation: fadeIn 0.3s ease; }
+        .screen.active { display: flex; align-items: center; justify-content: center; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .card { max-width: 560px; width: 100%; margin: 0 auto; padding: 40px 28px; }
+
+        /* Buttons */
+        .btn-pink { background: var(--pink); color: var(--white); border: none; font-weight: 700; font-family: 'Be Vietnam Pro', sans-serif; cursor: pointer; font-size: 15px; padding: 16px 44px; transition: opacity 0.2s; }
+        .btn-pink:hover { opacity: 0.9; }
+        .btn-dark { background: var(--dark); color: var(--white); border: 2px solid var(--dark); font-weight: 600; font-family: 'Be Vietnam Pro', sans-serif; cursor: pointer; font-size: 14px; padding: 14px 32px; transition: all 0.2s; text-decoration: none; display: inline-block; }
+        .btn-dark:hover { background: var(--white); color: var(--dark); }
+
+        /* Option buttons */
+        .option-btn {
+            display: block; width: 100%; text-align: left; padding: 14px 18px;
+            background: var(--white); border: 2px solid #E5E7EB; font-size: 14px;
+            color: var(--dark); line-height: 1.5; cursor: pointer; transition: all 0.2s;
+            font-family: 'Be Vietnam Pro', sans-serif; margin-bottom: 8px;
+        }
+        .option-btn:hover { border-color: var(--pink); background: var(--pink-light); }
+        .option-btn.selected { border-color: var(--pink); background: var(--pink-light); }
+
+        /* Progress bar */
+        .progress-track { width: 100%; height: 4px; background: #E5E7EB; margin-bottom: 28px; }
+        .progress-fill { height: 100%; background: var(--pink); transition: width 0.5s ease; }
+
+        /* Email input */
+        .email-input { flex: 1; padding: 13px 14px; border: 2px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: var(--white); font-size: 14px; outline: none; font-family: 'Be Vietnam Pro', sans-serif; }
+        .email-input::placeholder { color: rgba(255,255,255,0.3); }
+
+        @media (max-width: 480px) {
+            .card { padding: 28px 20px; }
+            h1 { font-size: 26px !important; }
+            .email-row { flex-direction: column; }
+            .email-row .btn-pink { width: 100%; text-align: center; }
+        }
+    
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif !important;}
+
+@media(max-width:768px){
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns:1fr !important; }
+  [style*="grid-template-columns:2fr"] { grid-template-columns:1fr 1fr !important; gap:20px !important; }
+  [style*="display:flex;gap:32px"] { flex-direction:column !important; }
+  [style*="display:flex;gap:28px"] { flex-direction:column !important; }
+  section { padding-left:16px !important; padding-right:16px !important; }
+  nav { padding:12px 16px !important; }
+}
+@media(max-width:480px){
+  [style*="grid-template-columns:2fr"] { grid-template-columns:1fr !important; }
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+}
+</style>
+
+<style>
+#mobilemenu a, nav a, nav button {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+footer a, footer p, footer div {
+  font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+
+@media(max-width:768px){
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns:1fr !important; }
+  [style*="grid-template-columns:2fr"] { grid-template-columns:1fr 1fr !important; gap:20px !important; }
+  [style*="display:flex;gap:32px"] { flex-direction:column !important; }
+  [style*="display:flex;gap:28px"] { flex-direction:column !important; }
+  section { padding-left:16px !important; padding-right:16px !important; }
+  nav { padding:12px 16px !important; }
+}
+@media(max-width:480px){
+  [style*="grid-template-columns:2fr"] { grid-template-columns:1fr !important; }
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div class="screen active" id="screen-intro">
+    <div class="card" style="text-align: center;">
+        <div style="font-size: 28px; font-weight: 700; margin-bottom: 24px;">
+            <span style="color: var(--pink);">ai</span> moms<span style="font-size: 12px; vertical-align: super;">™</span>
+        </div>
+        <div style="width: 50px; height: 2px; background: var(--pink); margin: 0 auto 28px;"></div>
+
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--pink); font-weight: 600; margin-bottom: 16px;">
+            2-MINUTE QUIZ
+        </div>
+        <h1 style="font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size: 32px; font-weight: 800; color: var(--dark); line-height: 1.2; margin: 0 0 14px;">
+            What's Your<br>Invisible Load Score?
+        </h1>
+        <p style="color: var(--text-mid); font-size: 15px; line-height: 1.6; max-width: 420px; margin: 0 auto 8px;">
+            8 quick questions to uncover how much of your family's mental load you're carrying — and what to do about it.
+        </p>
+        <p style="color: var(--text-light); font-size: 13px; margin-bottom: 36px;">Takes 2 minutes</p>
+
+        <button class="btn-pink" onclick="startQuiz()">Take the Quiz →</button>
+
+        <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #E5E7EB;">
+            <p style="font-size: 12px; color: var(--text-light);">
+                From the course helping moms Retire from Chief Everything Officer™
+            </p>
+            <p style="font-size: 11px; color: var(--text-light); margin-top: 8px;">
+                <a href="https://aimoms.ai/terms.html" target="_blank" style="color: var(--text-light); text-decoration: none;">Terms</a>
+                &nbsp;·&nbsp;
+                <a href="https://aimoms.ai/privacy.html" target="_blank" style="color: var(--text-light); text-decoration: none;">Privacy</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ -->
+<div class="screen" id="screen-quiz">
+    <div class="card">
+        <div class="progress-track"><div class="progress-fill" id="progressBar" style="width: 0%;"></div></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <span id="qCount" style="font-size: 12px; color: var(--text-light);"></span>
+            <span id="qCategory" style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--pink); font-weight: 600;"></span>
+        </div>
+        <h2 id="qText" style="font-size: 20px; font-weight: 700; color: var(--dark); line-height: 1.4; margin: 0 0 24px;"></h2>
+        <div id="qOptions"></div>
+        <button id="backBtn" onclick="goBack()" style="margin-top: 16px; background: none; border: none; color: var(--text-light); cursor: pointer; font-size: 13px; padding: 8px 0; font-family: 'Be Vietnam Pro', sans-serif; display: none;">← Back</button>
+    </div>
+</div>
+
+<!-- RESULT -->
+<div class="screen" id="screen-result">
+    <div class="card" style="text-align: center;">
+        <div id="resultEmoji" style="font-size: 48px; margin-bottom: 8px;"></div>
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; color: var(--pink);">YOUR RESULT</div>
+
+        <!-- Score gauge -->
+        <div style="position: relative; width: 180px; height: 180px; margin: 0 auto 20px;">
+            <svg viewBox="0 0 200 200" style="transform: rotate(-90deg);">
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#E5E7EB" stroke-width="10"/>
+                <circle id="gaugeCircle" cx="100" cy="100" r="85" fill="none" stroke="var(--pink)" stroke-width="10" stroke-dasharray="0 534" stroke-linecap="round" style="transition: stroke-dasharray 1.5s ease;"/>
+            </svg>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <div id="scoreNum" style="font-size: 40px; font-weight: 800; color: var(--dark); line-height: 1;"></div>
+                <div style="font-size: 12px; color: var(--text-light); margin-top: 4px;">out of 32</div>
+            </div>
+        </div>
+
+        <!-- TIME IMPACT -->
+        <div id="timeImpact" style="background:linear-gradient(135deg,#060d26,#1a2340);border-radius:16px;padding:24px;margin-bottom:24px;text-align:center;color:#fff">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#ff63d8;margin-bottom:8px">WHAT YOUR SCORE MEANS</div>
+            <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:16px">
+                <div>
+                    <div id="hoursWeek" style="font-family:'Outfit',sans-serif;font-weight:900;font-size:36px;color:#ff63d8;line-height:1">22</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px">hrs/week lost</div>
+                </div>
+                <div>
+                    <div id="hoursYear" style="font-family:'Outfit',sans-serif;font-weight:900;font-size:36px;color:#fff;line-height:1">1,144</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px">hrs/year lost</div>
+                </div>
+                <div>
+                    <div id="hoursSaved" style="font-family:'Outfit',sans-serif;font-weight:900;font-size:36px;color:#ff63d8;line-height:1">780</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px">hrs AI gives back</div>
+                </div>
+            </div>
+            <div id="timeMessage" style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;max-width:380px;margin:0 auto"></div>
+        </div>
+
+        <h2 id="resultTitle" style="font-size: 24px; font-weight: 800; color: var(--dark); margin: 0 0 8px;"></h2>
+        <p id="resultSummary" style="color: var(--text-mid); font-size: 14px; line-height: 1.6; max-width: 440px; margin: 0 auto 20px;"></p>
+
+        <div id="resultTip" style="background: var(--gray); border-left: 4px solid var(--pink); padding: 16px; margin-bottom: 24px; text-align: left;">
+            <div style="font-size: 12px; font-weight: 700; color: var(--dark); margin-bottom: 4px;">💡 What this means:</div>
+            <p id="tipText" style="font-size: 13px; color: var(--text-mid); line-height: 1.6; margin: 0;"></p>
+        </div>
+
+        <!-- Direct course CTA -->
+        <div style="background: var(--dark); padding: 24px; text-align: center; margin-bottom: 16px;">
+            <h3 style="color: var(--white); font-size: 16px; font-weight: 700; margin: 0 0 6px;">
+                Ready to fix this?
+            </h3>
+            <p style="color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.6; margin: 0 0 4px;">
+                The ai moms™ on-demand course teaches you to build Aime — your AI Chief Everything Officer who already knows your family.
+            </p>
+            <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin: 0 0 4px;">
+                Build your AI family management team and get those hours back.
+            </p>
+            <p style="color: var(--pink); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 12px 0 4px;">
+                Founding Member Pricing
+            </p>
+            <p style="font-size: 28px; font-weight: 700; color: var(--white); margin: 0 0 2px;">$247</p>
+            <p style="font-size: 11px; color: rgba(255,255,255,0.3); margin: 0 0 16px;">Standard pricing: $497</p>
+            <p style="font-size: 13px; margin: 0 0 16px;">
+                <a href="https://aimoms.ai" target="_blank" style="color: var(--pink); text-decoration: underline; font-weight: 500;">See full course details →</a>
+            </p>
+            <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://buy.stripe.com/28EfZj6U8aEB7MRbBwdZ608" target="_blank" class="btn-pink" style="text-decoration: none; padding: 12px 24px; font-size: 13px;" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{content_name:'pay-full',value:247,currency:'USD'})">Pay in Full — $247</a>
+                <a href="https://buy.stripe.com/6oU6oJ3HW8wt1ot0WSdZ609" target="_blank" style="text-decoration: none; padding: 12px 24px; font-size: 13px; background: none; border: 1px solid rgba(255,255,255,0.2); color: var(--white); font-weight: 600; font-family: 'Be Vietnam Pro', sans-serif;" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{content_name:'pay-split',value:248,currency:'USD'})">Two Payments — $124</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 24px;">
+            <p style="font-size: 13px; color: var(--text-light);">or</p>
+        </div>
+
+        <!-- Email capture for guide -->
+        <div style="background: var(--dark); padding: 24px; text-align: center;">
+            <h3 style="color: var(--white); font-size: 16px; font-weight: 700; margin: 0 0 6px;">
+                Not ready yet? Start with the free guide.
+            </h3>
+            <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin: 0 0 16px;">
+                Learn the one framework that changes how you use AI — then decide.
+            </p>
+            <form name="quiz-leads" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="quizForm" onsubmit="handleQuizSubmit(event)">
+                <input type="hidden" name="form-name" value="quiz-leads">
+                <input type="hidden" name="score" id="hiddenScore">
+                <input type="hidden" name="result" id="hiddenResult">
+                <p style="display:none;"><input name="bot-field"></p>
+                <div style="display: flex; gap: 8px;" class="email-row">
+                    <input type="text" name="name" placeholder="First name" required class="email-input" id="quizName" style="margin-bottom:8px">
+                    <input type="email" name="email" placeholder="your@email.com" required class="email-input" id="quizEmail">
+                    <button type="submit" class="btn-pink" style="padding: 13px 18px; font-size: 14px; white-space: nowrap;">Send it →</button>
+                </div>
+            </form>
+            <p style="font-size: 10px; color: rgba(255,255,255,0.2); text-align: center; line-height: 1.5; margin-top: 8px;">
+                By signing up, you agree to receive emails from ai moms™. Unsubscribe anytime.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 16px;">
+            <p style="font-size: 11px; color: var(--text-light);">
+                <a href="https://aimoms.ai/terms.html" target="_blank" style="color: var(--text-light); text-decoration: none;">Terms</a>
+                &nbsp;·&nbsp;
+                <a href="https://aimoms.ai/privacy.html" target="_blank" style="color: var(--text-light); text-decoration: none;">Privacy</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- FINAL -->
+<div class="screen" id="screen-final">
+    <div class="card" style="text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 16px;">🎉</div>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--dark); margin: 0 0 12px;">Check your inbox!</h2>
+        <p id="finalEmail" style="color: var(--text-mid); font-size: 15px; line-height: 1.6; max-width: 400px; margin: 0 auto 28px;"></p>
+
+        <div style="text-align: center; margin-bottom: 24px;">
+            <a href="https://aimomsguide.netlify.app" target="_blank" class="btn-pink" style="text-decoration: none; display: inline-block; padding: 16px 40px; font-size: 15px;">
+                Read the Free Guide Now →
+            </a>
+        </div>
+
+        <div style="background: var(--gray); border-left: 4px solid var(--pink); padding: 20px; margin-bottom: 24px; text-align: left;">
+            <h3 style="color: var(--dark); font-size: 15px; font-weight: 700; margin: 0 0 10px;">
+                Already ready to go further?
+            </h3>
+            <p style="color: var(--text-mid); font-size: 13px; line-height: 1.6; margin: 0 0 12px;">
+                The <strong>ai moms™ on-demand course</strong> teaches you to build Aime — your AI Chief Everything Officer who already knows your family. Build your AI family management team and get those hours back.
+            </p>
+            <p style="font-size: 12px; color: var(--pink); font-weight: 600; margin: 0 0 4px;">Founding Member Pricing: $247 (standard $497)</p>
+            <p style="font-size: 12px; color: var(--text-light); margin: 0;">45+ video lessons · On your schedule · 60-day access</p>
+        </div>
+
+        <a href="https://aimoms.ai" target="_blank" class="btn-dark" style="text-decoration: none; padding: 12px 28px; font-size: 13px;">
+            Learn More at aimoms.ai →
+        </a>
+
+        <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid #E5E7EB;">
+            <p style="font-size: 11px; color: var(--text-light); letter-spacing: 1px;">
+                ai moms™ — retire from chief everything officer™
+            </p>
+            <p style="font-size: 11px; color: var(--text-light); margin-top: 4px;">
+                <a href="https://aimoms.ai/terms.html" target="_blank" style="color: var(--text-light); text-decoration: none;">Terms</a>
+                &nbsp;·&nbsp;
+                <a href="https://aimoms.ai/privacy.html" target="_blank" style="color: var(--text-light); text-decoration: none;">Privacy</a>
+            </p>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+const QUESTIONS = [
+    { category: "Mental Load", question: "How often are you the one who remembers appointments, school events, and family commitments?", options: [
+        { text: "Rarely — this is well-managed in my household", score: 1 },
+        { text: "Sometimes — but I catch what falls through", score: 2 },
+        { text: "Usually me", score: 3 },
+        { text: "Always me — if I forget it, it doesn't happen", score: 4 }
+    ]},
+    { category: "Meal Management", question: "When it comes to meals (planning, shopping, cooking, cleanup) — what's your role?", options: [
+        { text: "This is well-distributed in my household", score: 1 },
+        { text: "I plan, but others help execute", score: 2 },
+        { text: "I handle most of it with occasional help", score: 3 },
+        { text: "I'm the entire food chain — plan to plate to cleanup", score: 4 }
+    ]},
+    { category: "Schedule Coordination", question: "Who coordinates pickups, dropoffs, playdates, and activity logistics?", options: [
+        { text: "This is handled by multiple people", score: 1 },
+        { text: "I coordinate but delegate the driving", score: 2 },
+        { text: "I'm the dispatcher AND often the driver", score: 3 },
+        { text: "I manage every moving piece — I AM the family GPS", score: 4 }
+    ]},
+    { category: "Household Operations", question: "Who notices when supplies are low, the house needs cleaning, or something needs fixing?", options: [
+        { text: "Multiple people notice and act on it", score: 1 },
+        { text: "I notice first but it gets handled", score: 2 },
+        { text: "I notice AND initiate — others help if asked", score: 3 },
+        { text: "If I don't see it and do it, we live in chaos", score: 4 }
+    ]},
+    { category: "Emotional Labor", question: "Who manages the emotional temperature of the family — checking in, smoothing conflicts, remembering what each person needs?", options: [
+        { text: "Multiple people in my house are tuned in", score: 1 },
+        { text: "I do more of this but I get some help", score: 2 },
+        { text: "This is primarily my job", score: 3 },
+        { text: "I'm the family therapist, mediator, and mood reader", score: 4 }
+    ]},
+    { category: "Decision Fatigue", question: "How many micro-decisions do you make for your family each day?", options: [
+        { text: "A few — others handle their own or I have help", score: 1 },
+        { text: "More than my fair share, but manageable", score: 2 },
+        { text: "Dozens — I'm the default decision-maker", score: 3 },
+        { text: "I've lost count — I decide EVERYTHING", score: 4 }
+    ]},
+    { category: "Admin & Paperwork", question: "Who handles forms, insurance, school communications, doctor appointments, and family admin?", options: [
+        { text: "Well-distributed across my household", score: 1 },
+        { text: "Mostly me but someone else handles a few categories", score: 2 },
+        { text: "Almost entirely me", score: 3 },
+        { text: "I am the family's Chief Administrative Officer", score: 4 }
+    ]},
+    { category: "Self-Care Impact", question: "How often do you sacrifice your own time (exercise, hobbies, rest) because family logistics take priority?", options: [
+        { text: "Rarely — I protect my time well", score: 1 },
+        { text: "Sometimes — but I usually get some me-time", score: 2 },
+        { text: "Often — my needs come last", score: 3 },
+        { text: "Always — I can't remember the last time I did something just for me", score: 4 }
+    ]}
+];
+
+const RESULTS = {
+    low: { range: "8-14", title: "The Balanced Operator", emoji: "✨", hoursWeek: 8, hoursSaved: 5, summary: "You've got a solid system going. Your invisible load is managed well — but even you could benefit from AI automating the repetitive parts.", tip: "Even at your level, AI can give you back ~5 hours every week. That's 260 hours a year — enough to read 26 books, train for a half marathon, or just breathe." },
+    medium: { range: "15-22", title: "The Quiet Carrier", emoji: "🎒", hoursWeek: 16, hoursSaved: 10, summary: "You're carrying more than your share — and you probably don't realize how much of it lives rent-free in your head. The mental tabs you keep open are costing you energy, sleep, and joy.", tip: "AI can give you back ~10 hours every week. That's 520 hours a year — the equivalent of 13 full work weeks. Time to rediscover the person you were before you became Chief Everything Officer." },
+    high: { range: "23-32", title: "Chief Everything Officer", emoji: "🔥", hoursWeek: 22, hoursSaved: 15, summary: "You are running an entire operation solo. You're the CEO, COO, CFO, and intern of your household — and it's not sustainable. The invisible load you're carrying would burn anyone out.", tip: "AI can give you back ~15 hours every week. That's 780 hours a year — nearly 20 full work weeks you're losing to invisible work. This isn't about productivity. It's about getting your life back." }
+};
+
+let currentQ = 0;
+let answers = {};
+
+function show(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function startQuiz() {
+    show('screen-quiz');
+    renderQuestion();
+    if (typeof fbq !== 'undefined') fbq('track', 'ViewContent', { content_name: 'quiz-started' });
+}
+
+function renderQuestion() {
+    const q = QUESTIONS[currentQ];
+    document.getElementById('progressBar').style.width = ((currentQ / QUESTIONS.length) * 100) + '%';
+    document.getElementById('qCount').textContent = 'Question ' + (currentQ + 1) + ' of ' + QUESTIONS.length;
+    document.getElementById('qCategory').textContent = q.category;
+    document.getElementById('qText').textContent = q.question;
+    document.getElementById('backBtn').style.display = currentQ > 0 ? 'block' : 'none';
+
+    const optDiv = document.getElementById('qOptions');
+    optDiv.innerHTML = '';
+    q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn' + (answers[currentQ] === opt.score ? ' selected' : '');
+        btn.textContent = opt.text;
+        btn.onclick = () => selectAnswer(opt.score);
+        optDiv.appendChild(btn);
+    });
+}
+
+function selectAnswer(score) {
+    answers[currentQ] = score;
+    setTimeout(() => {
+        if (currentQ < QUESTIONS.length - 1) {
+            currentQ++;
+            renderQuestion();
+        } else {
+            showResult();
+        }
+    }, 300);
+}
+
+function goBack() {
+    if (currentQ > 0) { currentQ--; renderQuestion(); }
+}
+
+function showResult() {
+    const total = Object.values(answers).reduce((a, b) => a + b, 0);
+    const r = total <= 14 ? RESULTS.low : total <= 22 ? RESULTS.medium : RESULTS.high;
+
+    document.getElementById('resultEmoji').textContent = r.emoji;
+    document.getElementById('scoreNum').textContent = total;
+    document.getElementById('resultTitle').textContent = r.title;
+    document.getElementById('resultSummary').textContent = r.summary;
+    document.getElementById('tipText').textContent = r.tip;
+    
+    // Time impact calculations
+    var hoursWeek = r.hoursWeek;
+    var hoursYear = hoursWeek * 52;
+    var savedYear = r.hoursSaved * 52;
+    var workWeeks = Math.round(hoursYear / 40);
+    document.getElementById('hoursWeek').textContent = hoursWeek;
+    document.getElementById('hoursYear').textContent = hoursYear.toLocaleString();
+    document.getElementById('hoursSaved').textContent = savedYear.toLocaleString();
+    var msgs = {
+        low: "That\'s " + workWeeks + " full work weeks per year spent on invisible work. AI can give you back 260 hours — enough time to rediscover the things you love.",
+        medium: "That\'s " + workWeeks + " full work weeks per year. You\'re working two jobs — your career and your household. AI can give you back 520 hours to rediscover yourself.",
+        high: "That\'s " + workWeeks + " full work weeks per year — nearly half a year of full-time work, invisible and unrecognized. AI can give you back 780 hours. Enough to change everything."
+    };
+    var level = total <= 14 ? "low" : total <= 22 ? "medium" : "high";
+    document.getElementById('timeMessage').textContent = msgs[level].replace(/\\'/g, "'");
+    document.getElementById('hiddenScore').value = total;
+    document.getElementById('hiddenResult').value = r.title;
+
+    show('screen-result');
+
+    // Animate gauge
+    const pct = (total / 32) * 100;
+    setTimeout(() => {
+        document.getElementById('gaugeCircle').style.strokeDasharray = (pct * 5.34) + ' ' + (534 - pct * 5.34);
+    }, 100);
+
+    if (typeof fbq !== 'undefined') fbq('track', 'ViewContent', { content_name: 'quiz-result', value: total });
+}
+
+function handleQuizSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('quizForm');
+    const email = document.getElementById('quizEmail').value;
+    if(typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name: 'Quiz Completed'});
+
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+    }).then(() => {
+        if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'quiz-lead' });
+        document.getElementById('finalEmail').innerHTML = 'Your AI Transformation Guide is on the way to <strong>' + email + '</strong>.';
+        show('screen-final');
+    }).catch(() => {
+        alert('Something went wrong — please try again.');
+    });
+}
+</script>
+
+</body>
+</html>
