@@ -4,12 +4,31 @@
 ## Current Sprint
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
-Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done (Next.js app in next/).
+Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — increment 1
+  (shared shell + homepage) done, builds + smoke-tests green. ~27 pages left to port.
   Supabase + Vercel provisioning still deferred (do with Lauren at the dashboards).
-Blocked by: Nothing (provisioning is a deliberate later step).
-Next step: Provision Supabase (articles + submissions tables) + Vercel project WITH Lauren;
-  then Phase 2 — port pages + shared layout into next/ (start with Header/Footer + homepage).
+Blocked by: Nothing.
+Next step: Continue Phase 2 commerce pages — Membership funnel next (membership +
+  membership-register + membership-thank-you), then Workshop funnel, then shop, quiz,
+  article. Foundations funnel DONE (commit bea4d02) and is the template to copy.
+  Forms render structurally now; wiring is Phase 4.
 Repo layout: root = live static HTML (reference); next/ = the Next.js rebuild.
+
+## Patterns established (reuse these when porting pages)
+- Shared chrome lives in app/layout.tsx (fonts, fbq queue stub, <Header/><Footer/><Analytics/>).
+- Design system in app/globals.css; per-page sections in app/<page>.css (plain global import,
+  NOT CSS modules, so class names stay intact).
+- Internal links → clean slugs via next/link (e.g. /foundations, NOT foundations.html).
+- Pixel-tracked CTAs → <TrackedLink href event params> (components/TrackedLink.tsx).
+- window.fbq typed in next/types/global.d.ts.
+- Static assets already copied to next/public (img-*, raquel.png, og-image.png, favicon.svg).
+- Stripe links + prices: import from next/lib/commerce.ts (never hardcode).
+- Each page wraps its body in <div className="page-NAME"> and its CSS lives in
+  app/NAME.css scoped under .page-NAME { ... } (CSS nesting; @keyframes hoisted out).
+- Register forms = client components: validate → InitiateCheckout pixel → POST to
+  /api/forms/<name> (Phase 4; .catch redirects anyway) → window.location to Stripe
+  (full vs ?plan=split) with prefilled_email. Thank-you pages: <PurchasePixel/>.
+- Reusable: TrackedLink, NewsletterPopup, FloatingQuizCTA, PurchasePixel.
 
 ## What's been built
 (Static site on Netlify, as of 2026-06-22 — the migration target)
