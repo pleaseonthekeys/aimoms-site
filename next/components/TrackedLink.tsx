@@ -36,7 +36,9 @@ export default function TrackedLink({
   const onClick = () => trackFbq(event, params);
   const isInternal = href.startsWith('/');
 
-  if (isInternal) {
+  // Use a plain anchor for external links OR when a target (e.g. _blank) is requested,
+  // so new-tab behavior is preserved; otherwise use client-side <Link>.
+  if (isInternal && !target) {
     return (
       <Link href={href} className={className} onClick={onClick}>
         {children}

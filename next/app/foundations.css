@@ -1,0 +1,149 @@
+/* Foundations sales page styles (ported from foundations.html). Scoped under
+   .page-foundations to avoid cross-route CSS collisions. */
+
+.page-foundations {
+  .container { max-width: 720px; margin: 0 auto; overflow-x: hidden; }
+  .centered { text-align: center; }
+
+  /* HERO */
+  .hero { padding: 140px 24px 80px; background: var(--white); min-height: 480px; display: flex; align-items: center; }
+  .hero-label {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.85em; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2.8em, 8vw, 5em);
+    line-height: 1.0; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 28px;
+  }
+  .hero-sub { font-size: 1.05em; line-height: 1.7; color: var(--gray-600); margin-bottom: 36px; }
+  .hero-note { font-size: 0.85em; color: var(--gray-400); margin-top: 22px; }
+
+  /* CTA BUTTON */
+  .cta-btn {
+    display: inline-block; background: var(--pink); color: #fff; padding: 16px 36px; border-radius: 10px;
+    font-size: 1.05em; font-weight: 700; text-decoration: none; transition: all 0.25s; letter-spacing: 0.01em;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px); outline: 2px solid var(--pink); outline-offset: 3px;
+    box-shadow: 0 8px 25px rgba(255, 99, 216, 0.3);
+  }
+
+  /* WHAT YOU'LL COVER */
+  .cover-card { background: var(--navy); border-radius: 16px; padding: 48px 36px; color: #fff; }
+  .cover-label {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.8em; color: var(--pink);
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;
+  }
+  .cover-card h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.5em; line-height: 1.3; margin-bottom: 32px; }
+  .cover-item {
+    padding: 18px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 1em; line-height: 1.6;
+    font-weight: 400; display: flex; gap: 14px; align-items: flex-start;
+  }
+  .cover-item::before { content: "\25C6"; color: #ff63d8; font-size: 0.6em; margin-top: 0.5em; flex-shrink: 0; }
+  .cover-item:last-child { padding-bottom: 0; }
+
+  /* SOUND FAMILIAR */
+  .familiar-section { background: var(--off-white); }
+  .familiar-section h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 6vw, 3.2em);
+    line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .familiar-sub { font-size: 1.05em; color: var(--gray-600); margin-bottom: 40px; line-height: 1.6; }
+  .pain-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 32px 28px; margin-bottom: 16px; }
+  .pain-card h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25em; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .pain-card p { color: var(--gray-600); font-size: 0.95em; line-height: 1.55; }
+
+  /* WHAT CHANGES */
+  .changes-section { background: var(--navy); color: #fff; }
+  .changes-section h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 6vw, 3.2em);
+    line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .changes-sub { font-size: 1.05em; color: rgba(255, 255, 255, 0.6); margin-bottom: 40px; line-height: 1.6; }
+  .benefit-card { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 32px 28px; margin-bottom: 16px; }
+  .benefit-card h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25em; margin-bottom: 8px; color: #fff; }
+  .benefit-card p { color: rgba(255, 255, 255, 0.55); font-size: 0.95em; line-height: 1.55; }
+
+  /* HOW IT WORKS */
+  .how-section { background: var(--white); }
+  .how-section h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 6vw, 3.2em);
+    line-height: 1.1; margin-bottom: 8px; letter-spacing: -0.02em;
+  }
+  .how-sub { font-size: 1.05em; color: var(--gray-600); margin-bottom: 48px; }
+  .step { text-align: center; margin-bottom: 40px; }
+  .step-num {
+    width: 52px; height: 52px; background: var(--pink); color: #fff; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center; font-family: 'Outfit', sans-serif;
+    font-weight: 800; font-size: 1.2em; margin-bottom: 14px;
+  }
+  .step h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.3em; margin-bottom: 6px; }
+  .step p { color: var(--gray-600); font-size: 0.95em; line-height: 1.5; max-width: 380px; margin: 0 auto; }
+
+  /* INSTRUCTOR / INCLUDED */
+  .instructor-section { background: var(--navy); color: #fff; }
+  .included-section { background: var(--navy); color: #fff; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .included-section h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 6vw, 3.2em);
+    line-height: 1.1; margin-bottom: 40px; letter-spacing: -0.02em;
+  }
+  .included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; }
+  .included-grid > div { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 24px; }
+  .included-grid h3 { font-size: 1em; margin-bottom: 8px; color: #fff; }
+  .included-grid p { font-size: 0.88em; line-height: 1.6; color: rgba(255, 255, 255, 0.6); }
+  .price-box {
+    margin-top: 48px; padding: 36px 28px; background: rgba(255, 99, 216, 0.08);
+    border: 1px solid rgba(255, 99, 216, 0.2); border-radius: 14px; text-align: center;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-section { background: var(--off-white); }
+  .testimonials-section h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 6vw, 3.2em);
+    line-height: 1.1; margin-bottom: 40px; letter-spacing: -0.02em;
+  }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; }
+  .testimonials-grid.autofit { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 16px; }
+  .tcard { background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; padding: 24px; text-align: left; }
+  .tcard p { font-size: 0.9em; line-height: 1.6; color: var(--navy); font-style: italic; margin-bottom: 14px; }
+  .tcard .tname { font-weight: 700; font-size: 0.85em; color: var(--navy); }
+  .tcard .trole { font-size: 0.75em; color: var(--gray-400); }
+
+  /* FAQ */
+  .faq-section { background: var(--white); }
+  .faq-section h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 6vw, 3.2em);
+    line-height: 1.1; margin-bottom: 40px; letter-spacing: -0.02em;
+  }
+  .faq-item { border-bottom: 1px solid var(--gray-200); }
+  .faq-item:first-child { border-top: 1px solid var(--gray-200); }
+  .faq-item summary {
+    padding: 22px 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15em;
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item summary::after { content: '+'; font-size: 1.4em; font-weight: 400; color: var(--gray-400); transition: transform 0.2s; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-answer { padding: 0 0 22px; color: var(--gray-600); font-size: 0.95em; line-height: 1.6; }
+
+  /* FINAL CTA */
+  .final-cta { background: var(--navy); color: #fff; padding: 100px 24px; }
+  .final-cta h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 6vw, 3.2em);
+    line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .final-sub { font-size: 1.05em; color: rgba(255, 255, 255, 0.6); margin-bottom: 36px; }
+  .final-note { font-size: 0.85em; color: rgba(255, 255, 255, 0.35); margin-top: 14px; }
+
+  @media (max-width: 768px) {
+    .included-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 120px 20px 60px; }
+    .cover-card { padding: 36px 24px; }
+    .final-cta { padding: 80px 20px; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2em; }
+  }
+}

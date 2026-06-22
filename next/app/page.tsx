@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="page-home">
       {/* HERO */}
       <section className="hero">
         <div className="container-sm">
@@ -342,6 +342,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-    </>
+    </div>
   );
 }
