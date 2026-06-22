@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserve Your Seat — Monthly Workshop — ai.moms™</title>
+<meta name="description" content="Reserve your seat for the next ai.moms™ Monthly Workshop. $68 a seat. 60 minutes live on Zoom — Thursday, July 9, 10:00am ET. Replay included.">
+<link rel="canonical" href="https://aimoms.ai/workshop-register">
+<meta name="robots" content="noindex">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --navy:#060d26;
+    --pink:#ff63d8;
+    --pink-hover:#e040b0;
+    --white:#ffffff;
+    --off-white:#f8f8f8;
+    --gray-100:#f3f3f3;
+    --gray-200:#e5e5e5;
+    --gray-300:#d4d4d4;
+    --gray-400:#999;
+    --gray-600:#666;
+    --ink-soft:#3d4357;
+    --serif:'Playfair Display', Georgia, serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;max-width:100%;}
+body{
+    font-family:'Be Vietnam Pro',sans-serif;
+    color:var(--navy);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;letter-spacing:-0.02em;}
+
+.italic-accent{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    letter-spacing:-0.01em;
+}
+.tm{
+    font-size:0.42em;
+    vertical-align:0.6em;
+    font-weight:600;
+    letter-spacing:0;
+    margin-left:1px;
+    opacity:0.85;
+}
+
+.container-sm{max-width:580px;margin:0 auto;padding:0 24px;}
+
+/* HERO */
+.hero{
+    padding:80px 24px 30px;
+    background:#fff;
+    text-align:center;
+}
+.hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:1px solid var(--gray-200);
+    padding:8px 18px;
+    border-radius:100px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:0.72em;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--navy);
+    margin-bottom:22px;
+}
+.hero-eyebrow .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--pink);
+    box-shadow:0 0 12px rgba(255,99,216,0.8);
+    animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:0.6;transform:scale(1.3);}
+}
+.hero h1{
+    font-family:'Outfit',sans-serif;
+    font-weight:900;
+    font-size:clamp(2.4em,6vw,4em);
+    line-height:1.0;
+    color:var(--navy);
+    letter-spacing:-0.035em;
+    margin-bottom:20px;
+    max-width:560px;
+    margin-left:auto;margin-right:auto;
+}
+.hero h1 .italic-accent{color:var(--pink);font-weight:600;}
+.hero-sub{
+    font-size:1.05em;
+    line-height:1.65;
+    color:var(--gray-600);
+    max-width:520px;
+    margin:0 auto 8px;
+}
+.hero-sub strong{color:var(--navy);font-weight:600;}
+.hero-price-line{
+    display:inline-block;
+    margin-top:18px;
+    padding:8px 18px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:100px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:0.85em;
+    letter-spacing:0.02em;
+}
+.hero-price-line .pink{color:var(--pink);}
+
+/* FORM */
+.form-section{
+    padding:30px 24px 80px;
+    background:#fff;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+.form-intro{
+    font-family:'Outfit',sans-serif;
+    font-size:0.72em;
+    font-weight:700;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    color:var(--pink);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:4px;
+}
+.form-intro::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background:var(--gray-200);
+}
+
+.field-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+@media(max-width:480px){
+    .field-row{grid-template-columns:1fr;gap:24px;}
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.field-label{
+    font-family:'Outfit',sans-serif;
+    font-size:0.72em;
+    font-weight:700;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--navy);
+}
+.field-label .opt{
+    color:var(--gray-400);
+    font-weight:500;
+    letter-spacing:0.08em;
+    margin-left:6px;
+    text-transform:none;
+    font-size:0.85em;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"]{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1.5px solid var(--gray-300);
+    padding:10px 0;
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:1em;
+    color:var(--navy);
+    font-weight:500;
+    transition:border-color 0.2s ease;
+    -webkit-appearance:none;
+    border-radius:0;
+}
+.field input:focus{
+    outline:none;
+    border-bottom-color:var(--pink);
+}
+.field input::placeholder{
+    color:var(--gray-400);
+    font-weight:400;
+}
+.field-help{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:0.82em;
+    color:var(--gray-400);
+    line-height:1.4;
+}
+
+/* Intent checkbox cards */
+.intent-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    align-items:stretch;
+}
+.intent-option{
+    display:block;
+    cursor:pointer;
+    position:relative;
+}
+.intent-option input[type="checkbox"]{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+.intent-option .intent-card{
+    height:100%;
+    padding:18px 16px;
+    background:#fff;
+    border:1.5px solid var(--gray-200);
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    transition:border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    min-height:106px;
+    position:relative;
+}
+.intent-option:hover .intent-card{
+    border-color:rgba(255,99,216,0.5);
+}
+.intent-option input[type="checkbox"]:checked + .intent-card{
+    background:rgba(255,99,216,0.06);
+    border-color:var(--pink);
+}
+.intent-option input[type="checkbox"]:checked + .intent-card::after{
+    content:'✓';
+    position:absolute;
+    top:10px;
+    right:12px;
+    width:20px;
+    height:20px;
+    background:var(--pink);
+    color:#fff;
+    border-radius:50%;
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-weight:800;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    line-height:1;
+}
+
+/* Wide variant — spans both columns */
+.intent-option.wide{
+    grid-column:1 / -1;
+}
+.intent-option.wide .intent-card{
+    min-height:0;
+    flex-direction:row;
+    align-items:center;
+    gap:14px;
+    padding:16px 18px;
+    flex-wrap:wrap;
+}
+.intent-option.wide .intent-tag{flex:0 0 auto;}
+.intent-option.wide .intent-name{flex:0 0 auto;margin-top:0;}
+.intent-option.wide .intent-desc{flex:1 1 200px;margin-top:0;}
+
+.intent-card .intent-tag{
+    font-family:'Outfit',sans-serif;
+    font-size:0.68em;
+    font-weight:700;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--pink);
+}
+.intent-card .intent-name{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.02em;
+    letter-spacing:-0.015em;
+    color:var(--navy);
+    line-height:1.2;
+    margin-top:2px;
+}
+.intent-card .intent-name .it{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    color:var(--pink);
+}
+.intent-card .intent-desc{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:0.85em;
+    line-height:1.45;
+    color:var(--gray-600);
+    font-weight:400;
+    margin-top:2px;
+}
+
+/* Submit */
+.submit-wrap{
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+button[type="submit"]{
+    background:var(--pink);
+    color:#fff;
+    border:none;
+    padding:18px 28px;
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:1em;
+    font-weight:700;
+    letter-spacing:0.01em;
+    cursor:pointer;
+    border-radius:12px;
+    transition:all 0.25s;
+    box-shadow:0 4px 20px rgba(255,99,216,0.25);
+}
+button[type="submit"]:hover{
+    background:var(--pink);
+    transform:translateY(-2px);
+    outline:2px solid var(--pink);
+    outline-offset:3px;
+    box-shadow:0 8px 26px rgba(255,99,216,0.35);
+}
+button[type="submit"]:disabled{
+    opacity:0.7;
+    cursor:wait;
+    transform:none;
+}
+button[type="submit"]::after{
+    content:'→';
+    margin-left:10px;
+    display:inline-block;
+    transition:transform 0.2s ease;
+}
+button[type="submit"]:hover:not(:disabled)::after{transform:translateX(4px);}
+.submit-note{
+    text-align:center;
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:0.82em;
+    color:var(--gray-400);
+    line-height:1.5;
+}
+
+/* Honeypot hidden */
+.hp-field{
+    position:absolute;
+    left:-9999px;
+    width:1px;height:1px;
+    overflow:hidden;
+}
+
+/* Nav typography */
+#mobilemenu a, nav a, nav button{
+    font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;
+}
+footer a, footer p, footer div{
+    font-family:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;
+}
+.tnl{transition:color 0.2s;text-transform:uppercase !important;}
+.tnl:hover{color:#ff63d8 !important;}
+@media(max-width:900px){.tnl{display:none !important;}}
+
+@media(max-width:640px){
+    .hero{padding:70px 20px 24px;}
+    .form-section{padding:24px 20px 60px;}
+    footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr 1fr !important;gap:20px !important;}
+}
+@media(max-width:480px){
+    h1{font-size:2.2em !important;}
+    footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr !important;}
+}
+
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif !important;}
+
+#mobilemenu a{transition:color 0.2s ease;}
+#mobilemenu a:hover{color:#ff63d8 !important;}
+nav a, nav button, #mobilemenu a{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;}
+@media(max-width:1040px){.tnl{display:none !important}}
+</style>
+
+<script>
+window._fbqQueue=[];
+window.fbq=function(){window._fbqQueue.push(arguments);};
+window._fbq=window.fbq;
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#060d26;border-bottom:none;padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.5;color:#fff">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer&#8482;.</div>
+</a>
+<div style="display:flex;align-items:center;gap:2px">
+<a href="foundations.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">FOUNDATIONS COURSE</a>
+<a href="membership.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MEMBERSHIP</a>
+<a href="workshop.html" class="tnl" style="color:#ff63d8;padding:7px 7px;font-size:11px;font-weight:700;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MONTHLY WORKSHOP</a>
+<a href="experiences.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MOM HOSTED EXPERIENCES</a>
+<a href="events.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">EVENTS SCHEDULE</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;margin-left:6px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px;margin-left:2px">
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="foundations.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOUNDATIONS COURSE</a>
+<a href="membership.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEMBERSHIP</a>
+<a href="workshop.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MONTHLY WORKSHOP</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MOM HOSTED EXPERIENCES</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="events.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EVENTS SCHEDULE</a>
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="science.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE SCIENCE</a>
+<a href="subscribe.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SUBSCRIBE</a>
+</div>
+</nav>
+<div style="height:56px"></div>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container-sm">
+        <div class="hero-eyebrow"><span class="dot"></span> Monthly Workshop &middot; Registration</div>
+        <h1>You&rsquo;re almost in.</h1>
+        <p class="hero-sub">Two quick steps: a few details about you, then payment. About <strong>2 minutes</strong> total. Then you&rsquo;ll get a confirmation email with your Zoom link.</p>
+        <div class="hero-price-line">$68<span class="pink"> a seat</span> &middot; replay included</div>
+    </div>
+</section>
+
+
+<!-- FORM -->
+<section class="form-section">
+    <div class="container-sm">
+
+        <!-- Netlify form: data is captured by Netlify, then submission redirects to Stripe checkout -->
+        <form
+            id="signupForm"
+            name="workshop-signup"
+            method="POST"
+            action="https://buy.stripe.com/3cI4gB5Q49Ax5EJ494dZ60l"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            novalidate
+        >
+            <input type="hidden" name="form-name" value="workshop-signup">
+
+            <p class="hp-field">
+                <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+
+            <div class="form-intro">Tell us about you</div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label class="field-label" for="first_name">First name</label>
+                    <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+                </div>
+                <div class="field">
+                    <label class="field-label" for="last_name">Last name</label>
+                    <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="field-label" for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="field">
+                <label class="field-label" for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel" maxlength="14" inputmode="numeric">
+            </div>
+
+            <div class="submit-wrap">
+                <button type="submit">Continue to payment</button>
+                <p class="submit-note">You&rsquo;ll be taken to a secure checkout. After payment, you&rsquo;ll get a confirmation email with your Zoom link within minutes.</p>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',sans-serif">Retire from<br>Chief Everything Officer&#8482;.</p>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
+<a href="foundations.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Foundations Course</a>
+<a href="membership.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Membership</a>
+<a href="workshop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Monthly Workshop</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Mom-Hosted Experiences</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Corporate Programs</a>
+<a href="out-of-office-waitlist.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Out of Office Weekends&#8482;</a>
+<a href="mailto:hello@aimoms.ai?subject=Private%201%3A1%20Coaching%20Inquiry" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Private 1:1 Coaching</a>
+<a href="editorial.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Edit</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The AI Toolkit</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Community</a>
+<a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Science</a>
+<a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Careers</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Prompt Packs</a>
+<a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Merch &amp; Gifts</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">h&#101;llo&#64;aimoms&#46;ai</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Partnerships, Press &amp; Media</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3);font-family:'Be Vietnam Pro',sans-serif">&copy; 2026 ai.moms&#8482; All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+<script>
+// Auto-format phone input as (XXX) XXX-XXXX
+(function(){
+    const phone = document.getElementById('phone');
+    if(!phone) return;
+    phone.addEventListener('input', function(e){
+        let digits = e.target.value.replace(/\D/g, '').substring(0,10);
+        let formatted = '';
+        if(digits.length === 0){ formatted = ''; }
+        else if(digits.length < 4){ formatted = '(' + digits; }
+        else if(digits.length < 7){ formatted = '(' + digits.substring(0,3) + ') ' + digits.substring(3); }
+        else { formatted = '(' + digits.substring(0,3) + ') ' + digits.substring(3,6) + '-' + digits.substring(6); }
+        e.target.value = formatted;
+    });
+    phone.addEventListener('focus', function(e){
+        if(e.target.value === ''){ e.target.value = '('; }
+    });
+    phone.addEventListener('blur', function(e){
+        if(e.target.value === '(' || e.target.value === ''){ e.target.value = ''; }
+    });
+})();
+
+// Capture form data in Netlify, then redirect to Stripe checkout.
+(function(){
+    var STRIPE_URL = "https://buy.stripe.com/3cI4gB5Q49Ax5EJ494dZ60l";
+    var form = document.getElementById('signupForm');
+    if(!form) return;
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        if(!form.checkValidity()){
+            form.reportValidity();
+            return;
+        }
+
+        var btn = form.querySelector('button[type="submit"]');
+        if(btn){
+            btn.disabled = true;
+            btn.textContent = 'Taking you to payment';
+        }
+
+        var done = false;
+        function go(){
+            if(done) return;
+            done = true;
+            // Pre-fill the Stripe checkout with the user's email
+            var email = (document.getElementById('email') || {}).value || '';
+            var redirectUrl = STRIPE_URL;
+            if(email){
+                redirectUrl += (STRIPE_URL.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(email);
+            }
+            // Pixel event for Meta tracking
+            if(typeof fbq !== 'undefined'){
+                try { fbq('track','InitiateCheckout',{content_name:'Foundations - Form Complete',value:68,currency:'USD'}); } catch(e){}
+            }
+            window.location.href = redirectUrl;
+        }
+
+        // Safety net: if capture is slow, redirect anyway.
+        setTimeout(go, 2500);
+
+        var body = new URLSearchParams(new FormData(form)).toString();
+        fetch(window.location.pathname, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body
+        }).then(go).catch(go);
+    });
+})();
+</script>
+
+</body>
+</html>

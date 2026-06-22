@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Out of Office Weekends™ — Mom Retreats. Reimagined. | ai.moms™</title>
+<meta name="description" content="A full-day retreat for moms — learn AI, play tennis, eat extraordinary meals, network with brilliant women, and breathe. Coming soon. Join the waitlist.">
+<link rel="canonical" href="https://aimoms.ai/out-of-office-waitlist">
+<meta property="og:title" content="Out of Office Weekends™ — ai.moms™">
+<meta property="og:description" content="A full-day retreat for moms — learn AI, play tennis, eat extraordinary meals, network with brilliant women, and breathe.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimoms.ai/out-of-office-waitlist">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Out of Office Weekends™ — ai.moms™">
+<meta name="twitter:description" content="A full-day retreat for moms — learn AI, play tennis, eat extraordinary meals, network with brilliant women, and breathe.">
+<meta name="twitter:image" content="https://aimoms.ai/og-image.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --navy:#060d26;
+    --pink:#ff63d8;
+    --pink-hover:#e040b0;
+    --white:#ffffff;
+    --off-white:#f8f8f8;
+    --gray-200:#e5e5e5;
+    --gray-300:#d4d4d4;
+    --gray-400:#999;
+    --gray-600:#666;
+    --serif:'Playfair Display', Georgia, serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-weight:400;
+    color:var(--navy);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;letter-spacing:-0.02em;color:var(--navy);}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.italic-accent{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    color:var(--pink);
+    letter-spacing:-0.01em;
+}
+.tm{
+    font-size:0.42em;
+    vertical-align:0.6em;
+    opacity:0.85;
+    font-weight:400;
+    letter-spacing:0;
+}
+
+/* SECTION SHARED */
+.section-eyebrow{
+    display:inline-block;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:11px;
+    color:var(--pink);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:14px;
+}
+.section-eyebrow.centered{display:block;text-align:center;}
+.section-eyebrow .dot{
+    display:inline-block;
+    width:7px;height:7px;
+    background:var(--pink);
+    border-radius:50%;
+    margin-right:8px;
+    vertical-align:middle;
+}
+.section-title{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:clamp(2em,4.5vw,3em);
+    line-height:1.05;
+    color:var(--navy);
+    margin-bottom:18px;
+    letter-spacing:-0.025em;
+}
+.section-title.centered{text-align:center;max-width:780px;margin:0 auto 18px;}
+.section-sub{
+    font-size:1.05em;
+    line-height:1.65;
+    color:var(--gray-600);
+    max-width:680px;
+}
+.section-sub.centered{text-align:center;margin:0 auto;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:#060d26;border-bottom:none;padding:12px 24px;display:block!important;}
+.nav-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.logo-link{text-decoration:none;display:flex;flex-direction:column;}
+.logo{font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1;}
+.logo .pink{color:var(--pink);font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;}
+.logo .moms{color:var(--navy);}
+.logo .tm-mark{font-size:8px;vertical-align:super;opacity:0.4;color:var(--navy);}
+.logo-sub{font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.01em;margin-top:1px;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.tnl{color:#fff;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.04em;text-transform:uppercase;}
+.tnl.active{color:var(--pink);font-weight:700;}
+.subscribe-pill{background:var(--pink);color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;margin-left:4px;}
+.hamburger{cursor:pointer;padding:6px;}
+.hamburger div{width:20px;height:2px;background:#fff;margin-bottom:4px;}
+.hamburger div:last-child{margin-bottom:0;}
+#mobilemenu{display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000;}
+#mobilemenu a{display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em;}
+#mobilemenu a:last-child{border-bottom:none;}
+#mobilemenu a:hover{color:var(--pink) !important;}
+
+/* HERO */
+.hero{padding:130px 24px 90px;background:#fff;text-align:center;}
+.hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:1px solid var(--gray-200);
+    padding:8px 16px;
+    border-radius:100px;
+    font-family:'Outfit',sans-serif;
+    font-weight:600;
+    font-size:11px;
+    color:var(--navy);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    margin-bottom:28px;
+}
+.hero-eyebrow .dot{
+    display:inline-block;
+    width:7px;height:7px;
+    background:var(--pink);
+    border-radius:50%;
+    animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:0.7;transform:scale(0.9);}
+}
+.hero h1{
+    font-family:'Outfit',sans-serif;
+    font-weight:900;
+    font-size:clamp(2.4em,6.5vw,4.6em);
+    line-height:1.0;
+    color:var(--navy);
+    letter-spacing:-0.035em;
+    margin:0 auto 24px;
+    max-width:920px;
+}
+.hero-sub{
+    font-size:1.1em;
+    line-height:1.7;
+    color:var(--gray-600);
+    max-width:680px;
+    margin:0 auto 36px;
+}
+.hero-sub strong{color:var(--navy);font-weight:600;}
+.cta-pink{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:var(--pink);
+    color:#fff;
+    padding:18px 36px;
+    border-radius:100px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:1em;
+    text-decoration:none;
+    transition:all 0.2s;
+    letter-spacing:0.01em;
+    border:2px solid var(--pink);
+    cursor:pointer;
+}
+.cta-pink:hover{background:transparent;color:var(--pink);border-color:var(--pink);transform:translateY(-2px);box-shadow:none;}
+.cta-large{font-size:1.05em;padding:20px 40px;}
+.hero-note{
+    font-family:'Outfit',sans-serif;
+    font-size:11px;
+    color:var(--gray-400);
+    margin-top:22px;
+    letter-spacing:0.04em;
+}
+
+/* SCHEDULE — TIMELINE */
+.schedule-section{padding:100px 24px 80px;background:var(--off-white);}
+.schedule-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:50px;
+}
+.schedule-card{
+    background:#fff;
+    border-radius:18px;
+    padding:32px 28px;
+    border:1px solid var(--gray-200);
+    position:relative;
+    overflow:hidden;
+    transition:all 0.2s;
+}
+.schedule-card::before{
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background:var(--pink);
+    transform:translateX(-100%);
+    transition:transform 0.3s ease;
+}
+.schedule-card:hover::before{transform:translateX(0);}
+.schedule-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(6,13,38,0.06);}
+.schedule-time{
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--pink);
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+.schedule-name{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.5em;
+    color:var(--navy);
+    margin-bottom:8px;
+    letter-spacing:-0.02em;
+}
+.schedule-desc{
+    font-size:0.95em;
+    line-height:1.6;
+    color:var(--gray-600);
+}
+.schedule-card.wide{grid-column:1 / -1;}
+
+/* INCLUDED — 4 CARDS */
+.included-section{padding:100px 24px;background:#fff;}
+.included-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:50px;
+}
+.included-card{
+    background:#fff;
+    border-radius:18px;
+    padding:36px 30px;
+    border:1px solid var(--gray-200);
+    position:relative;
+    overflow:hidden;
+    transition:all 0.2s;
+}
+.included-card::before{
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background:var(--pink);
+    transform:translateX(-100%);
+    transition:transform 0.3s ease;
+}
+.included-card:hover::before{transform:translateX(0);}
+.included-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(6,13,38,0.06);}
+.icon{
+    width:44px;height:44px;
+    background:rgba(255,99,216,0.1);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    color:var(--pink);
+}
+.included-card h3{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.25em;
+    margin-bottom:10px;
+    letter-spacing:-0.015em;
+}
+.included-card p{
+    font-size:0.95em;
+    line-height:1.65;
+    color:var(--gray-600);
+}
+
+/* WHERE/WHEN PLACEHOLDER */
+.locations-section{padding:80px 24px;background:var(--navy);color:#fff;text-align:center;}
+.locations-section .section-eyebrow{color:var(--pink);}
+.locations-section h2{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:clamp(1.8em,4vw,2.6em);
+    color:#fff;
+    line-height:1.1;
+    margin-bottom:18px;
+    max-width:720px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.locations-section p{
+    color:rgba(255,255,255,0.7);
+    font-size:1.05em;
+    line-height:1.65;
+    max-width:620px;
+    margin:0 auto;
+}
+
+/* WAITLIST FORM */
+.form-section{padding:100px 24px;background:#fff;}
+.form-wrap{max-width:560px;margin:0 auto;}
+.form-card{
+    background:var(--off-white);
+    border-radius:24px;
+    padding:48px 40px;
+    border:1px solid var(--gray-200);
+}
+.form-card h2{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.8em;
+    color:var(--navy);
+    text-align:center;
+    margin-bottom:8px;
+    letter-spacing:-0.02em;
+}
+.form-card .form-sub{
+    text-align:center;
+    color:var(--gray-600);
+    font-size:0.95em;
+    line-height:1.55;
+    margin-bottom:32px;
+}
+.field{margin-bottom:18px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+.field-row .field{margin-bottom:0;}
+.field-label{
+    display:block;
+    font-family:'Outfit',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    color:var(--navy);
+    margin-bottom:6px;
+    letter-spacing:0.01em;
+}
+.field input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid var(--gray-300);
+    border-radius:10px;
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:0.95em;
+    color:var(--navy);
+    background:#fff;
+    transition:border-color 0.2s;
+}
+.field input:focus{outline:none;border-color:var(--pink);}
+.submit-btn{
+    width:100%;
+    background:var(--pink);
+    color:#fff;
+    padding:18px 24px;
+    border-radius:12px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:1.02em;
+    border:2px solid var(--pink);
+    cursor:pointer;
+    transition:all 0.25s;
+    letter-spacing:0.01em;
+    margin-top:6px;
+}
+.submit-btn:hover{background:transparent;color:var(--pink);border-color:var(--pink);transform:translateY(-1px);}
+.submit-note{
+    text-align:center;
+    font-size:11px;
+    color:var(--gray-400);
+    margin-top:18px;
+    line-height:1.5;
+    font-family:'Outfit',sans-serif;
+}
+/* Honeypot — hidden */
+.bot-field{position:absolute;left:-9999px;opacity:0;}
+
+/* SUCCESS STATE */
+.form-success{
+    display:none;
+    background:var(--off-white);
+    border:1px solid var(--gray-200);
+    border-radius:24px;
+    padding:60px 40px;
+    text-align:center;
+}
+.form-success.show{display:block;}
+.form-success .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,99,216,0.1);
+    color:var(--pink);
+    padding:8px 18px;
+    border-radius:100px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    margin-bottom:20px;
+}
+.form-success .kicker .dot{
+    width:7px;height:7px;
+    background:var(--pink);
+    border-radius:50%;
+    animation:pulse 2s ease-in-out infinite;
+}
+.form-success h2{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:2em;
+    color:var(--navy);
+    margin-bottom:14px;
+    letter-spacing:-0.02em;
+}
+.form-success p{
+    color:var(--gray-600);
+    font-size:1em;
+    line-height:1.65;
+    max-width:420px;
+    margin:0 auto;
+}
+
+/* FAQ */
+.faq-section{padding:100px 24px;background:var(--off-white);}
+.faq-wrap{max-width:780px;margin:50px auto 0;}
+.faq-item{
+    background:#fff;
+    border-radius:14px;
+    padding:0;
+    margin-bottom:12px;
+    border:1px solid var(--gray-200);
+    overflow:hidden;
+}
+.faq-item summary{
+    cursor:pointer;
+    padding:22px 26px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:1.02em;
+    color:var(--navy);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    letter-spacing:-0.005em;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+    content:'+';
+    color:var(--pink);
+    font-weight:700;
+    font-size:1.4em;
+    transition:transform 0.2s;
+    line-height:1;
+}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-answer{padding:0 26px 22px;color:var(--gray-600);font-size:0.95em;line-height:1.65;}
+
+/* FINAL CTA */
+.final-cta{padding:110px 24px;background:var(--navy);text-align:center;color:#fff;}
+.final-cta h2{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:clamp(1.8em,4vw,2.6em);
+    color:#fff;
+    line-height:1.1;
+    margin-bottom:18px;
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+    letter-spacing:-0.02em;
+}
+.final-cta p{color:rgba(255,255,255,0.7);max-width:540px;margin:0 auto 32px;font-size:1.02em;line-height:1.65;}
+.final-cta-note{
+    font-family:'Outfit',sans-serif;
+    font-size:11px;
+    color:rgba(255,255,255,0.4);
+    margin-top:26px;
+    letter-spacing:0.04em;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .schedule-grid{grid-template-columns:1fr;}
+    .included-grid{grid-template-columns:1fr;}
+    .nav-links a:not(.subscribe-pill):not(.tnl[href="membership.html"]){display:none;}
+}
+@media(max-width:600px){
+    .hero{padding:115px 20px 70px;}
+    .schedule-section,.included-section,.form-section,.faq-section{padding:70px 20px;}
+    .locations-section,.final-cta{padding:80px 20px;}
+    .field-row{grid-template-columns:1fr;}
+    .form-card{padding:36px 24px;}
+}
+/* Harden nav font so it never falls back to a serif if the web font is slow to load */
+nav a, nav button, #mobilemenu a{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;}
+
+@media(max-width:900px){.tnl{display:none !important}}
+
+@media(max-width:1040px){.tnl{display:none !important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#060d26;border-bottom:none;padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.5;color:#fff">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer&#8482;.</div>
+</a>
+<div style="display:flex;align-items:center;gap:2px">
+<a href="foundations.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">FOUNDATIONS COURSE</a>
+<a href="membership.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MEMBERSHIP</a>
+<a href="workshop.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MONTHLY WORKSHOP</a>
+<a href="experiences.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MOM HOSTED EXPERIENCES</a>
+<a href="events.html" class="tnl" style="color:#ff63d8;padding:7px 7px;font-size:11px;font-weight:700;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">EVENTS SCHEDULE</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;margin-left:6px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px;margin-left:2px">
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="foundations.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOUNDATIONS COURSE</a>
+<a href="membership.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEMBERSHIP</a>
+<a href="workshop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MONTHLY WORKSHOP</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MOM HOSTED EXPERIENCES</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="events.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EVENTS SCHEDULE</a>
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="science.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE SCIENCE</a>
+<a href="subscribe.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SUBSCRIBE</a>
+</div>
+</nav>
+<div style="height:56px"></div>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-eyebrow"><span class="dot"></span> Out of Office Weekends<span class="tm">&#8482;</span> &middot; Coming soon</div>
+        <h1>Tennis. Pool. Learn AI.<br>Mahjong. Dinner. <span class="italic-accent">Breathe.</span></h1>
+        <p class="hero-sub">A full-day retreat for moms who want a real break from <strong>Chief Everything Officer<span class="tm">&#8482;</span></strong> duty. Learn AI, play tennis, network with brilliant women, eat extraordinary meals, and breathe.</p>
+        <a href="#waitlist" class="cta-pink cta-large">Join the waitlist &rarr;</a>
+        <p class="hero-note">First Out of Office launches Fall 2026 &middot; Limited to 50 moms</p>
+    </div>
+</section>
+
+
+<!-- A TYPICAL DAY -->
+<section class="schedule-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:8px">
+            <div class="section-eyebrow centered"><span class="dot"></span> A typical day</div>
+            <h2 class="section-title centered">An itinerary redesigned around how moms actually want to spend a day off.</h2>
+        </div>
+
+        <div class="schedule-grid">
+
+            <div class="schedule-card">
+                <div class="schedule-time">8:30 &ndash; 9:30 AM</div>
+                <div class="schedule-name">Morning fitness.</div>
+                <p class="schedule-desc">The format changes with each Out of Office &mdash; HIIT, strength, barre, long walks. Announced before each retreat. Coaches on-site. Coffee waiting.</p>
+            </div>
+
+            <div class="schedule-card">
+                <div class="schedule-time">9:30 &ndash; 11:00 AM</div>
+                <div class="schedule-name">Tennis.</div>
+                <p class="schedule-desc">Active mornings. Tennis, pickleball, paddle. Coaches and partners on-site. Coffee always.</p>
+            </div>
+
+            <div class="schedule-card">
+                <div class="schedule-time">11:00 AM &ndash; 12:30 PM</div>
+                <div class="schedule-name">Pool.</div>
+                <p class="schedule-desc">Swim, lounge, poolside lunch. Reset the body before the brain work starts.</p>
+            </div>
+
+            <div class="schedule-card">
+                <div class="schedule-time">12:30 &ndash; 2:30 PM</div>
+                <div class="schedule-name">Learn AI.</div>
+                <p class="schedule-desc">Two-hour deep dive with Aime &mdash; your AI Chief Everything Officer<span class="tm">&#8482;</span>. Real tools, real prompts, real workflows you&rsquo;ll use the second you get home.</p>
+            </div>
+
+            <div class="schedule-card">
+                <div class="schedule-time">2:30 &ndash; 5:30 PM</div>
+                <div class="schedule-name">Mahjong.</div>
+                <p class="schedule-desc">Mahjong tables, games, spa. Social, slow, brain-on but lighter. Pick your speed.</p>
+            </div>
+
+            <div class="schedule-card">
+                <div class="schedule-time">5:30 &ndash; 7:30 PM</div>
+                <div class="schedule-name">Dinner.</div>
+                <p class="schedule-desc">Chef-curated dinner. Long table. Real conversation. The kind of meal you don&rsquo;t make at home because someone always needs something.</p>
+            </div>
+
+            <div class="schedule-card wide">
+                <div class="schedule-time">7:30 PM &ndash; close</div>
+                <div class="schedule-name">Breathe.</div>
+                <p class="schedule-desc">The exhale. Sunset drinks, long conversations, no agenda. The moment you look around at the moms you just spent the day with and realize &mdash; that was a really good day.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:8px">
+            <div class="section-eyebrow centered"><span class="dot"></span> What&rsquo;s included</div>
+            <h2 class="section-title centered">Everything taken care of.</h2>
+            <p class="section-sub centered">Show up with a bag. We&rsquo;ll handle the rest.</p>
+        </div>
+
+        <div class="included-grid">
+
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3>Beautiful venue.</h3>
+                <p>Private property, design-forward spaces. Room to spread out, lounge, take a phone call if you have to. No tourists wandering through.</p>
+            </div>
+
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3>Full AI curriculum.</h3>
+                <p>Hands-on AI training. Built specifically for moms by moms. Walk away with workflows you actually use.</p>
+            </div>
+
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                </div>
+                <h3>All meals + drinks.</h3>
+                <p>Chef-curated lunch and dinner. Snacks always around. Natural wine, good coffee, fresh juice.</p>
+            </div>
+
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Activities + coaches.</h3>
+                <p>Tennis, pickleball, mahjong, pool, spa, morning fitness. Pros on-site to teach, partner, or just hang out.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- WHERE & WHEN -->
+<section class="locations-section">
+    <div class="container">
+        <div class="section-eyebrow centered" style="color:var(--pink);"><span class="dot" style="background:var(--pink);"></span> Where &amp; when</div>
+        <h2>Locations and dates <span style="color:var(--pink);">coming soon.</span></h2>
+        <p>We&rsquo;re scouting properties now &mdash; mountain, beach, desert. Waitlist members get first dibs on dates and locations when they&rsquo;re announced. Pricing released alongside the first weekend.</p>
+    </div>
+</section>
+
+
+<!-- WAITLIST FORM -->
+<section class="form-section" id="waitlist">
+    <div class="form-wrap">
+        <div id="form-state-default">
+            <div class="form-card">
+                <h2>Add me to the waitlist.</h2>
+                <p class="form-sub">First access to dates, locations, and pricing. No spam. We&rsquo;ll reach out when we have something real to share.</p>
+
+                <form
+                    name="outofoffice-waitlist"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    id="waitlist-form"
+                >
+                    <input type="hidden" name="form-name" value="outofoffice-waitlist">
+                    <p class="bot-field"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+
+                    <div class="field-row">
+                        <div class="field">
+                            <label class="field-label" for="first_name">First name</label>
+                            <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+                        </div>
+                        <div class="field">
+                            <label class="field-label" for="last_name">Last name</label>
+                            <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="field-label" for="email">Email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+
+                    <div class="field">
+                        <label class="field-label" for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" maxlength="14" inputmode="numeric">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Join the waitlist &rarr;</button>
+                    <p class="submit-note">No commitment. No payment. Just your name on the list.</p>
+                </form>
+            </div>
+        </div>
+
+        <!-- SUCCESS STATE — shown after form submit -->
+        <div id="form-state-success" class="form-success">
+            <div class="kicker"><span class="dot"></span> You&rsquo;re on the list</div>
+            <h2>See you in Fall 2026.</h2>
+            <p>We&rsquo;ll be in touch when dates and locations are confirmed. In the meantime, keep an eye on <a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="color:var(--pink);text-decoration:underline;">h&#101;llo&#64;aimoms&#46;ai</a> &mdash; that&rsquo;s where the first announcements will come from.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:8px">
+            <div class="section-eyebrow centered"><span class="dot"></span> What we know so far</div>
+            <h2 class="section-title centered">Frequently asked.</h2>
+        </div>
+
+        <div class="faq-wrap">
+
+            <details class="faq-item">
+                <summary>When is the first Out of Office?</summary>
+                <div class="faq-answer">Fall 2026. We&rsquo;re finalizing the property and the exact dates now. Waitlist members will be the first to know &mdash; before any public announcement.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How much will it cost?</summary>
+                <div class="faq-answer">Pricing will be shared when we announce the first weekend. It&rsquo;s an all-inclusive full-day retreat &mdash; venue, lunch + dinner, all activities, full AI curriculum. Think boutique retreat pricing, not weekend-warrior pricing.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How many moms per retreat?</summary>
+                <div class="faq-answer">Capped at 50. Small enough that you actually know everyone by the end. Large enough that the mastermind conversations stay rich.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do I need to know AI to come?</summary>
+                <div class="faq-answer">No. The curriculum starts at the beginning and goes deep. The only prerequisite is wanting to learn. If you&rsquo;re already advanced, you&rsquo;ll get more out of the business hour and the optional one-on-ones than the curriculum &mdash; and that&rsquo;s totally fine.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I bring a friend?</summary>
+                <div class="faq-answer">Yes &mdash; she just needs to be on the waitlist too. We&rsquo;ll do our best to put friends in the same weekend if both of you are confirmed.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Is this just for moms, or anyone?</summary>
+                <div class="faq-answer">Moms. That&rsquo;s the whole thing. The curriculum, the conversations, the energy, the schedule &mdash; all built around how moms specifically want to spend a day off.</div>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Set your <span style="color:var(--pink);">Out of Office.</span> We&rsquo;ll handle the rest.</h2>
+        <p>First Out of Office launches Fall 2026. Limited to 50 moms. Waitlist members get first dibs.</p>
+        <a href="#waitlist" class="cta-pink cta-large">Join the waitlist &rarr;</a>
+        <p class="final-cta-note">No commitment &middot; No payment &middot; Just your name on the list</p>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',sans-serif">Retire from<br>Chief Everything Officer&#8482;.</p>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
+<a href="foundations.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Foundations Course</a>
+<a href="membership.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Membership</a>
+<a href="workshop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Monthly Workshop</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Mom-Hosted Experiences</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Corporate Programs</a>
+<a href="out-of-office-waitlist.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Out of Office Weekends&#8482;</a>
+<a href="mailto:hello@aimoms.ai?subject=Private%201%3A1%20Coaching%20Inquiry" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Private 1:1 Coaching</a>
+<a href="editorial.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Edit</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The AI Toolkit</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Community</a>
+<a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Science</a>
+<a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Careers</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Prompt Packs</a>
+<a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Merch &amp; Gifts</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">h&#101;llo&#64;aimoms&#46;ai</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Partnerships, Press &amp; Media</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3);font-family:'Be Vietnam Pro',sans-serif">&copy; 2026 ai.moms&#8482; All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Phone autoformat + Inline form success -->
+<script>
+(function(){
+    var phone = document.getElementById('phone');
+    if(phone){
+        phone.addEventListener('input',function(e){
+            var v = e.target.value.replace(/\D/g,'').substring(0,10);
+            var f = '';
+            if(v.length > 0) f = '('+v.substring(0,3);
+            if(v.length >= 4) f += ') '+v.substring(3,6);
+            if(v.length >= 7) f += '-'+v.substring(6,10);
+            e.target.value = f;
+        });
+    }
+
+    var form = document.getElementById('waitlist-form');
+    var defaultState = document.getElementById('form-state-default');
+    var successState = document.getElementById('form-state-success');
+
+    if(form){
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            // Basic validation
+            var firstName = form.first_name.value.trim();
+            var lastName = form.last_name.value.trim();
+            var email = form.email.value.trim();
+            var phoneVal = form.phone.value.trim();
+            if(!firstName || !lastName || !email || !phoneVal){
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // POST to Netlify Forms
+            var formData = new FormData(form);
+            var body = new URLSearchParams();
+            formData.forEach(function(value, key){ body.append(key, value); });
+
+            fetch('/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: body.toString()
+            }).then(function(){
+                showSuccess();
+            }).catch(function(){
+                // Even on error, show success — Netlify usually succeeds and the user shouldn't see plumbing issues
+                showSuccess();
+            });
+        });
+    }
+
+    function showSuccess(){
+        defaultState.style.display = 'none';
+        successState.classList.add('show');
+        // Fire pixel — waitlist signup as Lead event
+        if(typeof fbq !== 'undefined'){
+            try { fbq('track','Lead',{content_name:'Out of Office Weekends Waitlist'}); } catch(e){}
+        }
+        // Scroll the success state into view
+        successState.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+})();
+</script>
+
+</body>
+</html>

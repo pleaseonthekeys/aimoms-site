@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Virtual Workshop — Your real entry into AI for moms | ai.moms™</title>
+<meta name="description" content="A live 60-minute virtual workshop. The same intro we run at our in-person events — now on Zoom. Hands-on walk-through, real prompts, your questions answered. $68 a seat. Monthly.">
+<link rel="canonical" href="https://aimoms.ai/workshop">
+<meta property="og:title" content="Monthly Virtual Workshop — ai.moms™">
+<meta property="og:description" content="A live 60-minute virtual workshop. $68 a seat. The easiest way to start with AI for moms.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimoms.ai/workshop">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Monthly Virtual Workshop — ai.moms™">
+<meta name="twitter:description" content="A live 60-minute virtual workshop. $68 a seat. The easiest way to start with AI for moms.">
+<meta name="twitter:image" content="https://aimoms.ai/og-image.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --navy:#060d26;
+    --pink:#ff63d8;
+    --pink-hover:#e040b0;
+    --white:#ffffff;
+    --off-white:#f8f8f8;
+    --gray-200:#e5e5e5;
+    --gray-300:#d4d4d4;
+    --gray-400:#999;
+    --gray-600:#666;
+    --serif:'Playfair Display', Georgia, serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;max-width:100%;}
+body{
+    font-family:'Be Vietnam Pro',sans-serif;
+    color:var(--navy);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;letter-spacing:-0.02em;}
+
+.pink{color:var(--pink);}
+.italic-accent{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    letter-spacing:-0.01em;
+}
+.tm{
+    font-size:0.42em;
+    vertical-align:0.6em;
+    font-weight:600;
+    letter-spacing:0;
+    margin-left:1px;
+    opacity:0.85;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.container-sm{max-width:680px;margin:0 auto;padding:0 24px;}
+
+.section-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:0.72em;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:18px;
+}
+.section-eyebrow::before{
+    content:'';
+    width:7px;height:7px;border-radius:50%;background:var(--pink);
+}
+.section-eyebrow.centered{justify-content:center;}
+.section-title{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:clamp(2em,5vw,3.4em);
+    line-height:1.05;
+    color:var(--navy);
+    letter-spacing:-0.025em;
+    margin-bottom:20px;
+}
+.section-title.centered{text-align:center;}
+.section-title .italic-accent{color:var(--pink);}
+.section-sub{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:1.05em;
+    line-height:1.65;
+    color:var(--gray-600);
+    max-width:620px;
+    margin:0 auto 32px;
+}
+.section-sub.centered{text-align:center;}
+.section-sub strong{color:var(--navy);font-weight:600;}
+
+/* CTAs */
+.cta-pink{
+    display:inline-block;
+    background:var(--pink);
+    color:#fff;
+    padding:16px 32px;
+    border-radius:12px;
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:0.95em;
+    font-weight:700;
+    text-decoration:none;
+    transition:all 0.25s;
+    box-shadow:0 4px 20px rgba(255,99,216,0.25);
+}
+.cta-pink:hover{
+    background:var(--pink);
+    transform:translateY(-2px);
+    outline:2px solid var(--pink);
+    outline-offset:3px;
+    box-shadow:0 8px 26px rgba(255,99,216,0.35);
+}
+.cta-pink::after{
+    content:'→';
+    margin-left:10px;
+    display:inline-block;
+    transition:transform 0.2s ease;
+}
+.cta-pink:hover::after{transform:translateX(4px);}
+.cta-large{padding:18px 38px;font-size:1.02em;}
+
+/* HERO */
+.hero{
+    padding:90px 24px 60px;
+    background:#fff;
+    text-align:center;
+}
+.hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:1px solid var(--gray-200);
+    padding:8px 18px;
+    border-radius:100px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:0.72em;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--navy);
+    margin-bottom:22px;
+}
+.hero-eyebrow .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--pink);
+    box-shadow:0 0 12px rgba(255,99,216,0.8);
+    animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:0.6;transform:scale(1.3);}
+}
+.hero-pills-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:22px;
+}
+.hero-pills-row .hero-eyebrow{margin-bottom:0;}
+.hero-pills-row .hero-price-line{margin-top:0;}
+
+.hero h1{
+    font-family:'Outfit',sans-serif;
+    font-weight:900;
+    font-size:clamp(2.4em,6.5vw,4.5em);
+    line-height:1.0;
+    color:var(--navy);
+    letter-spacing:-0.035em;
+    margin-bottom:22px;
+    max-width:840px;
+    margin-left:auto;margin-right:auto;
+}
+.hero h1 .italic-accent{color:var(--pink);font-weight:600;}
+.hero-sub{
+    font-size:1.1em;
+    line-height:1.65;
+    color:var(--gray-600);
+    max-width:620px;
+    margin:0 auto 18px;
+}
+.hero-sub strong{color:var(--navy);font-weight:600;}
+.hero-price-line{
+    display:inline-block;
+    margin-top:8px;
+    padding:8px 18px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:100px;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:0.85em;
+    letter-spacing:0.02em;
+}
+.hero-price-line .pink{color:var(--pink);}
+
+.hero-cta-wrap{margin-top:28px;}
+.hero-note{
+    margin-top:22px;
+    font-size:0.85em;
+    color:var(--gray-400);
+}
+
+/* SAVE THE DATE — hero callout */
+.date-callout{
+    max-width:520px;
+    margin:34px auto 0;
+    padding:22px 26px;
+    background:var(--off-white);
+    border:1px solid var(--gray-200);
+    border-radius:14px;
+    text-align:left;
+    position:relative;
+}
+.date-callout::before{
+    content:'';
+    position:absolute;
+    top:-1px;left:26px;
+    width:38px;height:2px;
+    background:var(--pink);
+}
+.date-callout-label{
+    font-family:'Outfit',sans-serif;
+    font-size:0.7em;
+    font-weight:700;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:8px;
+}
+.date-callout-headline{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.3em;
+    line-height:1.15;
+    color:var(--navy);
+    margin-bottom:4px;
+}
+.date-callout-headline .italic-accent{color:var(--pink);font-weight:500;}
+.date-callout-sub{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:0.88em;
+    color:var(--gray-600);
+    line-height:1.5;
+}
+
+/* WHAT YOU'LL GET — 2x2 grid */
+.included-section{padding:80px 24px 40px;background:#fff;}
+.included-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    max-width:880px;
+    margin:0 auto;
+}
+@media(max-width:680px){.included-grid{grid-template-columns:1fr;}}
+
+.included-card{
+    background:#fff;
+    border:1px solid var(--gray-200);
+    border-radius:14px;
+    padding:30px 28px;
+    transition:border-color 0.2s, transform 0.2s;
+}
+.included-card:hover{border-color:rgba(255,99,216,0.4);transform:translateY(-2px);}
+.included-card .icon{
+    width:42px;height:42px;
+    background:rgba(255,99,216,0.1);
+    color:var(--pink);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+}
+.included-card h3{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.18em;
+    color:var(--navy);
+    letter-spacing:-0.015em;
+    margin-bottom:10px;
+}
+.included-card p{
+    font-size:0.96em;
+    line-height:1.55;
+    color:var(--gray-600);
+}
+.included-card p strong{color:var(--navy);font-weight:600;}
+
+/* FORMAT — 3 numbered steps */
+.format-section{
+    padding:80px 24px;
+    background:var(--off-white);
+}
+.steps{
+    max-width:760px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+.step{
+    background:#fff;
+    border:1px solid var(--gray-200);
+    border-radius:14px;
+    padding:26px 28px;
+    display:flex;
+    gap:22px;
+    align-items:flex-start;
+}
+.step-num{
+    flex:0 0 50px;
+    width:50px;height:50px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:50%;
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.1em;
+    display:flex;align-items:center;justify-content:center;
+    line-height:1;
+}
+.step-body h3{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.18em;
+    color:var(--navy);
+    margin-bottom:6px;
+    letter-spacing:-0.015em;
+}
+.step-body h3 .min{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-weight:500;
+    font-size:0.82em;
+    color:var(--pink);
+    margin-left:8px;
+    letter-spacing:0.02em;
+}
+.step-body p{
+    font-size:0.96em;
+    line-height:1.55;
+    color:var(--gray-600);
+}
+
+/* PRICING CARD */
+.pricing-section{padding:40px 24px 80px;background:#fff;text-align:center;}
+.pricing-card{
+    max-width:440px;
+    margin:0 auto;
+    padding:42px 36px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:18px;
+    box-shadow:0 14px 50px rgba(6,13,38,0.12);
+    position:relative;
+}
+.pricing-card::before{
+    content:'';
+    position:absolute;
+    top:-1px;left:50%;transform:translateX(-50%);
+    width:60px;height:3px;
+    background:var(--pink);
+    border-radius:0 0 6px 6px;
+}
+.pricing-card .tag{
+    font-family:'Outfit',sans-serif;
+    font-size:0.7em;
+    font-weight:700;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:14px;
+}
+.pricing-card .price{
+    font-family:'Outfit',sans-serif;
+    font-weight:900;
+    font-size:4em;
+    line-height:1;
+    color:#fff;
+    letter-spacing:-0.04em;
+    margin-bottom:6px;
+}
+.pricing-card .price .small{
+    font-size:0.35em;
+    color:rgba(255,255,255,0.5);
+    font-weight:500;
+    margin-left:4px;
+}
+.pricing-card .sub{
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-size:0.92em;
+    color:rgba(255,255,255,0.7);
+    margin-bottom:22px;
+}
+.pricing-card .checklist{
+    list-style:none;
+    text-align:left;
+    margin:0 0 26px;
+    padding:0;
+}
+.pricing-card .checklist li{
+    padding:8px 0 8px 26px;
+    position:relative;
+    font-size:0.93em;
+    color:rgba(255,255,255,0.88);
+    line-height:1.4;
+}
+.pricing-card .checklist li::before{
+    content:'✓';
+    position:absolute;
+    left:0;top:8px;
+    color:var(--pink);
+    font-weight:800;
+}
+.pricing-card .checklist li strong{color:#fff;font-weight:600;}
+.pricing-card .cta-pink{display:block;width:100%;}
+.pricing-card .fineprint{
+    margin-top:14px;
+    font-size:0.8em;
+    color:rgba(255,255,255,0.5);
+    line-height:1.4;
+}
+
+/* AFTER THE WORKSHOP — next-step cards */
+.after-section{padding:80px 24px;background:var(--off-white);}
+.after-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    max-width:960px;
+    margin:0 auto;
+}
+@media(max-width:680px){.after-grid{grid-template-columns:1fr;}}
+
+.after-card{
+    background:#fff;
+    border:1px solid var(--gray-200);
+    border-radius:14px;
+    padding:28px 28px;
+    text-decoration:none;
+    color:inherit;
+    display:flex;flex-direction:column;
+    transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.after-card:hover{
+    border-color:rgba(255,99,216,0.4);
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+}
+.after-card .after-tag{
+    font-family:'Outfit',sans-serif;
+    font-size:0.68em;
+    font-weight:700;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:10px;
+}
+.after-card h3{
+    font-family:'Outfit',sans-serif;
+    font-weight:800;
+    font-size:1.18em;
+    color:var(--navy);
+    letter-spacing:-0.015em;
+    margin-bottom:8px;
+}
+.after-card h3 .italic-accent{color:var(--pink);font-weight:500;}
+.after-card p{
+    font-size:0.94em;
+    line-height:1.55;
+    color:var(--gray-600);
+    margin-bottom:14px;
+}
+.after-card .after-link{
+    margin-top:auto;
+    font-family:'Be Vietnam Pro',sans-serif;
+    font-weight:700;
+    font-size:0.85em;
+    color:var(--pink);
+    letter-spacing:0.02em;
+}
+
+/* FAQ */
+.faq-section{padding:80px 24px;background:#fff;}
+.faq-list{
+    max-width:760px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+}
+.faq-item{
+    border-bottom:1px solid var(--gray-200);
+    padding:0;
+}
+.faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:22px 0;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:1.04em;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:18px;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+    content:'+';
+    font-family:'Outfit',sans-serif;
+    font-weight:300;
+    font-size:1.6em;
+    color:var(--pink);
+    line-height:1;
+    transition:transform 0.2s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-answer{
+    padding:0 0 22px;
+    font-size:0.96em;
+    line-height:1.6;
+    color:var(--gray-600);
+    max-width:680px;
+}
+
+/* FINAL CTA */
+.final-cta{
+    padding:90px 24px 100px;
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+.final-cta::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+.final-cta h2{
+    font-family:'Outfit',sans-serif;
+    font-weight:900;
+    font-size:clamp(2.2em,5.5vw,3.8em);
+    line-height:1.05;
+    letter-spacing:-0.035em;
+    color:#fff;
+    margin-bottom:22px;
+    position:relative;
+}
+.final-cta h2 .italic-accent{color:var(--pink);font-weight:500;}
+.final-cta p{
+    font-size:1.05em;
+    line-height:1.65;
+    color:rgba(255,255,255,0.75);
+    max-width:560px;
+    margin:0 auto 32px;
+    position:relative;
+}
+.final-cta-note{
+    margin-top:26px;
+    font-size:0.85em;
+    color:rgba(255,255,255,0.45);
+}
+
+/* Nav typography */
+#mobilemenu a, nav a, nav button{
+    font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;
+}
+footer a, footer p, footer div{
+    font-family:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;
+}
+.tnl{transition:color 0.2s;text-transform:uppercase !important;}
+.tnl:hover{color:#ff63d8 !important;}
+@media(max-width:900px){.tnl{display:none !important;}}
+
+@media(max-width:640px){
+    .hero{padding:70px 20px 40px;}
+    .included-section, .format-section, .pricing-section, .after-section, .faq-section{padding:60px 20px;}
+    .final-cta{padding:80px 20px;}
+    .step{flex-direction:column;gap:14px;}
+    .step-num{width:42px;height:42px;flex:0 0 42px;font-size:1em;}
+    footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr 1fr !important;gap:20px !important;}
+}
+@media(max-width:480px){
+    footer [style*="grid-template-columns:2fr"]{grid-template-columns:1fr !important;}
+}
+
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif !important;}
+
+#mobilemenu a{transition:color 0.2s ease;}
+#mobilemenu a:hover{color:#ff63d8 !important;}
+nav a, nav button, #mobilemenu a{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;}
+@media(max-width:1040px){.tnl{display:none !important}}
+</style>
+
+<script>
+window._fbqQueue=[];
+window.fbq=function(){window._fbqQueue.push(arguments);};
+window._fbq=window.fbq;
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#060d26;border-bottom:none;padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.5;color:#fff">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer&#8482;.</div>
+</a>
+<div style="display:flex;align-items:center;gap:2px">
+<a href="foundations.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">FOUNDATIONS COURSE</a>
+<a href="membership.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MEMBERSHIP</a>
+<a href="workshop.html" class="tnl" style="color:#ff63d8;padding:7px 7px;font-size:11px;font-weight:700;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MONTHLY WORKSHOP</a>
+<a href="experiences.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MOM HOSTED EXPERIENCES</a>
+<a href="events.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">EVENTS SCHEDULE</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;margin-left:6px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px;margin-left:2px">
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="foundations.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOUNDATIONS COURSE</a>
+<a href="membership.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEMBERSHIP</a>
+<a href="workshop.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MONTHLY WORKSHOP</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MOM HOSTED EXPERIENCES</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="events.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EVENTS SCHEDULE</a>
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="science.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE SCIENCE</a>
+<a href="subscribe.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SUBSCRIBE</a>
+</div>
+</nav>
+<div style="height:56px"></div>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-pills-row">
+            <div class="hero-eyebrow"><span class="dot"></span> Monthly Workshop &middot; Live &middot; 60 minutes</div>
+            <div class="hero-price-line">$68<span class="pink"> a seat</span> &middot; replay included</div>
+        </div>
+        <h1>Your real entry into AI.<br><span class="italic-accent">In 60 minutes.</span></h1>
+        <p class="hero-sub">A live virtual workshop &mdash; the same intro we run at our in-person events, now on Zoom. <strong>Hands-on walk-through, real prompts, your questions answered.</strong> Held once a month.</p>
+
+        <div class="hero-cta-wrap">
+            <!-- TODO: Replace href with the real $68 workshop Stripe link (or registration form, if capturing leads first) -->
+            <a href="workshop-register.html" class="cta-pink cta-large" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{content_name:'Workshop - Hero CTA',value:68,currency:'USD'})">Reserve your seat</a>
+            <p class="hero-note">Open to everyone &middot; no prior AI experience needed</p>
+        </div>
+
+        <!-- SAVE THE DATE -->
+        <div class="date-callout">
+            <div class="date-callout-label">Next workshop</div>
+            <div class="date-callout-headline">Thursday, July 9 &middot; 10:00am ET</div>
+            <p class="date-callout-sub">60 minutes live on Zoom. Replay sent if you can&rsquo;t make it. Held the same time each month.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- INSIDE THE WORKSHOP -->
+<section class="included-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:32px">
+            <div class="section-eyebrow centered">What&rsquo;s covered</div>
+            <h2 class="section-title centered">Inside the workshop.</h2>
+            <p class="section-sub centered">Four parts. 60 minutes. Live on Zoom. Built to take you from <strong>where you are</strong> to actually using AI tomorrow.</p>
+        </div>
+
+        <div class="included-grid">
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M9 11a3 3 0 0 1 6 0c0 1.5-1 2-1.5 2.5S13 14.5 13 16"/><line x1="13" y1="19" x2="13" y2="19.01"/></svg>
+                </div>
+                <h3>01 &middot; The Welcome</h3>
+                <p>Why moms feel the way we feel &mdash; the neuroscience behind it. Then our mission: to retire moms around the globe from <strong>Chief Everything Officer<span class="tm">&#8482;</span></strong>.</p>
+            </div>
+
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3>02 &middot; The Foundations</h3>
+                <p>AI platform basics. The building blocks of good AI use. The prompting principles every mom needs before going deeper.</p>
+            </div>
+
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>03 &middot; Mom Use Cases</h3>
+                <p>Real-world use cases for the three moms we serve:</p>
+                <ul style="margin:8px 0 0;padding:0;list-style:none;font-size:0.92em;line-height:1.55;color:var(--gray-600);">
+                    <li style="padding:4px 0 4px 18px;position:relative;"><span style="position:absolute;left:0;color:var(--pink);font-weight:800;">&middot;</span> The mom at home <strong>eliminating the invisible load</strong></li>
+                    <li style="padding:4px 0 4px 18px;position:relative;"><span style="position:absolute;left:0;color:var(--pink);font-weight:800;">&middot;</span> The mom in corporate <strong>saving her seat at the table</strong></li>
+                    <li style="padding:4px 0 4px 18px;position:relative;"><span style="position:absolute;left:0;color:var(--pink);font-weight:800;">&middot;</span> The mom in her mompreneur era <strong>building something new</strong></li>
+                </ul>
+            </div>
+
+            <div class="included-card">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>04 &middot; Meet Aime</h3>
+                <p>Your <strong>AI Chief Everything Officer<span class="tm">&#8482;</span></strong>. We introduce the tool, show how she works, and walk through how she fits into your real life &mdash; at home, at work, or both.</p>
+            </div>
+        </div>
+
+        <!-- Q&A built-in note -->
+        <div style="max-width:760px;margin:36px auto 0;padding:22px 28px;background:var(--off-white);border-left:3px solid var(--pink);border-radius:0 10px 10px 0;text-align:left;">
+            <p style="font-family:'Be Vietnam Pro',sans-serif;font-size:0.96em;line-height:1.55;color:var(--gray-600);margin:0;"><strong style="color:var(--navy);font-weight:700;">Plus your questions &mdash; built in throughout.</strong> They&rsquo;re not saved for the end. This is our time to shape the workshop together, around what you actually want to learn.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- PRICING -->
+<section class="pricing-section" id="join">
+    <div class="container-sm">
+        <div style="text-align:center;margin-bottom:30px">
+            <div class="section-eyebrow centered">Reserve your seat</div>
+            <h2 class="section-title centered" style="font-size:clamp(1.8em,4vw,2.6em);">$68. One seat. 60 minutes.</h2>
+        </div>
+
+        <div class="pricing-card">
+            <div class="tag">Monthly Workshop</div>
+            <div class="price">$68<span class="small">a seat</span></div>
+            <div class="sub">One-time payment. Replay included.</div>
+
+            <ul class="checklist">
+                <li>Live 60-minute Zoom workshop</li>
+                <li>Hands-on walk-through in Claude</li>
+                <li>Real, ready-to-use prompts for moms</li>
+                <li>Built-in Q&amp;A &mdash; your actual questions</li>
+                <li><strong>Replay if you can&rsquo;t make it live</strong></li>
+                <li>Open to everyone &mdash; no prerequisite</li>
+            </ul>
+
+            <!-- TODO: Replace href with the real $68 workshop Stripe link -->
+            <a href="workshop-register.html" class="cta-pink cta-large" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{content_name:'Workshop - Pricing Card',value:68,currency:'USD'})">Reserve your seat</a>
+
+            <p class="fineprint">Confirmation email with Zoom link sent within minutes of registration.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- AFTER THE WORKSHOP -->
+<section class="after-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:36px">
+            <div class="section-eyebrow centered">After the workshop</div>
+            <h2 class="section-title centered">Loved it? Here&rsquo;s where it goes.</h2>
+            <p class="section-sub centered">The workshop is the easiest way to start. If you walk away wanting more &mdash; and most moms do &mdash; here&rsquo;s what comes next.</p>
+        </div>
+
+        <div class="after-grid">
+            <a href="membership.html" class="after-card">
+                <div class="after-tag">Most popular next step</div>
+                <h3>Stay sharp every other week.</h3>
+                <p>The Membership: bi-weekly live sessions on Zoom, private WhatsApp community, free access to all in-person events. $59/month. Cancel anytime.</p>
+                <span class="after-link">Join the Membership &rarr;</span>
+            </a>
+
+            <a href="foundations.html" class="after-card">
+                <div class="after-tag">Go deeper</div>
+                <h3>Take the full course.</h3>
+                <p>AI for Moms Foundations: 6 modules, 44 lessons, 50+ ready-to-use prompts. On-demand, watch on your schedule. Built by a mom, for moms.</p>
+                <span class="after-link">See the course &rarr;</span>
+            </a>
+
+            <a href="https://rsvp.aimoms.ai" target="_blank" class="after-card">
+                <div class="after-tag">Bring your friends in</div>
+                <h3>Host a mom-hosted experience.</h3>
+                <p>Want your circle to learn AI together? Host an in-person gathering for your friends &mdash; we&rsquo;ll bring the curriculum, the prompts, and the energy.</p>
+                <span class="after-link">Host or RSVP &rarr;</span>
+            </a>
+
+            <a href="mailto:hello@aimoms.ai?subject=Private%201%3A1%20Coaching%20Inquiry&amp;body=Hi%20ai.moms%20team%2C%0A%0AI%20attended%20the%20workshop%20and%27d%20love%20to%20learn%20more%20about%20private%201%3A1%20AI%20coaching.%20A%20bit%20about%20me%3A%0A%0A" class="after-card">
+                <div class="after-tag">Want it personal?</div>
+                <h3>Private 1:1 coaching.</h3>
+                <p>Dedicated, personalized AI coaching tailored to your specific life, work, or business. The most direct path to building your own AI system.</p>
+                <span class="after-link">Email us to inquire &rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container-sm">
+        <div style="text-align:center;margin-bottom:24px">
+            <div class="section-eyebrow centered">Questions</div>
+            <h2 class="section-title centered">Things people ask first.</h2>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>What if I can&rsquo;t make it live?</summary>
+                <div class="faq-answer">A replay is sent to every registered attendee within 24 hours of the workshop. You keep access for 30 days. Live is better for the Q&amp;A, but the replay is genuinely useful too.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Do I need any tech setup?</summary>
+                <div class="faq-answer">Just Zoom (free) and a laptop. If you want to follow along hands-on, we recommend creating a free Claude account beforehand &mdash; but it&rsquo;s not required. You can watch first and try later.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Is this the same as the Foundations Course?</summary>
+                <div class="faq-answer">No. The Foundations Course is the full curriculum &mdash; 6 modules, 44 lessons, 50+ prompts &mdash; designed for deep learning on your schedule. The workshop is a 60-minute live intro: a taste of what AI can do for moms, with hands-on demos and your real questions. Many people do the workshop first, then take the course.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Who&rsquo;s it for?</summary>
+                <div class="faq-answer">Every mom. Whether you&rsquo;ve never opened an AI tool or you use Claude/ChatGPT every day, the workshop meets you where you are. Beginners learn the foundations. Experienced users pick up new prompts and workflows. No prerequisites.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I bring a friend?</summary>
+                <div class="faq-answer">Absolutely &mdash; just register each person separately so we have your name on the Zoom link. The workshop is more fun with friends, and the Q&amp;A gets better the more moms are in the room.</div>
+            </details>
+        </div>
+    </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container-sm">
+        <h2>Ready for your real entry into AI?</h2>
+        <p>$68 a seat. 60 minutes live. Walk away actually using AI &mdash; and knowing where you want to go next.</p>
+        <!-- TODO: Replace href with the real $68 workshop Stripe link -->
+        <a href="workshop-register.html" class="cta-pink cta-large" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{content_name:'Workshop - Final CTA',value:68,currency:'USD'})">Reserve your seat</a>
+        <p class="final-cta-note">Open to everyone. No prereqs. Cancel up to 24 hours before for a full refund.</p>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',sans-serif">Retire from<br>Chief Everything Officer&#8482;.</p>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
+<a href="foundations.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Foundations Course</a>
+<a href="membership.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Membership</a>
+<a href="workshop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Monthly Workshop</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Mom-Hosted Experiences</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Corporate Programs</a>
+<a href="out-of-office-waitlist.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Out of Office Weekends&#8482;</a>
+<a href="mailto:hello@aimoms.ai?subject=Private%201%3A1%20Coaching%20Inquiry" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Private 1:1 Coaching</a>
+<a href="editorial.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Edit</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The AI Toolkit</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Community</a>
+<a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Science</a>
+<a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Careers</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Prompt Packs</a>
+<a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Merch &amp; Gifts</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">h&#101;llo&#64;aimoms&#46;ai</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Partnerships, Press &amp; Media</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3);font-family:'Be Vietnam Pro',sans-serif">&copy; 2026 ai.moms&#8482; All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',sans-serif">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

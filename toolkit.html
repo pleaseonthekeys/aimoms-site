@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://aimoms.ai/toolkit">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The AI Toolkit for Moms — ai.moms™</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap&family=Playfair+Display:ital,wght@1,500;1,700;1,900" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Be Vietnam Pro',sans-serif;color:#060d26;background:#fff;-webkit-font-smoothing:antialiased}
@@ -101,6 +101,8 @@ button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,B
   [style*="grid-template-columns:2fr"]{grid-template-columns:1fr !important}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
 }
+nav a, nav button, #mobilemenu a{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;}
+@media(max-width:1040px){.tnl{display:none !important}}
 </style>
 <!-- Meta Pixel -->
 <script>
@@ -112,28 +114,39 @@ fbq('init','1206405304980852');fbq('track','PageView');
 <body>
 
 <!-- NAV -->
-<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;padding:12px 24px">
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#060d26;border-bottom:none;padding:12px 24px;display:block!important">
 <div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
-<a href="index.html" style="text-decoration:none"><div style="font-family:Be Vietnam Pro,sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8">ai.</span><span style="color:#060d26">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.4">&#8482;</span></div><div style="font-size:9px;color:rgba(6,13,38,0.35);margin-top:1px">Retire from Chief Everything Officer.&#8482;</div></a>
-<div style="display:flex;align-items:center;gap:4px">
-<a href="index.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">ON-DEMAND</a>
-<a href="editorial.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">THE EDIT</a>
-<a href="toolkit.html" class="tnl" style="color:#ff63d8;font-weight:700;padding:7px 10px;font-size:12px;text-decoration:none;letter-spacing:0.04em">AI TOOLKIT</a>
-<a href="experiences.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">EXPERIENCES</a>
-<a href="corporate.html" class="tnl" style="color:#060d26;padding:7px 10px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.04em">FOR COMPANIES</a>
-<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;margin-left:4px">Subscribe</a>
-<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px"><div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div><div style="width:20px;height:2px;background:#060d26;margin-bottom:4px"></div><div style="width:20px;height:2px;background:#060d26"></div></div>
-</div></div>
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.5;color:#fff">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer&#8482;.</div>
+</a>
+<div style="display:flex;align-items:center;gap:2px">
+<a href="foundations.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">FOUNDATIONS COURSE</a>
+<a href="membership.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MEMBERSHIP</a>
+<a href="workshop.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MONTHLY WORKSHOP</a>
+<a href="experiences.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MOM HOSTED EXPERIENCES</a>
+<a href="events.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">EVENTS SCHEDULE</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;margin-left:6px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px;margin-left:2px">
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff"></div>
+</div>
+</div>
+</div>
 <div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
-<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">THE EDIT</a>
-<a href="index.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">ON-DEMAND</a>
-<a href="aime.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED">MEET AIME</a>
-<a href="quiz.html" target="_blank" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED">TAKE THE QUIZ</a>
-<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">THE AI TOOLKIT</a>
-<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">SHOP</a>
-<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">FOR COMPANIES</a>
-<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;border-bottom:1px solid #EFEFED">COMMUNITY</a>
-<a href="about.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none">ABOUT</a>
+<a href="foundations.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOUNDATIONS COURSE</a>
+<a href="membership.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEMBERSHIP</a>
+<a href="workshop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MONTHLY WORKSHOP</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MOM HOSTED EXPERIENCES</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="events.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EVENTS SCHEDULE</a>
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="science.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE SCIENCE</a>
+<a href="subscribe.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SUBSCRIBE</a>
 </div>
 </nav>
 <div style="height:56px"></div>
@@ -142,7 +155,7 @@ fbq('init','1206405304980852');fbq('track','PageView');
 <section style="min-height:380px;padding:90px 24px 56px;background:#060d26;text-align:center;color:white;display:flex;align-items:center;justify-content:center">
 <div style="max-width:700px;margin:0 auto">
 <p style="text-transform:uppercase;letter-spacing:0.25em;font-size:11px;color:#ff63d8;font-weight:700;margin-bottom:14px">Mom-Tested. Mom-Reviewed.</p>
-<h1 style="font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(2em,5vw,3.2em);letter-spacing:-0.03em;margin-bottom:14px;text-transform:uppercase;line-height:1.05">The AI Toolkit<br><span style="font-size:0.55em;opacity:0.6;letter-spacing:0.05em">for Moms</span></h1>
+<h1 style="font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(2.2em,5.5vw,3.6em);letter-spacing:-0.03em;margin-bottom:14px;line-height:1.05">The AI Toolkit<br><span style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;color:#ff63d8;font-size:0.7em;letter-spacing:-0.01em">for moms.</span></h1>
 <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;max-width:520px;margin:0 auto 20px">Every tool scored on what actually matters to moms: ease of use, time saved, family fit, and value. Ranked highest to lowest within every category.</p>
 <div style="display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
 <div style="border:1.5px solid #ff63d8;color:#ff63d8;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:7px 18px;border-radius:100px">80+ Tools Curated</div>
@@ -1500,17 +1513,20 @@ fbq('init','1206405304980852');fbq('track','PageView');
 <div style="max-width:1000px;margin:0 auto">
 <div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
 <div>
-<div style="font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<div style="font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
 <p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5">Retire from<br>Chief Everything Officer.&#8482;</p>
 </div>
 <div>
 <div style="font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
-<a href="index.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">ai.moms<sup style="font-size:0.55em;vertical-align:super">™</sup> 101 On-Demand</a>
-<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">AI+Me Hour</a>
-<a href="aime.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Meet Aime</a>
-<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">The AI Toolkit</a>
-<a href="experiences.html#outofoffice" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">Out of Office Weekends&#8482;</a>
-<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px">FOR COMPANIES</a>
+<a href="foundations.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Foundations Course</a>
+<a href="membership.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Membership</a>
+<a href="workshop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Monthly Workshop</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Mom-Hosted Experiences</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Corporate Programs</a>
+<a href="out-of-office-waitlist.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Out of Office Weekends&#8482;</a>
+<a href="mailto:hello@aimoms.ai?subject=Private%201%3A1%20Coaching%20Inquiry" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">Private 1:1 Coaching</a>
+<a href="editorial.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The Edit</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',sans-serif">The AI Toolkit</a>
 </div>
 <div>
 <div style="font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>

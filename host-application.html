@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="UTF-8">
+<meta property="og:title" content="Host a Mom-Hosted Experience — ai.moms™">
+<meta property="og:description" content="Open up your living room. Invite your mom besties. We bring the AI. Request to host a mom-hosted experience.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimoms.ai/host-application">
+<meta property="og:image" content="https://aimoms.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Host a Mom-Hosted Experience — ai.moms™">
+<meta name="twitter:description" content="Open up your living room. Invite your mom besties. We bring the AI.">
+<meta name="twitter:image" content="https://aimoms.ai/og-image.png">
+<link rel="canonical" href="https://aimoms.ai/host-application">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Host Request — ai.moms™</title>
+<meta name="description" content="Request to host a mom-hosted experience in your home. The best kind of girls' night in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#060d26;background:#fff;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.cat{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;display:block}
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],textarea,select{width:100%;padding:14px 16px;font-size:14px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;border:1.5px solid #E2E2DF;border-radius:10px;outline:none;background:#fff;color:#060d26}
+input:focus,textarea:focus,select:focus{border-color:#ff63d8}
+textarea{min-height:100px;resize:vertical}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23060d26' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+label.field{display:block;font-size:13px;font-weight:600;color:#060d26;margin-bottom:6px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+label.field .opt{font-weight:400;color:#A3A3A0;font-size:12px;margin-left:4px}
+.field-wrap{margin-bottom:18px;text-align:left}
+.field-help{font-size:12px;color:#6E6E6B;margin-top:6px;line-height:1.5}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.check-item{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid #E2E2DF;border-radius:10px;cursor:pointer;font-size:13px;background:#fff;transition:all 0.2s}
+.check-item:hover{border-color:#ff63d8}
+.check-item input{width:auto;margin:0}
+.check-item input:checked+span{font-weight:600;color:#ff63d8}
+button,a,.btn,input,select,textarea{font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif !important;}
+button.submit-btn{width:100%;padding:16px;background:#ff63d8;color:#fff;border:none;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;transition:opacity 0.2s;margin-top:8px}
+button.submit-btn:hover{opacity:0.9}
+@media(max-width:768px){
+  section { padding-left:16px !important; padding-right:16px !important; }
+  nav { padding:12px 16px !important; }
+  .check-grid { grid-template-columns:1fr !important; }
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns:1fr !important; }
+  [style*="grid-template-columns:1fr 1fr"]:not(.row-keep) { grid-template-columns:1fr !important; }
+}
+.tnl{transition:color 0.2s;text-transform:uppercase !important}
+.tnl:hover{color:#ff63d8 !important}
+@media(max-width:900px){
+  .tnl{display:none !important}
+}
+#mobilemenu a, nav a, nav button {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+footer a, footer p, footer div {
+  font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+}
+.italic-accent{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;}
+
+@media(max-width:1040px){.tnl{display:none !important}}
+nav a, nav button, #mobilemenu a{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important;}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1206405304980852');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1206405304980852&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:#060d26;border-bottom:none;padding:12px 24px;display:block!important">
+<div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
+<a href="index.html" style="text-decoration:none;display:flex;flex-direction:column">
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.04em;line-height:1"><span style="color:#ff63d8;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:900;">ai.</span><span style="color:#fff">moms</span><span style="font-size:8px;vertical-align:super;opacity:0.5;color:#fff">&#8482;</span></div>
+<div style="font-family:'Be Vietnam Pro',sans-serif;font-size:9px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.01em;margin-top:1px">Retire from Chief Everything Officer&#8482;.</div>
+</a>
+<div style="display:flex;align-items:center;gap:2px">
+<a href="foundations.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">FOUNDATIONS COURSE</a>
+<a href="membership.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MEMBERSHIP</a>
+<a href="workshop.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MONTHLY WORKSHOP</a>
+<a href="experiences.html" class="tnl" style="color:#ff63d8;padding:7px 7px;font-size:11px;font-weight:700;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">MOM HOSTED EXPERIENCES</a>
+<a href="events.html" class="tnl" style="color:#fff;padding:7px 7px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap">EVENTS SCHEDULE</a>
+<a href="subscribe.html" style="background:#ff63d8;color:#fff;padding:9px 20px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;margin-left:6px">Subscribe</a>
+<div onclick="var m=document.getElementById('mobilemenu');m.style.display=m.style.display==='block'?'none':'block'" style="cursor:pointer;padding:6px;margin-left:2px">
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff;margin-bottom:4px"></div>
+<div style="width:20px;height:2px;background:#fff"></div>
+</div>
+</div>
+</div>
+<div id="mobilemenu" style="display:none;position:absolute;right:24px;top:100%;background:#fff;border:1px solid #EFEFED;border-radius:12px;padding:12px 0;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:1000">
+<a href="foundations.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOUNDATIONS COURSE</a>
+<a href="membership.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MEMBERSHIP</a>
+<a href="workshop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MONTHLY WORKSHOP</a>
+<a href="experiences.html" style="display:block;padding:10px 20px;font-size:13px;color:#ff63d8;text-decoration:none;font-weight:600;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">MOM HOSTED EXPERIENCES</a>
+<a href="corporate.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">FOR COMPANIES</a>
+<a href="events.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">EVENTS SCHEDULE</a>
+<a href="editorial.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE EDIT</a>
+<a href="toolkit.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE AI TOOLKIT</a>
+<a href="shop.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SHOP</a>
+<a href="community.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">COMMUNITY</a>
+<a href="science.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">THE SCIENCE</a>
+<a href="subscribe.html" style="display:block;padding:10px 20px;font-size:13px;color:#060d26;text-decoration:none;font-weight:400;border-bottom:1px solid #EFEFED;font-family:'Outfit',sans-serif;letter-spacing:0.04em">SUBSCRIBE</a>
+</div>
+</nav>
+<div style="height:56px"></div>
+
+<!-- Hero -->
+<section style="padding:110px 24px 70px;text-align:center;background:#060d26;color:#fff">
+<div style="max-width:720px;margin:0 auto">
+<span class="cat" style="color:#ff63d8;margin-bottom:14px">REQUEST TO HOST</span>
+<h1 style="font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:clamp(2.7em,6.2vw,4.1em);font-weight:900;letter-spacing:-0.03em;line-height:1.04;margin-bottom:22px;color:#fff">The smartest girls&#8217; night in<br><span class="italic-accent" style="color:#ff63d8;font-weight:500">you'll ever host.</span></h1>
+<p style="font-size:18px;color:rgba(255,255,255,0.78);line-height:1.65;max-width:600px;margin:0 auto">A mom-hosted experience is the best kind of girls&#8217; night in &#8212; an intro to AI that helps you and your mom besties eliminate the invisible load and build your own AI Chief Everything Officer&#8482;. You provide the pours, the snacks, and the guest list. We bring the teaching.</p>
+</div>
+</section>
+
+
+
+<!-- The Form -->
+<section style="padding:30px 24px 80px;background:#fff">
+<div style="max-width:580px;margin:0 auto">
+<div style="background:#FAFAF9;border:1px solid #EFEFED;border-radius:16px;padding:36px 32px">
+<span class="cat" style="color:#ff63d8;margin-bottom:6px;text-align:center">TELL US ABOUT YOU</span>
+<h2 style="font-size:1.6em;font-weight:800;margin:6px 0 6px;text-align:center;line-height:1.2">Host Request</h2>
+<p style="font-size:13px;color:#6E6E6B;text-align:center;margin-bottom:28px;line-height:1.6">Takes about 3 minutes. We&#8217;ll be in touch to lock in your date.</p>
+
+<form name="host-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/host-success.html">
+<input type="hidden" name="form-name" value="host-request">
+<p style="display:none"><label>Don&#8217;t fill this out: <input name="bot-field"></label></p>
+
+<!-- About You -->
+<div style="margin-bottom:28px">
+<div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:#ff63d8;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid #EFEFED;padding-bottom:8px">About You</div>
+
+<div class="row-keep" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div class="field-wrap">
+<label class="field" for="first-name">First Name</label>
+<input type="text" name="first-name" id="first-name" required>
+</div>
+<div class="field-wrap">
+<label class="field" for="last-name">Last Name</label>
+<input type="text" name="last-name" id="last-name" required>
+</div>
+</div>
+
+<div class="field-wrap">
+<label class="field" for="email">Email</label>
+<input type="email" name="email" id="email" required>
+</div>
+
+<div class="field-wrap">
+<label class="field" for="phone">Phone <span class="opt">(for scheduling)</span></label>
+<input type="tel" name="phone" id="phone" required>
+</div>
+
+<div class="field-wrap">
+<label class="field" for="instagram">Instagram Handle <span class="opt">(optional)</span></label>
+<input type="text" name="instagram" id="instagram" placeholder="@yourhandle">
+</div>
+</div>
+
+<!-- Where You Are -->
+<div style="margin-bottom:28px">
+<div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:#ff63d8;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid #EFEFED;padding-bottom:8px">Your Home</div>
+
+<div class="row-keep" style="display:grid;grid-template-columns:2fr 1fr;gap:12px">
+<div class="field-wrap">
+<label class="field" for="city">City / Town</label>
+<input type="text" name="city" id="city" required>
+</div>
+<div class="field-wrap">
+<label class="field" for="state">State</label>
+<input type="text" name="state" id="state" required maxlength="2" placeholder="NY">
+</div>
+</div>
+
+<div class="field-wrap">
+<label class="field" for="zip">Zip Code</label>
+<input type="text" name="zip" id="zip" required maxlength="10">
+</div>
+
+<div class="field-wrap">
+<label class="field" for="space">Tell us about your space <span class="opt">(optional)</span></label>
+<textarea name="space" id="space" placeholder="Living room, kitchen island, backyard&#8230; how do you usually gather your mom friends?"></textarea>
+</div>
+</div>
+
+<!-- Your Crew -->
+<div style="margin-bottom:28px">
+<div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:#ff63d8;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid #EFEFED;padding-bottom:8px">Your Crew</div>
+
+<div class="field-wrap">
+<label class="field" for="guest-count">How many mom friends are you looking to invite?</label>
+<select name="guest-count" id="guest-count" required>
+<option value="">Select&#8230;</option>
+<option value="6-8">6&#8211;8 (a tight crew)</option>
+<option value="8-12">8&#8211;12 (the sweet spot)</option>
+<option value="12-15">12&#8211;15 (full house)</option>
+<option value="not-sure">Not sure yet</option>
+</select>
+</div>
+
+<div class="field-wrap">
+<label class="field" for="crew">Tell us about your crew <span class="opt">(optional)</span></label>
+<textarea name="crew" id="crew" placeholder="Working moms, stay-at-home moms, school pickup friends, neighbors, book club&#8230; who&#8217;s in the WhatsApp chat?"></textarea>
+</div>
+</div>
+
+<!-- Timing -->
+<div style="margin-bottom:28px">
+<div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:#ff63d8;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid #EFEFED;padding-bottom:8px">Timing</div>
+
+<div class="field-wrap">
+<label class="field" for="timeline">When are you hoping to host?</label>
+<select name="timeline" id="timeline" required>
+<option value="">Select&#8230;</option>
+<option value="ASAP">As soon as possible</option>
+<option value="next-month">Within the next month</option>
+<option value="1-2-months">1&#8211;2 months out</option>
+<option value="3-plus-months">3+ months out</option>
+<option value="flexible">I&#8217;m flexible &#8212; tell me what works</option>
+</select>
+</div>
+
+<div class="field-wrap">
+<label class="field">Best night of the week <span class="opt">(check all that apply)</span></label>
+<div class="check-grid">
+<label class="check-item"><input type="checkbox" name="nights[]" value="Monday"><span>Monday</span></label>
+<label class="check-item"><input type="checkbox" name="nights[]" value="Tuesday"><span>Tuesday</span></label>
+<label class="check-item"><input type="checkbox" name="nights[]" value="Wednesday"><span>Wednesday</span></label>
+<label class="check-item"><input type="checkbox" name="nights[]" value="Thursday"><span>Thursday</span></label>
+<label class="check-item"><input type="checkbox" name="nights[]" value="Friday"><span>Friday</span></label>
+<label class="check-item"><input type="checkbox" name="nights[]" value="Weekend"><span>Weekend</span></label>
+</div>
+</div>
+</div>
+
+<!-- Vibe -->
+<div style="margin-bottom:28px">
+<div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:#ff63d8;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid #EFEFED;padding-bottom:8px">The Vibe</div>
+
+<div class="field-wrap">
+<label class="field" for="why">Why do you want to host? <span class="opt">(optional but we love hearing this)</span></label>
+<textarea name="why" id="why" placeholder="What got you excited about hosting? What do you want your friends to walk away with?"></textarea>
+</div>
+
+<div class="field-wrap">
+<label class="field" for="referral">How did you hear about us?</label>
+<select name="referral" id="referral">
+<option value="">Select&#8230;</option>
+<option value="Instagram">Instagram</option>
+<option value="TikTok">TikTok</option>
+<option value="Friend">A friend told me</option>
+<option value="Newsletter">The Edit / newsletter</option>
+<option value="Press">Press / article</option>
+<option value="Search">Google search</option>
+<option value="Other">Other</option>
+</select>
+</div>
+</div>
+
+<button type="submit" class="submit-btn" onclick="if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'Host Request'})">Send My Request &rarr;</button>
+<p style="font-size:11px;color:#A3A3A0;margin-top:14px;text-align:center;line-height:1.5">By submitting, you agree to be contacted about hosting a mom-hosted experience.<br>We&#8217;ll never share your info.</p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- FAQ Mini -->
+<section style="padding:60px 24px 80px;background:#F5F5F5">
+<div style="max-width:680px;margin:0 auto">
+<h2 style="font-size:1.8em;font-weight:800;text-align:center;margin-bottom:36px;letter-spacing:-0.02em">A Few Quick Things</h2>
+
+<div style="background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px">
+<h3 style="font-size:1.05em;font-weight:700;margin-bottom:8px;color:#060d26">Do I need to know anything about AI?</h3>
+<p style="font-size:14px;color:#444;line-height:1.6">Nope. The whole point is that you don&#8217;t. We teach beginners. If you&#8217;ve been curious but overwhelmed, you&#8217;re exactly who this is for.</p>
+</div>
+
+<div style="background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px">
+<h3 style="font-size:1.05em;font-weight:700;margin-bottom:8px;color:#060d26">What do I provide as the host?</h3>
+<p style="font-size:14px;color:#444;line-height:1.6">Your home, the snacks, and the guest list. We send a simple hosting guide ahead of time. Wine and cheese are encouraged but not required.</p>
+</div>
+
+<div style="background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px">
+<h3 style="font-size:1.05em;font-weight:700;margin-bottom:8px;color:#060d26">How long is the evening?</h3>
+<p style="font-size:14px;color:#444;line-height:1.6">About 3 hours total &#8212; including time to mingle before and after. The structured AI part is around 2.5 hours: an intro to AI, a hands-on session where you put AI to work on real mom-life to-dos, and a Q&amp;A.</p>
+</div>
+
+<div style="background:#fff;border-radius:12px;padding:24px 28px">
+<h3 style="font-size:1.05em;font-weight:700;margin-bottom:8px;color:#060d26">Is there a cost to attend?</h3>
+<p style="font-size:14px;color:#444;line-height:1.6">Guests pay per person to attend. As the host, your seat is free. We&#8217;ll walk you through pricing and details once we connect.</p>
+</div>
+
+<div style="text-align:center;margin-top:32px">
+<a href="experiences.html" style="display:inline-block;color:#ff63d8;font-size:13px;font-weight:600;text-decoration:none;border-bottom:1px solid #ff63d8;padding-bottom:2px">&larr; Back to Experiences</a>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="background:#060d26;padding:60px 24px 80px">
+<div style="max-width:1000px;margin:0 auto">
+<div style="display:grid;grid-template-columns:2fr 1.5fr 1.5fr 1fr 1.5fr;gap:28px;margin-bottom:36px;text-align:left">
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.04em;margin-bottom:8px"><span style="color:#ff63d8">ai.</span><span style="color:#fff">moms</span><span style="font-size:7px;vertical-align:super;opacity:0.4;color:#fff">&#8482;</span></div>
+<p style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Retire from<br>Chief Everything Officer.&#8482;</p>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">LEARNING EXPERIENCES</div>
+<a href="index.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">ai moms&#8482; 101 On-Demand</a>
+<a href="experiences.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Mom-Hosted Experiences</a>
+<a href="aime.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Meet Aime</a>
+<a href="toolkit.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">The AI Toolkit</a>
+<a href="corporate.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">For Companies</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">COMPANY</div>
+<a href="about.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">About ai moms&#8482;</a>
+<a href="community.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Community</a>
+<a href="science.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">The Science</a>
+<a href="careers.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Careers</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">SHOP</div>
+<a href="shop.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Prompt Packs</a>
+<a href="shop.html#merch" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Merch &amp; Gifts</a>
+</div>
+<div>
+<div style="font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:10px;color:#ff63d8;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">CONNECT</div>
+<a href="mai&#108;to:h&#101;llo&#64;aimoms&#46;ai" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">h&#101;llo&#64;aimoms&#46;ai</a>
+<a href="press.html" style="display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:8px;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Partnerships, Press &amp; Media</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span style="font-size:10px;color:rgba(255,255,255,0.3);font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">&copy; 2026 ai.moms&#8482; All rights reserved.</span>
+<div style="display:flex;gap:14px">
+<a href="privacy.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Privacy Policy</a>
+<a href="terms.html" style="font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">Terms &amp; Conditions</a>
+</div>
+</div>
+<div style="margin-top:20px;padding:16px 20px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.03)">
+<p style="font-size:11px;color:rgba(255,255,255,0.35);line-height:1.7;font-family:'Be Vietnam Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;margin:0">ai.moms&#8482; is an educational platform. All content is for informational and educational purposes only and does not constitute professional, legal, financial, medical, or therapeutic advice. Individual results vary. AI tools referenced are third-party products not owned or operated by ai.moms&#8482;. Use of third-party AI tools is at your own risk. <strong style="color:rgba(255,255,255,0.5)">Please review our full <a href="terms.html" style="color:#ff63d8;text-decoration:underline">Terms &amp; Conditions</a> and <a href="privacy.html" style="color:#ff63d8;text-decoration:underline">Privacy Policy</a> before using this site or enrolling in any program.</strong></p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
