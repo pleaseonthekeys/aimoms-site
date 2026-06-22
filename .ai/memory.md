@@ -8,10 +8,13 @@ Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — incre
   (shared shell + homepage) done, builds + smoke-tests green. ~27 pages left to port.
   Supabase + Vercel provisioning still deferred (do with Lauren at the dashboards).
 Blocked by: Nothing.
-Next step: Continue Phase 2 commerce pages — Membership funnel next (membership +
-  membership-register + membership-thank-you), then Workshop funnel, then shop, quiz,
-  article. Foundations funnel DONE (commit bea4d02) and is the template to copy.
+Next step: Continue Phase 2 commerce pages — Workshop funnel next (workshop +
+  workshop-register + workshop-thank-you), then shop, quiz, article. Foundations +
+  Membership funnels DONE and are the templates to copy.
   Forms render structurally now; wiring is Phase 4.
+  ⚠️ FLAG for Raquel: membership-thank-you fires Pixel "Subscribe" with value:49,
+  but membership is $59/mo — looks like a stale value. Ported verbatim for attribution
+  parity; confirm before launch.
 Repo layout: root = live static HTML (reference); next/ = the Next.js rebuild.
 
 ## Patterns established (reuse these when porting pages)

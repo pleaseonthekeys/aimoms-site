@@ -1,0 +1,143 @@
+/* Membership sales page styles (ported from membership.html). */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.page-membership {
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 24px; }
+
+  .cta-pink {
+    display: inline-block; background: var(--pink); color: #fff; padding: 18px 44px; border-radius: 12px;
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.05em; font-weight: 700; text-decoration: none;
+    transition: all 0.25s; box-shadow: 0 4px 20px rgba(255, 99, 216, 0.25);
+  }
+  .cta-pink:hover { background: var(--pink-hover); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 99, 216, 0.4); }
+  .cta-pink.cta-large { padding: 22px 56px; font-size: 1.15em; }
+
+  /* HERO */
+  .hero { padding: 140px 24px 90px; background: #fff; text-align: center; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gray-200);
+    padding: 8px 18px; border-radius: 100px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.72em;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); margin-bottom: 26px;
+  }
+  .hero-eyebrow .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--pink);
+    box-shadow: 0 0 12px rgba(255, 99, 216, 0.8); animation: pulse 2s ease-in-out infinite;
+  }
+  .hero h1 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2.6em, 6.5vw, 4.6em); line-height: 1.0;
+    color: var(--navy); letter-spacing: -0.035em; margin-bottom: 24px; max-width: 860px; margin-left: auto; margin-right: auto;
+  }
+  .hero h1 .pink { color: var(--pink); }
+  .italic-accent { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500; color: var(--pink); letter-spacing: -0.01em; }
+  .hero-sub { font-size: 1.1em; line-height: 1.7; color: var(--gray-600); max-width: 620px; margin: 0 auto 36px; }
+  .hero-price-line {
+    display: inline-flex; align-items: baseline; gap: 10px; background: #060d26; color: #fff; padding: 14px 28px;
+    border-radius: 100px; margin-bottom: 20px;
+  }
+  .hero-price-line .num { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5em; color: #fff; letter-spacing: -0.02em; }
+  .hero-price-line .num .pink { color: var(--pink); }
+  .hero-price-line .label { color: rgba(255, 255, 255, 0.65); font-size: 0.85em; }
+  .hero-note { color: var(--gray-400); font-size: 0.82em; margin-top: 12px; }
+
+  /* WHAT'S INCLUDED */
+  .included-section { background: var(--navy); color: #fff; padding: 100px 24px; }
+  .section-eyebrow {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.72em; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: 14px; text-align: center;
+  }
+  .section-title {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 5vw, 3.2em); line-height: 1.05;
+    letter-spacing: -0.03em; text-align: center; margin-bottom: 14px;
+  }
+  .included-section .section-title { color: #fff; }
+  .included-section .section-sub { color: rgba(255, 255, 255, 0.6); text-align: center; max-width: 560px; margin: 0 auto 56px; font-size: 1.02em; line-height: 1.7; }
+
+  .included-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 880px; margin: 0 auto; }
+  .included-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 18px; padding: 36px 30px; }
+  .included-card .icon {
+    width: 48px; height: 48px; background: rgba(255, 99, 216, 0.15); border: 1px solid rgba(255, 99, 216, 0.3);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; color: var(--pink);
+  }
+  .included-card h3 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3em; margin-bottom: 10px; color: #fff; letter-spacing: -0.02em; }
+  .included-card p { color: rgba(255, 255, 255, 0.6); font-size: 0.95em; line-height: 1.7; }
+
+  /* HOW IT WORKS */
+  .how-section { padding: 100px 24px; background: #fff; }
+  .how-section .section-sub { text-align: center; color: var(--gray-600); max-width: 560px; margin: 0 auto 56px; font-size: 1.02em; line-height: 1.7; }
+  .steps { max-width: 760px; margin: 0 auto; }
+  .step { display: flex; gap: 28px; padding: 32px 0; border-top: 1px solid var(--gray-200); align-items: flex-start; }
+  .step:last-child { border-bottom: 1px solid var(--gray-200); }
+  .step-num {
+    flex: 0 0 56px; width: 56px; height: 56px; background: var(--pink); color: #fff; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.4em;
+  }
+  .step-body h3 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.25em; margin-bottom: 6px; color: var(--navy); }
+  .step-body p { color: var(--gray-600); font-size: 0.98em; line-height: 1.7; }
+
+  /* PRICING */
+  .pricing-section { padding: 90px 24px; background: var(--off-white); }
+  .pricing-card {
+    background: #fff; border-radius: 24px; padding: 56px 48px; max-width: 560px; margin: 0 auto;
+    border: 1px solid var(--gray-200); box-shadow: 0 20px 60px rgba(6, 13, 38, 0.06); text-align: center;
+  }
+  .pricing-card .tag {
+    display: inline-block; background: rgba(255, 99, 216, 0.1); color: var(--pink); padding: 8px 16px; border-radius: 100px;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.7em; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 20px;
+  }
+  .pricing-card .price { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 5em; line-height: 1; color: var(--navy); letter-spacing: -0.04em; margin-bottom: 6px; }
+  .pricing-card .price .small { font-size: 0.32em; color: var(--gray-400); font-weight: 600; letter-spacing: 0; vertical-align: middle; margin-left: 4px; }
+  .pricing-card .sub { color: var(--gray-600); font-size: 0.95em; margin-bottom: 28px; }
+  .pricing-card .checklist { text-align: left; margin: 0 auto 28px; max-width: 380px; }
+  .pricing-card .checklist li {
+    list-style: none; padding: 10px 0; color: var(--navy); font-size: 0.95em; line-height: 1.5;
+    display: flex; gap: 12px; align-items: flex-start; border-bottom: 1px solid var(--gray-100);
+  }
+  .pricing-card .checklist li:last-child { border-bottom: none; }
+  .pricing-card .checklist li::before { content: "✓"; color: var(--pink); font-weight: 900; flex-shrink: 0; font-size: 1.1em; line-height: 1.3; }
+  .pricing-card .cta-pink { display: block; width: 100%; }
+  .pricing-card .fineprint { color: var(--gray-400); font-size: 0.78em; margin-top: 18px; line-height: 1.6; }
+
+  /* FAQ */
+  .faq-section { padding: 90px 24px; background: #fff; }
+  .faq-list { max-width: 760px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--gray-200); }
+  .faq-item:first-child { border-top: 1px solid var(--gray-200); }
+  .faq-item summary {
+    padding: 24px 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1em; cursor: pointer;
+    list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--navy); letter-spacing: -0.01em;
+  }
+  .faq-item summary::after { content: '+'; font-size: 1.5em; font-weight: 300; color: var(--gray-400); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-answer { padding: 0 0 24px; color: var(--gray-600); font-size: 0.98em; line-height: 1.7; }
+
+  /* FINAL CTA */
+  .final-cta { background: var(--navy); color: #fff; padding: 110px 24px; text-align: center; position: relative; overflow: hidden; }
+  .final-cta-inner { position: relative; z-index: 1; }
+  .final-cta h2 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2em, 5vw, 3em); line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.03em; color: #fff; }
+  .final-cta h2 .pink { color: var(--pink); }
+  .final-cta p { color: rgba(255, 255, 255, 0.65); font-size: 1.05em; max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+  .final-cta-note { color: rgba(255, 255, 255, 0.4); font-size: 0.82em; margin-top: 18px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .included-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 60px 20px; }
+    .hero { padding: 120px 20px 70px; }
+    .pricing-card { padding: 40px 28px; }
+    .pricing-card .price { font-size: 3.8em; }
+    .step { gap: 18px; padding: 24px 0; }
+    .step-num { flex: 0 0 44px; width: 44px; height: 44px; font-size: 1.15em; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.4em; }
+  }
+}
