@@ -42,9 +42,14 @@ She should feel seen and capable, never judged. "No stupid questions vibes. You 
 - Next.js (App Router) + TypeScript
 - Tailwind CSS (fidelity-first port of the current inline styles, then refactor)
 - Supabase (Postgres for articles + form submissions; Auth later for the gated course)
-- Resend (transactional email — replicates Netlify Forms notifications). Lauren owns the
+- Resend (transactional email — replicates Netlify Forms notifications). Raquel owns the
   account; API key lives in Vercel env, never in code.
-- Vercel (deployment)
+- Vercel (deployment). **Hosting plan during build: deploy to Lauren's own free Vercel
+  account, then transfer the project to Raquel when she's ready to go live / upgrades to
+  Pro.** Raquel is on free Hobby and can't pay $20/mo yet; Hobby has no team-member invites,
+  so building under Lauren's account (native to her MCP, no shared credentials) and
+  transferring later is the path. Build/stage locally (`next dev`) until deploy is needed.
+  Note: Hobby is non-commercial — production (a paid course site) should move to Pro at cutover.
 - Stripe Payment Links (hosted checkout — URLs only, no Stripe SDK). The Foundations
   **course link + price are config/env values** and will change soon (see Non-negotiables).
 - Facebook Pixel (ad tracking)
