@@ -50,6 +50,14 @@ She should feel seen and capable, never judged. "No stupid questions vibes. You 
 - Facebook Pixel (ad tracking)
 - No AI/LLM feature on the site.
 
+## Repo layout (during migration)
+- **Repo root** = the live static HTML site (Netlify). This is the **reference** — the
+  source of truth for content, copy, pricing, Stripe links, Pixel, and exact URLs while we
+  rebuild. Do not break it; it stays live until cutover.
+- **`next/`** = the new Next.js app (App Router + TS + Tailwind 4). All rebuild work happens
+  here. We swap it in at cutover, then retire the root HTML.
+- Supabase + Vercel are **not provisioned yet** (deferred — do together with Lauren).
+
 ## What's been built (current static site — the migration target)
 - Homepage; Foundations course (sales → register → thank-you)
 - Membership $59/mo (sales → register → thank-you)
