@@ -1,0 +1,181 @@
+/* Workshop sales-page styles (ported from workshop.html). */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.page-workshop {
+  --serif: 'Playfair Display', Georgia, serif;
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+  .pink { color: var(--pink); }
+  .italic-accent { font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: -0.01em; }
+  .tm { font-size: 0.42em; vertical-align: 0.6em; font-weight: 600; letter-spacing: 0; margin-left: 1px; opacity: 0.85; }
+
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: 0.72em; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); margin-bottom: 18px;
+  }
+  .section-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--pink); }
+  .section-eyebrow.centered { justify-content: center; }
+  .section-title {
+    font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(2em, 5vw, 3.4em); line-height: 1.05;
+    color: var(--navy); letter-spacing: -0.025em; margin-bottom: 20px;
+  }
+  .section-title.centered { text-align: center; }
+  .section-title .italic-accent { color: var(--pink); }
+  .section-sub {
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.05em; line-height: 1.65; color: var(--gray-600);
+    max-width: 620px; margin: 0 auto 32px;
+  }
+  .section-sub.centered { text-align: center; }
+  .section-sub strong { color: var(--navy); font-weight: 600; }
+
+  /* CTAs */
+  .cta-pink {
+    display: inline-block; background: var(--pink); color: #fff; padding: 16px 32px; border-radius: 12px;
+    font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95em; font-weight: 700; text-decoration: none;
+    transition: all 0.25s; box-shadow: 0 4px 20px rgba(255, 99, 216, 0.25);
+  }
+  .cta-pink:hover { background: var(--pink-hover); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(255, 99, 216, 0.35); }
+  .cta-pink::after { content: '→'; margin-left: 10px; display: inline-block; transition: transform 0.2s ease; }
+  .cta-pink:hover::after { transform: translateX(4px); }
+  .cta-large { padding: 18px 38px; font-size: 1.02em; }
+
+  /* HERO */
+  .hero { padding: 90px 24px 60px; background: #fff; text-align: center; }
+  .hero-pills-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; margin-bottom: 22px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gray-200);
+    padding: 8px 18px; border-radius: 100px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.72em;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); margin-bottom: 0;
+  }
+  .hero-eyebrow .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--pink);
+    box-shadow: 0 0 12px rgba(255, 99, 216, 0.8); animation: pulse 2s ease-in-out infinite;
+  }
+  .hero h1 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2.4em, 6.5vw, 4.5em); line-height: 1.0;
+    color: var(--navy); letter-spacing: -0.035em; margin-bottom: 22px; max-width: 840px; margin-left: auto; margin-right: auto;
+  }
+  .hero h1 .italic-accent { color: var(--pink); font-weight: 600; }
+  .hero-sub { font-size: 1.1em; line-height: 1.65; color: var(--gray-600); max-width: 620px; margin: 0 auto 18px; }
+  .hero-sub strong { color: var(--navy); font-weight: 600; }
+  .hero-price-line {
+    display: inline-block; margin-top: 0; padding: 8px 18px; background: var(--navy); color: #fff;
+    border-radius: 100px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.85em; letter-spacing: 0.02em;
+  }
+  .hero-price-line .pink { color: var(--pink); }
+  .hero-cta-wrap { margin-top: 28px; }
+  .hero-note { margin-top: 22px; font-size: 0.85em; color: var(--gray-400); }
+
+  /* SAVE THE DATE — hero callout */
+  .date-callout {
+    max-width: 520px; margin: 34px auto 0; padding: 22px 26px; background: var(--off-white);
+    border: 1px solid var(--gray-200); border-radius: 14px; text-align: left; position: relative;
+  }
+  .date-callout::before { content: ''; position: absolute; top: -1px; left: 26px; width: 38px; height: 2px; background: var(--pink); }
+  .date-callout-label { font-family: 'Outfit', sans-serif; font-size: 0.7em; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--pink); margin-bottom: 8px; }
+  .date-callout-headline { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3em; line-height: 1.15; color: var(--navy); margin-bottom: 4px; }
+  .date-callout-headline .italic-accent { color: var(--pink); font-weight: 500; }
+  .date-callout-sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88em; color: var(--gray-600); line-height: 1.5; }
+
+  /* WHAT YOU'LL GET — 2x2 grid */
+  .included-section { padding: 80px 24px 40px; background: #fff; }
+  .included-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 880px; margin: 0 auto; }
+  .included-card {
+    background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; padding: 30px 28px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .included-card:hover { border-color: rgba(255, 99, 216, 0.4); transform: translateY(-2px); }
+  .included-card .icon {
+    width: 42px; height: 42px; background: rgba(255, 99, 216, 0.1); color: var(--pink); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .included-card h3 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.18em; color: var(--navy); letter-spacing: -0.015em; margin-bottom: 10px; }
+  .included-card p { font-size: 0.96em; line-height: 1.55; color: var(--gray-600); }
+  .included-card p strong { color: var(--navy); font-weight: 600; }
+  .included-card .usecase-list { margin: 8px 0 0; padding: 0; list-style: none; font-size: 0.92em; line-height: 1.55; color: var(--gray-600); }
+  .included-card .usecase-list li { padding: 4px 0 4px 18px; position: relative; }
+  .included-card .usecase-list li .bullet { position: absolute; left: 0; color: var(--pink); font-weight: 800; }
+  .included-card .usecase-list li strong { color: var(--navy); font-weight: 600; }
+
+  .qa-note {
+    max-width: 760px; margin: 36px auto 0; padding: 22px 28px; background: var(--off-white);
+    border-left: 3px solid var(--pink); border-radius: 0 10px 10px 0; text-align: left;
+  }
+  .qa-note p { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.96em; line-height: 1.55; color: var(--gray-600); margin: 0; }
+  .qa-note p strong { color: var(--navy); font-weight: 700; }
+
+  /* PRICING CARD */
+  .pricing-section { padding: 40px 24px 80px; background: #fff; text-align: center; }
+  .pricing-card {
+    max-width: 440px; margin: 0 auto; padding: 42px 36px; background: var(--navy); color: #fff; border-radius: 18px;
+    box-shadow: 0 14px 50px rgba(6, 13, 38, 0.12); position: relative;
+  }
+  .pricing-card::before {
+    content: ''; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px;
+    background: var(--pink); border-radius: 0 0 6px 6px;
+  }
+  .pricing-card .tag { font-family: 'Outfit', sans-serif; font-size: 0.7em; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--pink); margin-bottom: 14px; }
+  .pricing-card .price { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 4em; line-height: 1; color: #fff; letter-spacing: -0.04em; margin-bottom: 6px; }
+  .pricing-card .price .small { font-size: 0.35em; color: rgba(255, 255, 255, 0.5); font-weight: 500; margin-left: 4px; }
+  .pricing-card .sub { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.92em; color: rgba(255, 255, 255, 0.7); margin-bottom: 22px; }
+  .pricing-card .checklist { list-style: none; text-align: left; margin: 0 0 26px; padding: 0; }
+  .pricing-card .checklist li { padding: 8px 0 8px 26px; position: relative; font-size: 0.93em; color: rgba(255, 255, 255, 0.88); line-height: 1.4; }
+  .pricing-card .checklist li::before { content: '✓'; position: absolute; left: 0; top: 8px; color: var(--pink); font-weight: 800; }
+  .pricing-card .checklist li strong { color: #fff; font-weight: 600; }
+  .pricing-card .cta-pink { display: block; width: 100%; }
+  .pricing-card .fineprint { margin-top: 14px; font-size: 0.8em; color: rgba(255, 255, 255, 0.5); line-height: 1.4; }
+
+  /* AFTER THE WORKSHOP — next-step cards */
+  .after-section { padding: 80px 24px; background: var(--off-white); }
+  .after-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 960px; margin: 0 auto; }
+  .after-card {
+    background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px 28px; text-decoration: none;
+    color: inherit; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .after-card:hover { border-color: rgba(255, 99, 216, 0.4); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); }
+  .after-card .after-tag { font-family: 'Outfit', sans-serif; font-size: 0.68em; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 10px; }
+  .after-card h3 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.18em; color: var(--navy); letter-spacing: -0.015em; margin-bottom: 8px; }
+  .after-card h3 .italic-accent { color: var(--pink); font-weight: 500; }
+  .after-card p { font-size: 0.94em; line-height: 1.55; color: var(--gray-600); margin-bottom: 14px; }
+  .after-card .after-link { margin-top: auto; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; font-size: 0.85em; color: var(--pink); letter-spacing: 0.02em; }
+
+  /* FAQ */
+  .faq-section { padding: 80px 24px; background: #fff; }
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--gray-200); padding: 0; }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 22px 0; font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: 1.04em; color: var(--navy); letter-spacing: -0.01em; display: flex; justify-content: space-between; align-items: center; gap: 18px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 1.6em; color: var(--pink); line-height: 1; transition: transform 0.2s; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-answer { padding: 0 0 22px; font-size: 0.96em; line-height: 1.6; color: var(--gray-600); max-width: 680px; }
+
+  /* FINAL CTA */
+  .final-cta { padding: 90px 24px 100px; background: var(--navy); color: #fff; text-align: center; position: relative; overflow: hidden; }
+  .final-cta::before { content: ""; position: absolute; inset: 0; pointer-events: none; }
+  .final-cta h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2.2em, 5.5vw, 3.8em); line-height: 1.05;
+    letter-spacing: -0.035em; color: #fff; margin-bottom: 22px; position: relative;
+  }
+  .final-cta h2 .italic-accent { color: var(--pink); font-weight: 500; }
+  .final-cta p { font-size: 1.05em; line-height: 1.65; color: rgba(255, 255, 255, 0.75); max-width: 560px; margin: 0 auto 32px; position: relative; }
+  .final-cta-note { margin-top: 26px; font-size: 0.85em; color: rgba(255, 255, 255, 0.45); }
+
+  @media (max-width: 680px) {
+    .included-grid { grid-template-columns: 1fr; }
+    .after-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .hero { padding: 70px 20px 40px; }
+    .included-section, .pricing-section, .after-section, .faq-section { padding: 60px 20px; }
+    .final-cta { padding: 80px 20px; }
+  }
+}

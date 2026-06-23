@@ -4,17 +4,19 @@
 ## Current Sprint
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
-Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — increment 1
-  (shared shell + homepage) done, builds + smoke-tests green. ~27 pages left to port.
-  Supabase + Vercel provisioning still deferred (do with Lauren at the dashboards).
+Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — Foundations,
+  Membership, AND Workshop funnels done; builds + smoke-tests green (11 routes). ~24
+  pages left to port. Supabase + Vercel provisioning still deferred (do with Lauren).
 Blocked by: Nothing.
-Next step: Continue Phase 2 commerce pages — Workshop funnel next (workshop +
-  workshop-register + workshop-thank-you), then shop, quiz, article. Foundations +
-  Membership funnels DONE and are the templates to copy.
-  Forms render structurally now; wiring is Phase 4.
-  ⚠️ FLAG for Raquel: membership-thank-you fires Pixel "Subscribe" with value:49,
-  but membership is $59/mo — looks like a stale value. Ported verbatim for attribution
-  parity; confirm before launch.
+Next step: Continue Phase 2 commerce pages — Shop next (shop.html: course/gift/bundle
+  Stripe links + Pixel), then quiz, article. Foundations/Membership/Workshop funnels
+  DONE and are the templates to copy. Forms render structurally now; wiring is Phase 4.
+  ⚠️ FLAGS for Raquel (stale Pixel values — ported verbatim for attribution parity,
+  confirm before launch):
+   - membership-thank-you fires "Subscribe" value:49, but membership is $59/mo.
+   - workshop-thank-you fires "Purchase" value:25, but workshop is $68.
+   - workshop-register fires InitiateCheckout content_name "Foundations - Form Complete"
+     (a copy-paste leftover on the Workshop form; the event + $68 value are correct).
 Repo layout: root = live static HTML (reference); next/ = the Next.js rebuild.
 
 ## Patterns established (reuse these when porting pages)
