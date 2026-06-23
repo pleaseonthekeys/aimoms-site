@@ -4,13 +4,25 @@
 ## Current Sprint
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
-Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — Foundations,
-  Membership, Workshop funnels + Shop + Quiz done; builds + smoke-tests green (13 routes).
-  ~22 pages left to port. Supabase + Vercel provisioning still deferred (do with Lauren).
+Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — COMMERCE-FIRST
+  PASS COMPLETE: Foundations, Membership, Workshop funnels + Shop + Quiz + Article all
+  done; builds + runtime-tests green (14 routes; /article is dynamic via ?id=). Remaining
+  Phase 2 = non-commerce pages. Supabase + Vercel provisioning deferred (do with Lauren).
 Blocked by: Nothing.
-Next step: Continue Phase 2 commerce pages — Article next (article.html: id-based URL,
-  renders from articles-data.js — temporary source until Phase 3 Supabase). Foundations/
-  Membership/Workshop funnels + Shop + Quiz DONE. Forms render structurally; wiring is Phase 4.
+Next step: Phase 2 NON-COMMERCE pages next — editorial (article index; /article redirects
+  here on bad/missing id so port it soon), then experiences, events, host-application,
+  host-success, out-of-office-waitlist, community, science, corporate, curriculum, press,
+  careers + 6 interns, subscribe, toolkit, privacy, terms, success/newsletter-success.
+  Then Phase 3 (articles -> Supabase), Phase 4 (forms -> API routes). Commerce-first pass
+  (all Stripe/Pixel pages) is DONE. Forms render structurally; wiring is Phase 4.
+  Article notes: /article reads ?id= (dynamic server page), renders from the new
+  next/lib/articles-data.ts (43 articles, copied verbatim from articles-data.js -> ESM +
+  types; temporary until Phase 3 Supabase). getArticle/ARTICLE_IDS exported. Gift modal
+  self-purchase -> STRIPE_LINKS.foundationsPayInFull, gift-purchase -> STRIPE_LINKS.courseGift
+  (redirect-regardless on capture; POST /api/forms/* wired Phase 4). CTA hrefs mapped to
+  clean slugs (index.html->/ , aime.html->/foundations [aime removed], subscribe.html->
+  /subscribe, toolkit.html->/toolkit). Body images still hotlink unsplash (Phase 7 re-host);
+  hero images are local /img-*.jpg (all 28 present in public).
   Quiz notes: ported as full interactive client component (components/QuizApp.tsx) with
   TODO(raquel) keep/redesign/remove. 4 screens (intro/quiz/result/final), all Pixel events
   preserved (quiz-started, quiz-result value:total, pay-full/pay-split InitiateCheckout,
@@ -31,6 +43,11 @@ Next step: Continue Phase 2 commerce pages — Article next (article.html: id-ba
    - workshop-thank-you fires "Purchase" value:25, but workshop is $68.
    - workshop-register fires InitiateCheckout content_name "Foundations - Form Complete"
      (a copy-paste leftover on the Workshop form; the event + $68 value are correct).
+   - ARTICLE PROMPT BLOCKS (deliberate FIX, not verbatim): the live article.html had a
+     switch-statement bug (`case 'prompt'` label deleted) that silently dropped ALL 101
+     teachable prompt blocks across the 43 articles. The port RESTORES them (prompt box +
+     copy button, exactly as the orphaned code + CSS intended). Confirm this is desired —
+     it's the one place we intentionally diverge from live output to recover lost content.
 Repo layout: root = live static HTML (reference); next/ = the Next.js rebuild.
 
 ## Patterns established (reuse these when porting pages)
