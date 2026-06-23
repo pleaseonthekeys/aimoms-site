@@ -44,12 +44,14 @@ She should feel seen and capable, never judged. "No stupid questions vibes. You 
 - Supabase (Postgres for articles + form submissions; Auth later for the gated course)
 - Resend (transactional email — replicates Netlify Forms notifications). Raquel owns the
   account; API key lives in Vercel env, never in code.
-- Vercel (deployment). **Hosting plan during build: deploy to Lauren's own free Vercel
-  account, then transfer the project to Raquel when she's ready to go live / upgrades to
-  Pro.** Raquel is on free Hobby and can't pay $20/mo yet; Hobby has no team-member invites,
-  so building under Lauren's account (native to her MCP, no shared credentials) and
-  transferring later is the path. Build/stage locally (`next dev`) until deploy is needed.
-  Note: Hobby is non-commercial — production (a paid course site) should move to Pro at cutover.
+- Vercel (deployment). **Hosting/access plan: build directly on Raquel's Vercel + Supabase
+  accounts via TOKENS + CLI** (Lauren's own free accounts are at their project limits, and
+  paid team-member invites aren't an option). Lauren's OAuth MCPs stay on her own account;
+  a token drives the CLI against Raquel's account — they coexist, so use the CLI (not MCP
+  tools) for Raquel's projects. Vercel: `VERCEL_TOKEN` + `vercel --token`. Supabase:
+  `SUPABASE_ACCESS_TOKEN` + `supabase link/db push`. Tokens via one-time link; runtime keys
+  in gitignored `.env.local`. Building where it'll live means no cutover migration later.
+  Note: Hobby is non-commercial — the paid course site should move to Pro before/at launch.
 - Stripe Payment Links (hosted checkout — URLs only, no Stripe SDK). The Foundations
   **course link + price are config/env values** and will change soon (see Non-negotiables).
 - Facebook Pixel (ad tracking)
