@@ -5,12 +5,17 @@
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
 Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — Foundations,
-  Membership, AND Workshop funnels done; builds + smoke-tests green (11 routes). ~24
+  Membership, Workshop funnels + Shop done; builds + smoke-tests green (12 routes). ~23
   pages left to port. Supabase + Vercel provisioning still deferred (do with Lauren).
 Blocked by: Nothing.
-Next step: Continue Phase 2 commerce pages — Shop next (shop.html: course/gift/bundle
-  Stripe links + Pixel), then quiz, article. Foundations/Membership/Workshop funnels
-  DONE and are the templates to copy. Forms render structurally now; wiring is Phase 4.
+Next step: Continue Phase 2 commerce pages — Quiz next (quiz.html: course buy buttons +
+  quiz-leads form; port as-is + TODO keep/redesign/remove), then article. Foundations/
+  Membership/Workshop funnels + Shop DONE. Forms render structurally now; wiring is Phase 4.
+  Shop note: course card + course-gift display use PRICES.foundations (single config
+  value); gift links are STRIPE_LINKS.courseGift ($247) + STRIPE_LINKS.bundle ($297),
+  verbatim. Course card fires InitiateCheckout content_name "shop-course". Shop reuses
+  the global FloatingQuizCTA + NewsletterPopup (same as foundations); cookie/pixel/PageView
+  are global (Analytics in layout) — shop's inline pixel init was NOT duplicated.
   ⚠️ FLAGS for Raquel (stale Pixel values — ported verbatim for attribution parity,
   confirm before launch):
    - membership-thank-you fires "Subscribe" value:49, but membership is $59/mo.
