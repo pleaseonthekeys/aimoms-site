@@ -1,0 +1,78 @@
+/* Mom-Hosted Experiences page styles (ported from experiences.html inline styles into scoped classes). */
+
+@keyframes exp-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+.page-experiences {
+  --serif: 'Playfair Display', Georgia, serif;
+
+  .italic-accent { font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: -0.01em; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* HERO */
+  .hero-exp { min-height: 480px; display: flex; align-items: center; padding: 80px 0; background: #060d26; text-align: center; color: #fff; }
+  .hero-exp h1 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2.4em, 5vw, 3.4em); letter-spacing: -0.035em; line-height: 1.05; margin-bottom: 20px; color: #fff; }
+  .hero-exp h1 .italic-accent { color: var(--pink); font-weight: 500; }
+  .hero-exp p { font-size: 1.2em; color: rgba(255, 255, 255, 0.75); max-width: 700px; margin: 0 auto; line-height: 1.8; }
+
+  /* HERO IMAGE */
+  .hero-image { height: 400px; overflow: hidden; }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* THE CONCEPT */
+  .concept { padding: 80px 0; background: #fff; }
+  .concept-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .concept-inner h2 { font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; font-size: 2.5em; margin-bottom: 30px; }
+  .concept-inner p { font-size: 1.15em; line-height: 1.8; color: #444; margin-bottom: 16px; }
+  .concept-inner p.lead-bold { font-weight: 700; color: #060d26; margin-bottom: 0; }
+
+  /* HOW IT WORKS */
+  .how-it-works { padding: 80px 0; background: #F5F5F5; }
+  .how-it-works h2 { font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; font-size: 2.5em; text-align: center; margin-bottom: 60px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+  .step { background: #fff; padding: 40px 30px; border-radius: 16px; text-align: center; }
+  .step-num { font-family: 'Outfit', sans-serif; font-size: 3em; font-weight: 700; color: var(--pink); margin-bottom: 10px; }
+  .step h3 { font-family: 'Outfit', sans-serif; font-size: 1.3em; margin-bottom: 12px; }
+  .step p { font-size: 1em; line-height: 1.7; color: #444; }
+
+  /* THE EVENING */
+  .evening { padding: 80px 0; background: #fff; }
+  .evening h2 { font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; font-size: 2.5em; text-align: center; margin-bottom: 50px; }
+  .timeline { max-width: 700px; margin: 0 auto; }
+  .tl-item { display: flex; gap: 24px; margin-bottom: 30px; align-items: flex-start; }
+  .tl-time { font-weight: 700; font-size: 1em; color: var(--pink); min-width: 100px; padding-top: 3px; }
+  .tl-content { font-size: 1.05em; line-height: 1.7; color: #444; }
+  .tl-content strong { color: #060d26; }
+
+  /* DETAILS */
+  .details { padding: 80px 0; background: #F5F5F5; }
+  .details h2 { font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; font-size: 2.5em; text-align: center; margin-bottom: 50px; }
+  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+  .detail-card { background: #fff; padding: 30px; border-radius: 16px; text-align: center; }
+  .detail-card h3 { font-family: 'Outfit', sans-serif; font-size: 1.8em; font-weight: 700; color: var(--pink); margin-bottom: 6px; }
+  .detail-card p { font-size: 0.95em; color: #444; }
+  .detail-card .fine { font-size: 0.85em; color: #999; }
+
+  /* HOST CTA */
+  .host-cta { padding: 100px 0; background: #060d26; text-align: center; color: #fff; }
+  .host-cta h2 { font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; font-size: 2.5em; margin-bottom: 20px; color: #fff; }
+  .host-cta p { font-size: 1.2em; color: rgba(255, 255, 255, 0.7); margin: 0 auto 40px; max-width: 600px; line-height: 1.7; }
+  .host-cta p.fine { font-size: 0.9em; color: rgba(255, 255, 255, 0.4); margin-top: 20px; margin-bottom: 0; }
+  .btn-host { display: inline-block; background: var(--pink); color: #fff; padding: 18px 44px; text-decoration: none; font-size: 1.1em; font-weight: 700; border-radius: 50px; border: 2px solid var(--pink); transition: all 0.3s; }
+  .btn-host:hover { transform: translateY(-2px); outline: 2px solid var(--pink); outline-offset: 3px; box-shadow: 0 8px 26px rgba(255, 99, 216, 0.35); }
+
+  /* FAQ */
+  .faq-exp { padding: 80px 0; background: #fff; }
+  .faq-exp h2 { font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; font-size: 2.2em; text-align: center; margin-bottom: 50px; }
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  .faq-item { padding: 24px 0; border-bottom: 1px solid #eee; }
+  .faq-item h3 { font-family: 'Outfit', sans-serif; font-size: 1.1em; font-weight: 700; margin-bottom: 8px; }
+  .faq-item p { font-size: 1em; line-height: 1.7; color: #444; }
+  .faq-item a { color: var(--pink); }
+
+  @media (max-width: 768px) {
+    .hero-exp h1 { font-size: 2em; }
+    .steps { grid-template-columns: 1fr; }
+    .tl-item { flex-direction: column; gap: 4px; }
+    .tl-time { min-width: auto; }
+  }
+}

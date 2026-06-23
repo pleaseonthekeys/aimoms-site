@@ -1,0 +1,101 @@
+/* For Companies (corporate) page styles (ported from corporate.html's inline <style>). */
+
+.page-corporate {
+  line-height: 1.6;
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero-corp { min-height: 480px; display: flex; align-items: center; padding: 80px 0 80px; background: #060d26; text-align: center; color: #FFFFFF; }
+  .hero-corp .label { text-transform: uppercase; letter-spacing: 0.25em; font-size: 11px; color: #ff63d8; font-weight: 700; margin-bottom: 20px; }
+  .hero-corp h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.6em, 6vw, 4.2em);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+  }
+  .hero-corp h1 .accent { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500; color: #ff63d8; }
+  .hero-corp p { font-size: 1.2em; color: rgba(255, 255, 255, 0.75); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+
+  /* Business Case */
+  .business-case { padding: 80px 0; background: #F5F5F5; }
+  .business-case h2 { font-size: 2.5em; text-align: center; margin-bottom: 20px; letter-spacing: -0.025em; line-height: 1.05; }
+  .business-case .subtitle { font-size: 1.15em; text-align: center; max-width: 700px; margin: 0 auto 60px; line-height: 1.8; color: #444; font-style: italic; }
+  .case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+  .case-card { background: #FFFFFF; padding: 40px 36px; border-radius: 16px; border-left: 4px solid #ff63d8; }
+  .case-card h3 { font-size: 1.3em; margin-bottom: 10px; color: #060d26; }
+  .case-card p { font-size: 1em; line-height: 1.7; color: #444; }
+
+  /* What We Deliver */
+  .deliver { padding: 80px 0; background: #FFFFFF; }
+  .deliver h2 { font-size: 2.5em; text-align: center; margin-bottom: 16px; letter-spacing: -0.025em; line-height: 1.05; }
+  .deliver .subtitle { font-size: 1.15em; text-align: center; max-width: 780px; margin: 0 auto 20px; line-height: 1.8; color: #444; font-style: italic; }
+  .deliver .format-note { font-size: 1.05em; text-align: center; max-width: 780px; margin: 0 auto 60px; line-height: 1.8; color: #060d26; font-weight: 500; }
+  .deliver-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+  .deliver-card { text-align: center; padding: 40px 28px; background: #F5F5F5; border-radius: 16px; }
+  .deliver-card h3 { font-size: 1.2em; margin-bottom: 12px; color: #ff63d8; }
+  .deliver-card p { font-size: 0.95em; line-height: 1.7; color: #444; }
+
+  /* Engagement Options */
+  .engagements { padding: 80px 0; background: #F5F5F5; }
+  .engagements h2 { font-size: 2.5em; text-align: center; margin-bottom: 16px; letter-spacing: -0.025em; line-height: 1.05; }
+  .engagements .subtitle { font-size: 1.15em; text-align: center; max-width: 700px; margin: 0 auto 60px; line-height: 1.8; color: #444; }
+  .engage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+  .engage-card { background: #FFFFFF; padding: 44px 32px; border-radius: 16px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease; }
+  .engage-card.featured { border-color: #ff63d8; position: relative; }
+  .engage-card.featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff63d8;
+    color: #FFFFFF;
+    font-size: 0.75em;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .engage-card h3 { font-size: 1.4em; margin-bottom: 6px; }
+  .engage-card .engage-desc { font-size: 0.9em; color: #ff63d8; font-weight: 600; margin-bottom: 24px; }
+  .engage-detail { text-align: left; font-size: 0.95em; line-height: 2; color: #444; padding-left: 0; }
+  .engage-detail li { list-style: none; padding-left: 20px; position: relative; }
+  .engage-detail li::before { content: '\2192'; position: absolute; left: 0; color: #ff63d8; font-weight: 700; }
+
+  /* Who It's For */
+  .who { padding: 80px 0; background: #FFFFFF; }
+  .who h2 { font-size: 2.5em; text-align: center; margin-bottom: 50px; letter-spacing: -0.025em; line-height: 1.05; }
+  .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+  .who-card { background: #F5F5F5; padding: 36px 30px; border-radius: 16px; }
+  .who-card h3 { font-size: 1.15em; margin-bottom: 10px; }
+  .who-card p { font-size: 0.95em; line-height: 1.7; color: #444; }
+
+  /* CTA */
+  .corp-cta { padding: 100px 0; background: #060d26; text-align: center; color: #FFFFFF; }
+  .corp-cta h2 { font-size: 2.5em; margin-bottom: 20px; color: #FFFFFF; letter-spacing: -0.025em; line-height: 1.05; }
+  .corp-cta p { font-size: 1.2em; color: rgba(255, 255, 255, 0.7); margin-bottom: 40px; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .btn-corp { display: inline-block; background: #ff63d8; color: #FFFFFF; padding: 18px 44px; text-decoration: none; font-size: 1.1em; font-weight: 700; border-radius: 50px; border: 2px solid #ff63d8; transition: all 0.3s; }
+  .btn-corp:hover { background: transparent; }
+
+  /* FAQ */
+  .faq-corp { padding: 80px 0; background: #FFFFFF; }
+  .faq-corp h2 { font-size: 2.2em; text-align: center; margin-bottom: 50px; letter-spacing: -0.025em; line-height: 1.05; }
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  .faq-item { padding: 24px 0; border-bottom: 1px solid #eee; }
+  .faq-item h3 { font-size: 1.1em; font-weight: 700; margin-bottom: 8px; }
+  .faq-item p { font-size: 1em; line-height: 1.7; color: #444; }
+
+  @media (max-width: 768px) {
+    .hero-corp h1 { font-size: 2em; }
+    .case-grid { grid-template-columns: 1fr; }
+    .deliver-grid { grid-template-columns: 1fr; }
+    .engage-grid { grid-template-columns: 1fr; }
+    .engage-card.featured { margin-top: 20px; }
+  }
+}

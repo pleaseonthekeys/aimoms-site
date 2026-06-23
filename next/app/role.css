@@ -1,0 +1,81 @@
+/* Careers role/role-detail pages — shared, scoped styles.
+   Ported verbatim from the six static intern/teacher HTML <style> blocks (they were
+   identical) into one sheet scoped under .page-role. Source --navy/--pink/--white match
+   globals; --border (#EFEFED) and the #333 body color are page-local and kept as-is.
+   The source sticky top-bar + minimal footer are dropped (global Header/Footer handle
+   chrome); only the "Back to Careers" link is preserved as an in-page back-bar. */
+
+.page-role {
+  --border: #EFEFED;
+
+  background: var(--white);
+  color: var(--navy);
+  line-height: 1.6;
+
+  /* BACK BAR (replaces source .top-bar; logo lives in global Header) */
+  .role-backbar {
+    background: var(--navy);
+    padding: 14px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .back-link {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .back-link:hover { color: var(--pink); }
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 80px 60px 96px; }
+  .hero-inner { max-width: 880px; margin: 0 auto; }
+  .hero-label { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 18px; }
+  .hero h1 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(2.4rem, 5.5vw, 4rem); color: var(--white); line-height: 1.05; margin-bottom: 28px; letter-spacing: -0.02em; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+  .pill { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.18); padding: 8px 16px; border-radius: 100px; }
+  .hero-desc { font-size: 1.15rem; color: rgba(255, 255, 255, 0.78); line-height: 1.7; max-width: 640px; border-left: 3px solid var(--pink); padding-left: 24px; }
+
+  /* CONTENT */
+  .content { max-width: 760px; margin: 0 auto; padding: 80px 40px; }
+  .section { margin-bottom: 72px; }
+  .section:last-child { margin-bottom: 0; }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+  .section-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.9rem; color: var(--navy); margin-bottom: 24px; line-height: 1.15; letter-spacing: -0.01em; }
+  .body-text { font-size: 1rem; color: #333; line-height: 1.75; margin-bottom: 18px; }
+  .body-text strong { color: var(--navy); font-weight: 700; }
+
+  .item-list { list-style: none; margin-bottom: 18px; }
+  .item-list li { font-size: 1rem; color: #333; line-height: 1.7; padding: 14px 0 14px 28px; position: relative; border-bottom: 1px solid var(--border); }
+  .item-list li:last-child { border-bottom: none; }
+  .item-list li::before { content: ''; position: absolute; left: 0; top: 24px; width: 16px; height: 2px; background: var(--pink); }
+  .item-list li strong { color: var(--navy); font-weight: 700; }
+
+  .highlight-box { background: rgba(255, 99, 216, 0.06); border-left: 3px solid var(--pink); padding: 28px 32px; margin: 36px 0; border-radius: 2px; }
+  .highlight-box p { font-size: 1.05rem; color: var(--navy); line-height: 1.65; font-style: italic; margin-bottom: 0; }
+  .highlight-box .attribution { display: block; font-style: normal; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); font-weight: 700; margin-top: 14px; }
+
+  /* APPLY BLOCK */
+  .apply-block { background: var(--navy); padding: 56px 56px 60px; margin: 80px 0 0; border-radius: 2px; }
+  .apply-block .section-label { color: var(--pink); margin-bottom: 14px; }
+  .apply-block h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.9rem; color: var(--white); margin-bottom: 18px; line-height: 1.2; letter-spacing: -0.01em; }
+  .apply-block p { font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.7; margin-bottom: 12px; }
+  .apply-block .lead { color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; margin-bottom: 28px; }
+  .apply-block ol { list-style: none; counter-reset: apply-counter; margin: 20px 0 28px; }
+  .apply-block ol li { counter-increment: apply-counter; font-size: 0.98rem; color: rgba(255, 255, 255, 0.85); line-height: 1.65; padding: 10px 0 10px 40px; position: relative; }
+  .apply-block ol li::before { content: counter(apply-counter); position: absolute; left: 0; top: 8px; color: var(--pink); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 0.85rem; width: 26px; height: 26px; border: 1.5px solid var(--pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .apply-btn { display: inline-block; margin-top: 8px; background: var(--pink); color: var(--navy); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 36px; text-decoration: none; border-radius: 100px; transition: all 0.2s; }
+  .apply-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255, 99, 216, 0.3); }
+
+  .closing-line { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--navy); text-align: center; margin-top: 64px; font-style: italic; }
+
+  @media (max-width: 768px) {
+    .role-backbar { padding: 12px 24px; }
+    .hero { padding: 56px 24px 72px; }
+    .content { padding: 56px 24px; }
+    .apply-block { padding: 40px 28px 44px; }
+  }
+}

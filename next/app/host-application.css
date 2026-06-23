@@ -1,0 +1,86 @@
+/* Host application page styles (ported from host-application.html's inline styles into scoped classes). */
+
+.page-host-application {
+  --serif: 'Playfair Display', Georgia, serif;
+
+  .cat { font-family: 'Be Vietnam Pro', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; display: block; }
+  .italic-accent { font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: -0.01em; }
+
+  /* HERO */
+  .host-hero { padding: 110px 24px 70px; text-align: center; background: var(--navy); color: #fff; }
+  .host-hero-inner { max-width: 720px; margin: 0 auto; }
+  .host-hero .cat { color: var(--pink); margin-bottom: 14px; }
+  .host-hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.7em, 6.2vw, 4.1em);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
+    margin-bottom: 22px;
+    color: #fff;
+  }
+  .host-hero h1 .italic-accent { color: var(--pink); font-weight: 500; }
+  .host-hero p { font-size: 18px; color: rgba(255, 255, 255, 0.78); line-height: 1.65; max-width: 600px; margin: 0 auto; }
+
+  /* FORM SHELL */
+  .host-form-section { padding: 30px 24px 80px; background: #fff; }
+  .host-form-inner { max-width: 580px; margin: 0 auto; }
+  .host-form-card { background: #FAFAF9; border: 1px solid #EFEFED; border-radius: 16px; padding: 36px 32px; }
+  .host-form-card .cat { color: var(--pink); margin-bottom: 6px; text-align: center; }
+  .host-form-card h2 { font-size: 1.6em; font-weight: 800; margin: 6px 0 6px; text-align: center; line-height: 1.2; }
+  .host-form-intro { font-size: 13px; color: #6E6E6B; text-align: center; margin-bottom: 28px; line-height: 1.6; }
+
+  /* FORM FIELDS */
+  .form-group { margin-bottom: 28px; }
+  .group-heading {
+    font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 700; color: var(--pink);
+    letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px;
+    border-bottom: 1px solid #EFEFED; padding-bottom: 8px;
+  }
+  .field-wrap { margin-bottom: 18px; text-align: left; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .two-one { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
+  label.field { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; font-family: 'Be Vietnam Pro', sans-serif; }
+  label.field .opt { font-weight: 400; color: #A3A3A0; font-size: 12px; margin-left: 4px; }
+
+  input[type=text], input[type=email], input[type=tel], textarea, select {
+    width: 100%; padding: 14px 16px; font-size: 14px; font-family: 'Be Vietnam Pro', sans-serif;
+    border: 1.5px solid #E2E2DF; border-radius: 10px; outline: none; background: #fff; color: var(--navy);
+  }
+  input:focus, textarea:focus, select:focus { border-color: var(--pink); }
+  textarea { min-height: 100px; resize: vertical; }
+  select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23060d26' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
+  }
+
+  .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .check-item { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1.5px solid #E2E2DF; border-radius: 10px; cursor: pointer; font-size: 13px; background: #fff; transition: all 0.2s; }
+  .check-item:hover { border-color: var(--pink); }
+  .check-item input { width: auto; margin: 0; }
+  .check-item input:checked + span { font-weight: 600; color: var(--pink); }
+
+  .submit-btn { width: 100%; padding: 16px; background: var(--pink); color: #fff; border: none; border-radius: 100px; font-size: 15px; font-weight: 700; cursor: pointer; transition: opacity 0.2s; margin-top: 8px; }
+  .submit-btn:hover { opacity: 0.9; }
+  .submit-btn:disabled { opacity: 0.6; cursor: wait; }
+  .submit-fine { font-size: 11px; color: #A3A3A0; margin-top: 14px; text-align: center; line-height: 1.5; }
+
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  /* FAQ MINI */
+  .host-faq { padding: 60px 24px 80px; background: #F5F5F5; }
+  .host-faq-inner { max-width: 680px; margin: 0 auto; }
+  .host-faq h2 { font-size: 1.8em; font-weight: 800; text-align: center; margin-bottom: 36px; letter-spacing: -0.02em; }
+  .faq-card { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 14px; }
+  .faq-card:last-of-type { margin-bottom: 0; }
+  .faq-card h3 { font-size: 1.05em; font-weight: 700; margin-bottom: 8px; color: var(--navy); }
+  .faq-card p { font-size: 14px; color: #444; line-height: 1.6; }
+  .host-faq-back { text-align: center; margin-top: 32px; }
+  .host-faq-back a { display: inline-block; color: var(--pink); font-size: 13px; font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--pink); padding-bottom: 2px; }
+
+  @media (max-width: 768px) {
+    .check-grid { grid-template-columns: 1fr; }
+    .two-col, .two-one { grid-template-columns: 1fr; }
+  }
+}

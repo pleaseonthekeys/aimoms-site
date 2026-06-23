@@ -1,0 +1,64 @@
+/* Press page styles (ported from press.html's inline styles into scoped classes). */
+
+.page-press {
+  --serif: 'Playfair Display', Georgia, serif;
+
+  .press-hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 80px 24px 40px;
+    text-align: center;
+  }
+  .press-hero-inner { max-width: 600px; margin: 0 auto; }
+  .press-hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.4em, 5.5vw, 3.6em);
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+  .press-hero h1 .serif-accent { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--pink); }
+  .press-hero p { font-size: 15px; color: #6E6E6B; line-height: 1.7; }
+
+  .press-form-section { padding: 0 24px 80px; }
+  .press-form-inner { max-width: 480px; margin: 0 auto; }
+
+  .press-field { margin-bottom: 16px; }
+  .press-field.last { margin-bottom: 20px; }
+  .press-label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 13px; }
+  .press-input, .press-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    border: 1.5px solid #E2E2DF;
+    border-radius: 10px;
+    outline: none;
+  }
+  .press-input:focus, .press-textarea:focus { border-color: var(--pink); }
+  .press-textarea { min-height: 120px; resize: vertical; }
+
+  .press-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  .press-submit:hover { opacity: 0.85; }
+  .press-submit:disabled { opacity: 0.6; cursor: wait; }
+
+  .press-success { max-width: 480px; margin: 0 auto; text-align: center; padding: 20px 0; }
+  .press-success h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.6em; margin-bottom: 12px; letter-spacing: -0.02em; }
+  .press-success p { font-size: 15px; color: #6E6E6B; line-height: 1.7; }
+
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+}

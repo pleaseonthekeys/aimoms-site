@@ -26,7 +26,8 @@ function loadMetaPixel() {
   const queued = window._fbqQueue || [];
 
   const n = function (this: unknown, ...args: unknown[]) {
-    n.callMethod ? n.callMethod.apply(n, args) : n.queue.push(args);
+    if (n.callMethod) n.callMethod(...args);
+    else n.queue.push(args);
   } as FbqFn;
   n.push = n;
   n.loaded = true;
@@ -57,6 +58,8 @@ export default function Analytics() {
 
   useEffect(() => {
     const consent = localStorage.getItem('aimoms_cookies');
+    // Intentional on-mount client read (localStorage is browser-only).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!consent) setShowBanner(true);
     else if (consent === 'all') loadMetaPixel();
   }, []);

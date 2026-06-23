@@ -1,0 +1,112 @@
+/* The AI Toolkit page styles (ported from toolkit.html's inline <style> into scoped classes). */
+
+.page-toolkit {
+  --serif: 'Playfair Display', Georgia, serif;
+
+  /* HERO */
+  .tk-hero { min-height: 380px; padding: 90px 24px 56px; background: var(--navy); text-align: center; color: #fff; display: flex; align-items: center; justify-content: center; }
+  .tk-hero-inner { max-width: 700px; margin: 0 auto; }
+  .tk-hero-eyebrow { text-transform: uppercase; letter-spacing: 0.25em; font-size: 11px; color: var(--pink); font-weight: 700; margin-bottom: 14px; }
+  .tk-hero h1 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(2.2em, 5.5vw, 3.6em); letter-spacing: -0.03em; margin-bottom: 14px; line-height: 1.05; }
+  .tk-hero h1 .accent { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--pink); font-size: 0.7em; letter-spacing: -0.01em; }
+  .tk-hero p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 520px; margin: 0 auto 20px; }
+  .tk-hero-chips { display: inline-flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .tk-chip-pink { border: 1.5px solid var(--pink); color: var(--pink); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 18px; border-radius: 100px; }
+  .tk-chip-ghost { border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 18px; border-radius: 100px; }
+
+  /* SCORING KEY */
+  .tk-scorekey { background: #fafafa; border-bottom: 1px solid #EFEFED; padding: 16px 24px; }
+  .tk-scorekey-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .tk-scorekey-title { font-size: 11px; font-weight: 700; color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+  .tk-scorekey-items { display: flex; gap: 20px; flex-wrap: wrap; }
+  .tk-scorekey-items span { font-size: 11px; color: #666; }
+  .tk-scorekey-items strong { color: var(--navy); }
+  .tk-scorekey-note { font-size: 11px; color: #bbb; margin-left: auto; white-space: nowrap; }
+
+  /* FILTER BAR */
+  .tk-filter-bar { padding: 16px 0; position: sticky; top: 56px; background: #fff; z-index: 90; border-bottom: 1px solid #EFEFED; }
+  .tk-filters { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tk-btn { font-family: 'Be Vietnam Pro', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border: 1.5px solid #EFEFED; border-radius: 100px; cursor: pointer; background: transparent; color: #999; transition: all 0.2s; white-space: nowrap; }
+  .tk-btn:hover { border-color: var(--pink); color: var(--pink); }
+  .tk-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .tk-btn sup { font-size: 0.45em; vertical-align: super; opacity: 0.6; }
+
+  /* SECTIONS WRAP */
+  .tk-sections { padding: 0 0 80px; }
+
+  /* GRID */
+  .tk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 24px; align-items: stretch; }
+
+  /* SECTION HEADERS */
+  .tk-section { display: block; }
+  .tk-section.hidden { display: none; }
+  .sec-header { max-width: 1100px; margin: 0 auto; padding: 40px 24px 16px; }
+  .sec-header .sec-header-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .sec-label { font-family: 'Be Vietnam Pro', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 4px; }
+  .sec-label.has-emoji { text-transform: none; letter-spacing: 0.12em; }
+  .sec-label sup { font-size: 0.45em; vertical-align: super; opacity: 0.6; }
+  .sec-bar { height: 2px; width: 40px; background: var(--pink); }
+  .sec-note { font-size: 12px; color: #bbb; margin-top: 8px; }
+  .sec-intro { font-size: 13px; color: #999; margin-top: 10px; max-width: 600px; }
+
+  /* CARDS */
+  .tk-card { transition: transform 0.2s, box-shadow 0.2s; height: 100%; border-radius: 14px; border: 1px solid #EFEFED; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+  .tk-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .card-header { background: linear-gradient(135deg, #060d26, #1a2340); padding: 20px 24px; min-height: 76px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
+  .card-header.h-aimoms { background: linear-gradient(135deg, #4a6fa5, #2d4e7e); }
+  .card-name { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.15em; color: #fff; margin: 0; }
+  .card-name sup { font-size: 0.35em; vertical-align: super; opacity: 0.5; }
+  .card-price { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+  .card-body { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; }
+  .card-tagline { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 12px; }
+  .card-builtline { font-size: 11px; color: #bbb; margin-bottom: 14px; flex: 1; }
+  .card-builtline .dot { color: var(--pink); }
+  .card-review { font-size: 12px; color: #999; line-height: 1.6; margin-bottom: 14px; flex: 1; }
+  .card-review strong { color: #060d26; }
+  .card-review.muted { color: #ccc; }
+  .card-link-wrap { margin-top: auto; padding-top: 10px; border-top: 1px solid #EFEFED; }
+  .card-link { font-size: 11px; color: var(--pink); font-weight: 700; text-decoration: none; }
+  .card-soon { font-size: 11px; color: #ccc; font-weight: 600; }
+  .card-review-pending { font-size: 11px; color: #ccc; font-style: italic; margin-bottom: 12px; }
+
+  /* SCORE SYSTEM */
+  .score-block { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 8px; }
+  .score-overall { display: flex; flex-direction: column; align-items: center; background: var(--navy); color: #fff; border-radius: 10px; padding: 8px 12px; min-width: 52px; flex-shrink: 0; }
+  .score-overall-num { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.4em; line-height: 1; color: #fff; }
+  .score-overall-label { font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-top: 2px; }
+  .score-bars { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .score-row { display: flex; align-items: center; gap: 6px; }
+  .score-row-label { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #999; width: 56px; flex-shrink: 0; }
+  .score-bar-track { flex: 1; height: 4px; background: #EFEFED; border-radius: 2px; overflow: hidden; }
+  .score-bar-fill { height: 100%; border-radius: 2px; background: var(--navy); }
+  .score-row-num { font-size: 9px; font-weight: 700; color: var(--navy); width: 14px; text-align: right; flex-shrink: 0; }
+  .score-7 { color: rgba(255,255,255,0.85) !important; }
+  .score-6 { color: rgba(255,255,255,0.7) !important; }
+
+  /* BADGES */
+  .badge { position: absolute; top: 12px; right: 12px; font-size: 8px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; }
+  .badge-top { background: var(--pink); color: #fff; }
+  .badge-new { background: rgba(255,255,255,0.2); color: #fff; }
+  .badge-soon { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
+
+  /* CTA BANNER */
+  .tk-cta { background: var(--navy); padding: 64px 24px; text-align: center; }
+  .tk-cta-inner { max-width: 600px; margin: 0 auto; }
+  .tk-cta-eyebrow { font-size: 11px; color: var(--pink); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+  .tk-cta h2 { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: clamp(1.8em, 4vw, 2.6em); color: #fff; letter-spacing: -0.03em; margin-bottom: 16px; }
+  .tk-cta p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 28px; }
+  .tk-cta-btn { display: inline-block; background: var(--pink); color: #fff; padding: 14px 32px; border-radius: 100px; font-size: 13px; font-weight: 700; text-decoration: none; letter-spacing: 0.05em; }
+
+  @media (max-width: 900px) {
+    .tk-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .tk-filters { flex-wrap: nowrap; overflow-x: auto; padding: 0 16px; gap: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .tk-filters::-webkit-scrollbar { display: none; }
+    .tk-btn { flex-shrink: 0; padding: 7px 14px; font-size: 10px; }
+    .tk-filter-bar { padding: 10px 0; }
+  }
+  @media (max-width: 600px) {
+    .tk-grid { grid-template-columns: 1fr; }
+  }
+}

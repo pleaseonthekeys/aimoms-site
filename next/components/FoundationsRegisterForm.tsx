@@ -19,6 +19,8 @@ export default function FoundationsRegisterForm() {
   const [isSplit, setIsSplit] = useState(false);
 
   useEffect(() => {
+    // Intentional on-mount client read of the URL query (browser-only).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsSplit(new URLSearchParams(window.location.search).get('plan') === 'split');
   }, []);
 

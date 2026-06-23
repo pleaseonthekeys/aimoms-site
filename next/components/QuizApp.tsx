@@ -114,16 +114,14 @@ export default function QuizApp() {
     const sum = Object.values(finalAnswers).reduce((a, b) => a + b, 0);
     setTotal(sum);
     setLevel(levelFor(sum));
+    setGaugePct(0); // reset before the result screen shows; the effect animates it up
     setScreen('result');
     trackFbq('ViewContent', { content_name: 'quiz-result', value: sum });
   };
 
-  // Animate the score gauge once the result screen is shown.
+  // Animate the score gauge once the result screen is shown (async — no sync setState in effect).
   useEffect(() => {
-    if (screen !== 'result') {
-      setGaugePct(0);
-      return;
-    }
+    if (screen !== 'result') return;
     const pct = (total / 32) * 100;
     const t = setTimeout(() => setGaugePct(pct), 100);
     return () => clearTimeout(t);

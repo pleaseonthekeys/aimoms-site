@@ -1,0 +1,56 @@
+/* Careers page styles (ported from careers.html's inline <style>).
+   The source page's bespoke <nav> and <footer> are dropped in favor of the global
+   Header/Footer; only the page-body styles are ported here. */
+
+.page-careers {
+  --light-pink: rgba(255, 99, 216, 0.08);
+  --mid-pink: rgba(255, 99, 216, 0.25);
+  --gray: #666666;
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 80px 60px 72px; position: relative; overflow: hidden; }
+  .hero-label { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 16px; }
+  .hero h1 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); color: #ffffff; line-height: 1.1; max-width: 900px; margin-bottom: 20px; }
+  .hero h1 em { color: var(--pink); font-style: normal; }
+  .hero p { font-size: 1rem; color: rgba(255, 255, 255, 0.65); max-width: 520px; line-height: 1.75; }
+
+  /* OPEN POSITIONS */
+  .positions { padding: 64px 60px; }
+  .positions h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--navy); margin-bottom: 40px; }
+
+  .position-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+    border-bottom: 1px solid #EFEFED;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    gap: 24px;
+  }
+  .position-row:first-of-type { border-top: 1px solid #EFEFED; }
+  .position-row:hover .position-title { color: var(--pink); }
+  .position-row:hover .position-arrow { color: var(--pink); transform: translateX(4px); }
+
+  .position-left { flex: 1; }
+  .position-type { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 6px; }
+  .position-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--navy); margin-bottom: 10px; transition: color 0.2s; }
+  .position-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--light-pink);
+    border: 1px solid var(--mid-pink);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+  .position-arrow { font-size: 1.2rem; color: #ccc; transition: all 0.2s; flex-shrink: 0; }
+
+  @media (max-width: 768px) {
+    .hero, .positions { padding-left: 24px; padding-right: 24px; }
+  }
+}
