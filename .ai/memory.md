@@ -5,12 +5,21 @@
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
 Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — Foundations,
-  Membership, Workshop funnels + Shop done; builds + smoke-tests green (12 routes). ~23
-  pages left to port. Supabase + Vercel provisioning still deferred (do with Lauren).
+  Membership, Workshop funnels + Shop + Quiz done; builds + smoke-tests green (13 routes).
+  ~22 pages left to port. Supabase + Vercel provisioning still deferred (do with Lauren).
 Blocked by: Nothing.
-Next step: Continue Phase 2 commerce pages — Quiz next (quiz.html: course buy buttons +
-  quiz-leads form; port as-is + TODO keep/redesign/remove), then article. Foundations/
-  Membership/Workshop funnels + Shop DONE. Forms render structurally now; wiring is Phase 4.
+Next step: Continue Phase 2 commerce pages — Article next (article.html: id-based URL,
+  renders from articles-data.js — temporary source until Phase 3 Supabase). Foundations/
+  Membership/Workshop funnels + Shop + Quiz DONE. Forms render structurally; wiring is Phase 4.
+  Quiz notes: ported as full interactive client component (components/QuizApp.tsx) with
+  TODO(raquel) keep/redesign/remove. 4 screens (intro/quiz/result/final), all Pixel events
+  preserved (quiz-started, quiz-result value:total, pay-full/pay-split InitiateCheckout,
+  Lead "Quiz Completed" + "quiz-lead"). Course buy buttons use STRIPE_LINKS.foundations*
+  + PRICES (pay-split value = foundationsTwoPay*2 = 248, i.e. 124x2; $1 over the $247
+  pay-in-full — by design, not a stale-value bug). quiz-leads form POSTs to
+  /api/forms/quiz-leads (Phase 4), shows final screen on success. OG image normalized to
+  /og-image.png (source used social-share.jpg, likely not re-hosted). Terms/Privacy links
+  now internal /terms /privacy (those routes still pending port).
   Shop note: course card + course-gift display use PRICES.foundations (single config
   value); gift links are STRIPE_LINKS.courseGift ($247) + STRIPE_LINKS.bundle ($297),
   verbatim. Course card fires InitiateCheckout content_name "shop-course". Shop reuses

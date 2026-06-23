@@ -1,0 +1,64 @@
+/* Quiz funnel styles (ported from quiz.html). Interactive "Invisible Load Score" quiz.
+   TODO(raquel): decide keep / redesign / remove (per migration plan, Phase 6). */
+
+@keyframes quizFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-quiz {
+  /* Local palette (matches the standalone quiz app's own vars). */
+  --dark: #060d26;
+  --pink: #ff63d8;
+  --pink-light: #fff0fb;
+  --gray: #F5F5F5;
+  --white: #ffffff;
+  --text-mid: #4A5568;
+  --text-light: #999;
+
+  background: var(--white);
+
+  .screen { display: none; min-height: calc(100vh - 56px); animation: quizFadeIn 0.3s ease; }
+  .screen.active { display: flex; align-items: center; justify-content: center; }
+  .card { max-width: 560px; width: 100%; margin: 0 auto; padding: 40px 28px; }
+
+  /* Buttons */
+  .btn-pink {
+    background: var(--pink); color: var(--white); border: 2px solid var(--pink); font-weight: 700;
+    font-family: 'Be Vietnam Pro', sans-serif; cursor: pointer; font-size: 15px; padding: 16px 44px; transition: all 0.25s;
+  }
+  .btn-pink:hover { background: transparent; color: var(--pink); border-color: var(--pink); }
+  .btn-dark {
+    background: var(--dark); color: var(--white); border: 2px solid var(--dark); font-weight: 600;
+    font-family: 'Be Vietnam Pro', sans-serif; cursor: pointer; font-size: 14px; padding: 14px 32px;
+    transition: all 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-dark:hover { background: var(--white); color: var(--dark); }
+
+  /* Option buttons */
+  .option-btn {
+    display: block; width: 100%; text-align: left; padding: 14px 18px; background: var(--white);
+    border: 2px solid #E5E7EB; font-size: 14px; color: var(--dark); line-height: 1.5; cursor: pointer;
+    transition: all 0.2s; font-family: 'Be Vietnam Pro', sans-serif; margin-bottom: 8px;
+  }
+  .option-btn:hover { border-color: var(--pink); background: var(--pink-light); }
+  .option-btn.selected { border-color: var(--pink); background: var(--pink-light); }
+
+  /* Progress bar */
+  .progress-track { width: 100%; height: 4px; background: #E5E7EB; margin-bottom: 28px; }
+  .progress-fill { height: 100%; background: var(--pink); transition: width 0.5s ease; }
+
+  /* Email input */
+  .email-input {
+    flex: 1; padding: 13px 14px; border: 2px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.06);
+    color: var(--white); font-size: 14px; outline: none; font-family: 'Be Vietnam Pro', sans-serif;
+  }
+  .email-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+  @media (max-width: 480px) {
+    .card { padding: 28px 20px; }
+    .quiz-h1 { font-size: 26px; }
+    .email-row { flex-direction: column; }
+    .email-row .btn-pink { width: 100%; text-align: center; }
+  }
+}
