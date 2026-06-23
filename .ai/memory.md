@@ -4,17 +4,22 @@
 ## Current Sprint
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
-Status: Phase 0 DONE. Phase 1 LOCAL SCAFFOLD done. Phase 2 IN PROGRESS — COMMERCE-FIRST
-  PASS COMPLETE: Foundations, Membership, Workshop funnels + Shop + Quiz + Article all
-  done; builds + runtime-tests green (14 routes; /article is dynamic via ?id=). Remaining
-  Phase 2 = non-commerce pages. Supabase + Vercel provisioning deferred (do with Lauren).
-Blocked by: Nothing.
-Next step: Phase 2 NON-COMMERCE pages next — editorial (article index; /article redirects
-  here on bad/missing id so port it soon), then experiences, events, host-application,
-  host-success, out-of-office-waitlist, community, science, corporate, curriculum, press,
-  careers + 6 interns, subscribe, toolkit, privacy, terms, success/newsletter-success.
-  Then Phase 3 (articles -> Supabase), Phase 4 (forms -> API routes). Commerce-first pass
-  (all Stripe/Pixel pages) is DONE. Forms render structurally; wiring is Phase 4.
+Status: Phase 0, 1 (local scaffold), 2 (ALL pages), 6 (stubs) DONE. Phase 7 PARTIAL
+  (sitemap + robots done; image re-host + deploy pending). Build green — 41 routes.
+  Every page is ported: commerce funnels (Foundations/Membership/Workshop/Shop/Quiz/
+  Article), all display pages, careers + 6 role pages, all 10 form components (client-side,
+  POST to /api/forms/<name> — routes NOT built yet). foundations-course stub + sitemap +
+  robots committed. Supabase client scaffolding committed but imported nowhere yet.
+Blocked by: Provisioning — Phases 3/4/5/7 need Raquel's Supabase + Vercel + Resend
+  (tokens/keys). Do WITH Lauren. Nothing else blocking.
+Next step: With Lauren — provision Raquel's Supabase + Vercel via tokens (VERCEL_TOKEN /
+  SUPABASE_ACCESS_TOKEN, CLI not MCP), then:
+  - Phase 3: import 43 articles (next/lib/articles-data.ts) → Supabase `articles`; render from DB.
+  - Phase 4: build /api/forms/* route handlers (Supabase insert + Resend → hello@aimoms.ai);
+    export/import existing Netlify Forms leads before cutover. Form components already POST
+    to these paths and redirect-regardless on failure.
+  - Phase 5: set each Stripe link's success_url → matching *-thank-you page.
+  - Phase 7: re-host ~67 unsplash body images → /public; Vercel preview; DNS cutover.
   Article notes: /article reads ?id= (dynamic server page), renders from the new
   next/lib/articles-data.ts (43 articles, copied verbatim from articles-data.js -> ESM +
   types; temporary until Phase 3 Supabase). getArticle/ARTICLE_IDS exported. Gift modal
