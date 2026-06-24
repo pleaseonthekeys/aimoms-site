@@ -4,22 +4,24 @@
 ## Current Sprint
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
-Status: Phase 0, 1 (local scaffold), 2 (ALL pages), 6 (stubs) DONE. Phase 7 PARTIAL
-  (sitemap + robots done; image re-host + deploy pending). Build green — 41 routes.
-  Every page is ported: commerce funnels (Foundations/Membership/Workshop/Shop/Quiz/
-  Article), all display pages, careers + 6 role pages, all 10 form components (client-side,
-  POST to /api/forms/<name> — routes NOT built yet). foundations-course stub + sitemap +
-  robots committed. Supabase client scaffolding committed but imported nowhere yet.
-Blocked by: Provisioning — Phases 3/4/5/7 need Raquel's Supabase + Vercel + Resend
-  (tokens/keys). Do WITH Lauren. Nothing else blocking.
-Next step: With Lauren — provision Raquel's Supabase + Vercel via tokens (VERCEL_TOKEN /
-  SUPABASE_ACCESS_TOKEN, CLI not MCP), then:
-  - Phase 3: import 43 articles (next/lib/articles-data.ts) → Supabase `articles`; render from DB.
-  - Phase 4: build /api/forms/* route handlers (Supabase insert + Resend → hello@aimoms.ai);
-    export/import existing Netlify Forms leads before cutover. Form components already POST
-    to these paths and redirect-regardless on failure.
-  - Phase 5: set each Stripe link's success_url → matching *-thank-you page.
-  - Phase 7: re-host ~67 unsplash body images → /public; Vercel preview; DNS cutover.
+Status: Phases 0,1,2,3,4,6,7a DONE & verified. Build green — 41 routes.
+  - Supabase LIVE on Raquel's project (ref pzrrxtakwvspstwbvefb). Migration applied via the
+    Management API (no CLI). 43 articles imported; /article reads from Supabase (lib/articles.ts,
+    local fallback). 10-form handler app/api/forms/[form]/route.ts verified live (rows + Resend
+    200; honeypot dropped; unknown→404). RLS: articles public-read, submissions server-only.
+  - 42 unsplash images re-hosted to public/img/articles/ (67 refs rewritten; Supabase re-imported).
+  - Keys in next/.env.local (gitignored): Supabase URL/anon/service, Resend key/from/to,
+    SUPABASE_ACCESS_TOKEN (sbp_) + SUPABASE_PROJECT_REF.
+  Commits this session: 4d7401a (Phase 3+4), 02c227c (Phase 7a).
+Blocked by: VERCEL_TOKEN (Lauren getting it) for the preview deploy; GoDaddy DNS for cutover;
+  Raquel's Stripe dashboard for success_url.
+Next step:
+  - Phase 7b: `vercel --token $VERCEL_TOKEN` deploy from next/ to a preview URL; set the 6
+    runtime env vars in the Vercel project (Supabase URL/anon/service, Resend key/from/to);
+    smoke-test preview (article, a form, pixel).
+  - Cutover (GoDaddy DNS): verify aimoms.ai in Resend (then FROM/TO → hello@aimoms.ai);
+    export existing Netlify Forms leads; point DNS Netlify→Vercel (Netlify as fallback).
+  - Phase 5 (Raquel): set each Stripe link's success_url → matching *-thank-you page.
   Article notes: /article reads ?id= (dynamic server page), renders from the new
   next/lib/articles-data.ts (43 articles, copied verbatim from articles-data.js -> ESM +
   types; temporary until Phase 3 Supabase). getArticle/ARTICLE_IDS exported. Gift modal
