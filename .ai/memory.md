@@ -4,7 +4,11 @@
 ## Current Sprint
 Working on: Migrating the static HTML site → Next.js + Supabase + Vercel.
   Full plan: ~/.claude/plans/aime-html-is-no-robust-fog.md
-Status: Phases 0,1,2,3,4,6,7a DONE & verified. Build green — 41 routes.
+Status: Phases 0,1,2,3,4,6,7a,7b DONE & verified. Build green — 41 routes.
+  LIVE PREVIEW: https://aimoms-preview.vercel.app (on LAUREN's Vercel Hobby, project
+  aimoms-preview — Raquel was inaccessible; real launch must redeploy to Raquel's Pro).
+  Verified live: pages 200, /article from Supabase, local images, a form POST wrote a real
+  Supabase row. 6 runtime env vars set in Vercel (Production scope).
   - Supabase LIVE on Raquel's project (ref pzrrxtakwvspstwbvefb). Migration applied via the
     Management API (no CLI). 43 articles imported; /article reads from Supabase (lib/articles.ts,
     local fallback). 10-form handler app/api/forms/[form]/route.ts verified live (rows + Resend
