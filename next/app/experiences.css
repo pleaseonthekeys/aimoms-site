@@ -16,7 +16,8 @@
 
   /* HERO IMAGE */
   .hero-image { height: 400px; overflow: hidden; }
-  .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* object-position biased upward so the hosts' heads aren't cropped in the 400px band */
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
 
   /* THE CONCEPT */
   .concept { padding: 80px 0; background: #fff; }
