@@ -16,6 +16,7 @@
 ---
 
 ## STEP 0 — Before the call (Lauren, tonight)
+- [ ] **Create the GitHub repo + push `main`.** Recommended: create it under **Raquel's GitHub** (she owns the asset) and add Lauren as a collaborator — or create under Lauren's and add Raquel/grant her Vercel access. **Private** repo. Secrets are already safe (verified: no `.env` files or keys tracked, and none anywhere in git history). *(If you'd rather create it under Raquel's account, do this as the first item on the call instead.)*
 - [ ] In GoDaddy, **lower the TTL** on the existing `aimoms.ai` A/CNAME records to **600 seconds** (10 min). This makes tomorrow's flip propagate fast. *(If Lauren doesn't have GoDaddy access yet, this becomes the first thing on the call — do it and take a short break before Step 6 to let the old TTL expire.)*
 - [ ] Confirm the preview is green: https://aimoms-preview.vercel.app (homepage, /events, /experiences, an /article, one test form).
 - [ ] Have open: `next/.env.local` (env values), the Stripe link→thank-you map (Step 3), this checklist.
@@ -25,12 +26,15 @@
 - [ ] Raquel's **Vercel is upgraded to Pro** (paid) — required to host a commercial site. Do this now if not done.
 - [ ] **Confirm the Foundations price + Stripe link are still current.** Raquel was raising the price (new link). If it changed, Lauren updates the one line in `next/lib/commerce.ts`, rebuilds, and redeploys before launch.
 
-## STEP 2 — Stand up production on Raquel's Vercel *(no user impact — temp URL only)*
-- [ ] Lauren gets a **Vercel access token scoped to Raquel's team** (Raquel: Vercel → Account Settings → Tokens → Create), or Raquel runs the CLI while screen-sharing.
-- [ ] From `next/`: link a new project on **Raquel's** team and set the 6 env vars (Production scope): `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `RESEND_TO_EMAIL`.
-- [ ] `vercel deploy --prod` → get Raquel's `*.vercel.app` URL.
-- [ ] Quick smoke test that temp URL (homepage 200, one article, one form submit → check the Supabase row). **This is what we'll point the domain at.**
-- [ ] *(Optional, recommended follow-up — not required for launch: create a GitHub repo + connect it to the Vercel project so future content edits auto-deploy. Can be done after go-live.)*
+## STEP 2 — Stand up production on Raquel's Vercel, via GitHub *(no user impact — temp URL only)*
+**Deploy model: GitHub-connected** — future content edits auto-deploy on push (the durable path Raquel can maintain).
+- [ ] Repo is created + pushed (Step 0). Re-confirm `next/.env.local` and `next/.vercel` are **not** in it (already verified clean).
+- [ ] In **Raquel's Vercel** → **Add New → Project → Import Git Repository** → select the repo. *(If it's not listed, click "Adjust GitHub App Permissions" / install the Vercel GitHub app on the account or org that owns the repo.)*
+- [ ] ⚠️ **Set Root Directory = `next/`.** The repo root is the old static site; the Next.js app lives in `next/`. Framework preset should auto-detect **Next.js** once the root is right.
+- [ ] Add the **6 env vars** (Production scope) — these do **not** carry over from the earlier CLI preview: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `RESEND_TO_EMAIL` (Lauren has the values in `next/.env.local`).
+- [ ] **Deploy** → get Raquel's `*.vercel.app` URL.
+- [ ] Smoke test that temp URL (homepage 200, one article, one form submit → check the Supabase row). **This is what we'll point the domain at.**
+- [ ] Confirm auto-deploy: a trivial commit pushed to `main` triggers a fresh Vercel build.
 
 ## STEP 3 — Verify Stripe success URLs *(verify, don't rebuild)*
 The site is already `aimoms.ai` and the thank-you slugs are unchanged, so these should already be right. For **each** payment link, open it in Stripe → **After payment / Confirmation page** and confirm it points to the matching on-site page (or just keep whatever `aimoms.ai/...` path is already there — those slugs all exist on the new site):
@@ -86,11 +90,11 @@ Do **not** touch DNS until every box here is checked on Raquel's production temp
 - [ ] Retire Lauren's `aimoms-preview` project (it was a temporary Hobby preview).
 - [ ] Decommission / unpublish the Netlify site once fully confident.
 - [ ] Hand Raquel the Resend login; confirm she can see lead notifications.
-- [ ] *(Optional)* Connect the GitHub repo to Vercel for auto-deploy on future content edits.
 - [ ] Set the Stripe `success_url`s if any were found pointing at non-aimoms URLs in Step 3.
+- [ ] *(Optional)* Walk Raquel through the edit→commit→push→auto-deploy loop once, so she's comfortable making content changes.
 
 ---
 
 ### Who does what (quick reference)
-- **Lauren:** Vercel CLI deploy + env vars, build/redeploy, all verification/testing, reads out the DNS records to set.
-- **Raquel:** logs into + screen-shares her dashboards, upgrades Vercel to Pro, creates the Vercel token, clicks Verify in Resend, confirms Stripe confirmation pages, makes the GoDaddy DNS edits, confirms the test email landed.
+- **Lauren:** GitHub repo + push, Vercel project import (Root Directory = `next/`) + env vars, build/verify, all testing, reads out the DNS records to set.
+- **Raquel:** logs into + screen-shares her dashboards, upgrades Vercel to Pro, authorizes the Vercel GitHub app (if repo is on her account), clicks Verify in Resend, confirms Stripe confirmation pages, makes the GoDaddy DNS edits, confirms the test email landed.
