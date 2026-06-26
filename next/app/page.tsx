@@ -17,7 +17,7 @@ export default function Home() {
             <span className="dot" /> Built by moms, for moms.
           </div>
           <h1>
-            Your entry into AI.
+            Your entry into AI......
             <br />
             <span className="italic-accent">For moms.</span>
           </h1>
